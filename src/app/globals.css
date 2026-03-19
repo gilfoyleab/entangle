@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #030305;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  /* Next.js 13+ default margin reset */
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Metallic Text Utilities */
+.text-metallic {
+  background: linear-gradient(to bottom, #ffffff 0%, #b3b3b3 50%, #808080 51%, #e6e6e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+
+.text-metallic-cyan {
+  background: linear-gradient(to bottom, #d4f4ff 0%, #4bc0c8 50%, #4bc0c8 51%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-metallic-magenta {
+  background: linear-gradient(to bottom, #ffe6f2 0%, #ff4b82 50%, #ff1a66 51%, #ff80ab 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Ensure smooth scrolling when jumping */
+html {
+  scroll-behavior: smooth;
+}
