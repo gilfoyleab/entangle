@@ -33,7 +33,17 @@ export default function Home() {
           </div>
         </header>
 
-
+        {/* Hero Text */}
+        <div className="flex-1 flex flex-col items-center pt-24 text-center px-4">
+          <h1 className="text-5xl md:text-[5.5rem] font-medium tracking-tight mb-6 leading-[1.1]">
+            ENTANGLED IN <br />
+            <span className="text-gray-400">THE COSMOS</span>
+          </h1>
+          <p className="max-w-2xl text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+            The quantum entanglement of Miners and Validators. <br />
+            Decentralizing AI, delivering fast, flexible, and efficient compute.
+          </p>
+        </div>
 
       </div>
     </main>
