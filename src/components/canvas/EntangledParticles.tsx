@@ -43,20 +43,38 @@ export function EntangledParticles({ scrollProgress }: { scrollProgress?: number
   const corePositions = useMemo(() => generateLumpySphere(20000, radius * 1.4, 0.1), []);
 
   useFrame((state, delta) => {
+    const scroll = scrollProgress || 0;
+
     if (groupRef.current) {
-      // Very slow majestic rotation of the whole entangled mass
-      groupRef.current.rotation.y += delta * 0.08;
+      // Rotate faster as you scroll
+      groupRef.current.rotation.y += delta * (0.08 + scroll * 0.1);
       groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.05;
+      
+      // Slight zoom in on scroll
+      groupRef.current.position.z = scroll * 2;
     }
     if (blueSphereRef.current) {
+      // Pull apart
+      blueSphereRef.current.position.x = -(offsetDistance + scroll * 3.5);
       blueSphereRef.current.rotation.x += delta * 0.1;
       blueSphereRef.current.rotation.y += delta * 0.15;
     }
     if (redSphereRef.current) {
+      // Pull apart
+      redSphereRef.current.position.x = (offsetDistance + scroll * 3.5);
       redSphereRef.current.rotation.x -= delta * 0.1;
       redSphereRef.current.rotation.y -= delta * 0.15;
     }
     if (whiteCoreRef.current) {
+      // Shrink and fade the core as they separate
+      const coreScale = Math.max(0, 1 - scroll * 1.5);
+      whiteCoreRef.current.scale.set(coreScale * 1.2, coreScale * 0.8, coreScale * 0.8);
+      
+      const mat = whiteCoreRef.current.material as THREE.PointsMaterial;
+      if (mat) {
+         mat.opacity = 0.6 * coreScale;
+      }
+
       whiteCoreRef.current.rotation.z += delta * 0.05;
       whiteCoreRef.current.rotation.y -= delta * 0.05;
     }
