@@ -18,14 +18,27 @@ body {
 
 /* Glassmorphism utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Metallic Text Utilities */
+.text-metallic-premium {
+  background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 45%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-shadow-strong {
+  text-shadow: 0 4px 20px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,0.8);
+}
+
 .text-metallic {
   background: linear-gradient(to bottom, #ffffff 0%, #b3b3b3 50%, #808080 51%, #e6e6e6 100%);
   -webkit-background-clip: text;

@@ -25,7 +25,7 @@ function generateLumpySphere(count: number, radius: number, noiseAmp: number) {
   return positions;
 }
 
-export function EntangledParticles({ scrollProgress }: { scrollProgress?: number }) {
+export function EntangledParticles() {
   const groupRef = useRef<THREE.Group>(null);
   const blueSphereRef = useRef<THREE.Points>(null);
   const redSphereRef = useRef<THREE.Points>(null);
@@ -43,7 +43,9 @@ export function EntangledParticles({ scrollProgress }: { scrollProgress?: number
   const corePositions = useMemo(() => generateLumpySphere(20000, radius * 1.4, 0.1), []);
 
   useFrame((state, delta) => {
-    const scroll = scrollProgress || 0;
+    // Read directly from window object to avoid React re-renders!
+    const scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+    const scroll = Math.min(1, scrollY / 1500);
 
     if (groupRef.current) {
       // Rotate faster as you scroll
