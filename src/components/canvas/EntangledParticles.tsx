@@ -52,8 +52,13 @@ export function EntangledParticles() {
       groupRef.current.rotation.y += delta * (0.08 + scroll * 0.1);
       groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.05;
       
-      // Slight zoom in on scroll
-      groupRef.current.position.z = scroll * 2;
+      // Zoom logic: Closer at top, FARTHER as you scroll down
+      // z=1.5 (close) -> z=-3.5 (far)
+      groupRef.current.position.z = 1.5 - scroll * 5;
+      
+      // Also subtle scale down as it recedes
+      const scale = 1.2 - scroll * 0.6;
+      groupRef.current.scale.set(scale, scale, scale);
     }
     if (blueSphereRef.current) {
       // Pull apart
