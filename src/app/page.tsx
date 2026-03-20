@@ -56,7 +56,7 @@ export default function Home() {
               <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             </div>
           </div>
-          <span className="font-light tracking-[0.2em] text-lg lowercase text-gray-200">entangle</span>
+          <span className="font-light tracking-[0.2em] text-lg lowercase text-gray-200">entangle protocol</span>
         </div>
 
         {/* Nav Links Removed */}
