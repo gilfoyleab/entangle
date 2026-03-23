@@ -171,26 +171,33 @@ export function EntangledParticles() {
     const isBlueFlashing = flashCycle < 0.1; // Very fast, abrupt flash (0.1s)
     const isRedFlashing = flashCycle > 0.75 && flashCycle < 0.85;
 
-    // Helper to abruptly flash the middle particles of the sphere
+    // Helper to abruptly flash a rotating sector of the sphere
     const updateFlash = (
       sphereRef: React.RefObject<THREE.Points | null>,
       positions: Float32Array,
       baseColor: THREE.Color,
-      isRightSide: boolean,
-      isFlashing: boolean
+      isFlashing: boolean,
+      time: number
     ) => {
       if (!sphereRef.current) return;
       const colors = sphereRef.current.geometry.attributes.color;
       if (!colors) return;
 
+      // Rotating sector logic
+      const angle = time * 8.0; // Fast rotation for the "jhimik jhimk" feel
+      const dx = Math.cos(angle);
+      const dy = Math.sin(angle);
+
       for (let i = 0; i < particleCount; i++) {
         const px = positions[i * 3];
+        const py = positions[i * 3 + 1];
 
-        // Find particles in the middle/center of the sphere (local X near 0) instead of just the inner edge
-        const isMiddle = Math.abs(px) < radius * 0.5;
+        // Find particles in a rotating sector/cone area
+        const dot = (px * dx + py * dy) / radius;
+        const inSector = dot > 0.4; // Select a "slice" of the sphere
 
-        // Turn all middle particles blinding white at once, creating a concentrated single flash
-        const shouldSpark = isMiddle && isFlashing;
+        // Flash part of the sphere in a rotating motion
+        const shouldSpark = inSector && isFlashing;
 
         if (shouldSpark) {
           // Blinding white flash
@@ -245,14 +252,14 @@ export function EntangledParticles() {
       blueSphereRef.current.position.x = bx;
       blueSphereRef.current.rotation.x += delta * 0.07;
       blueSphereRef.current.rotation.y += delta * 0.1;
-      updateFlash(blueSphereRef, bluePositions, baseBlue, false, isBlueFlashing);
+      updateFlash(blueSphereRef, bluePositions, baseBlue, isBlueFlashing, t);
     }
 
     if (redSphereRef.current) {
       redSphereRef.current.position.x = rx;
       redSphereRef.current.rotation.x -= delta * 0.07;
       redSphereRef.current.rotation.y -= delta * 0.1;
-      updateFlash(redSphereRef, redPositions, baseRed, true, isRedFlashing);
+      updateFlash(redSphereRef, redPositions, baseRed, isRedFlashing, t);
     }
 
     if (whiteCoreRef.current) {
@@ -265,7 +272,7 @@ export function EntangledParticles() {
       whiteCoreRef.current.rotation.x += delta * 0.35;
 
       const mat = whiteCoreRef.current.material as THREE.PointsMaterial;
-      if (mat) mat.opacity = 0.35;
+      if (mat) mat.opacity = 0.6; // Increased from 0.35
     }
   });
 
@@ -277,7 +284,7 @@ export function EntangledParticles() {
           <bufferAttribute attach="attributes-position" count={6000} args={[corePositions, 3]} />
           <bufferAttribute attach="attributes-color" count={6000} args={[coreColors, 3]} />
         </bufferGeometry>
-        <PointMaterial vertexColors transparent size={0.015} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} opacity={0.35} />
+        <PointMaterial vertexColors transparent size={0.02} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} opacity={0.6} />
       </points>
 
       {/* Blue / Cyan Particle Sphere */}
