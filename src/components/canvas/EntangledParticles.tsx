@@ -138,12 +138,9 @@ export function EntangledParticles() {
 
   const smoothedScroll = useRef(0);
   
-  // Random Flash State Timers
-  const nextFlashBlue = useRef(Math.random() * 1.0);
-  const flashDurationBlue = useRef(0.05 + Math.random() * 0.15);
-  
-  const nextFlashRed = useRef(Math.random() * 1.0);
-  const flashDurationRed = useRef(0.05 + Math.random() * 0.15);
+  // Shared Random Flash State Timer for Entanglement
+  const nextFlash = useRef(Math.random() * 1.0);
+  const flashDuration = useRef(0.05 + Math.random() * 0.15);
 
   useFrame((state, delta) => {
     const scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
@@ -207,22 +204,14 @@ export function EntangledParticles() {
 
     // Random "Chis Chis" Communication Flash Logic
     // Both interval and duration are completely random to create an organic, unpredictable data-burst effect.
-    let isBlueFlashing = false;
-    if (t > nextFlashBlue.current) {
-      isBlueFlashing = true;
-      if (t > nextFlashBlue.current + flashDurationBlue.current) {
+    // Use a single synchronized state for true entanglement!
+    let isFlashing = false;
+    if (t > nextFlash.current) {
+      isFlashing = true;
+      if (t > nextFlash.current + flashDuration.current) {
         // Flash completely finished. Schedule next one!
-        nextFlashBlue.current = t + 0.2 + Math.random() * 1.6; // Random delay off (0.2s to 1.8s)
-        flashDurationBlue.current = 0.05 + Math.random() * 0.15; // Random flash duration (0.05s to 0.20s)
-      }
-    }
-
-    let isRedFlashing = false;
-    if (t > nextFlashRed.current) {
-      isRedFlashing = true;
-      if (t > nextFlashRed.current + flashDurationRed.current) {
-        nextFlashRed.current = t + 0.2 + Math.random() * 1.6;
-        flashDurationRed.current = 0.05 + Math.random() * 0.15;
+        nextFlash.current = t + 0.2 + Math.random() * 1.6; // Random delay off (0.2s to 1.8s)
+        flashDuration.current = 0.05 + Math.random() * 0.15; // Random flash duration (0.05s to 0.20s)
       }
     }
 
@@ -238,17 +227,25 @@ export function EntangledParticles() {
       const colors = sphereRef.current.geometry.attributes.color;
       if (!colors) return;
 
-      // Rotating sector logic
-      const angle = time * 8.0; // Fast rotation for the "jhimik jhimk" feel
-      const dx = Math.cos(angle);
-      const dy = Math.sin(angle);
+      // Rotating sector logic in WORLD space so both spheres look identical visually
+      const angle = time * 8.0;
+      const worldDir = new THREE.Vector3(Math.cos(angle), Math.sin(angle), 0);
+      
+      // Convert world direction down to local space so the visual flash doesn't rotate with the sphere
+      const invQuat = sphereRef.current.quaternion.clone().invert();
+      worldDir.applyQuaternion(invQuat);
+
+      const dx = worldDir.x;
+      const dy = worldDir.y;
+      const dz = worldDir.z;
 
       for (let i = 0; i < particleCount; i++) {
         const px = positions[i * 3];
         const py = positions[i * 3 + 1];
+        const pz = positions[i * 3 + 2];
 
-        // Find particles in a rotating sector/cone area
-        const dot = (px * dx + py * dy) / radius;
+        // Find particles in a rotating sector/cone area mapping 3D coords
+        const dot = (px * dx + py * dy + pz * dz) / radius;
         const inSector = dot > 0.4; // Select a "slice" of the sphere
 
         // Flash part of the sphere in a rotating motion
@@ -307,14 +304,14 @@ export function EntangledParticles() {
       blueSphereRef.current.position.x = bx;
       blueSphereRef.current.rotation.x += delta * 0.07;
       blueSphereRef.current.rotation.y += delta * 0.1;
-      updateFlash(blueSphereRef, bluePositions, baseBlue, isBlueFlashing, t);
+      updateFlash(blueSphereRef, bluePositions, baseBlue, isFlashing, t);
     }
 
     if (redSphereRef.current) {
       redSphereRef.current.position.x = rx;
       redSphereRef.current.rotation.x -= delta * 0.07;
       redSphereRef.current.rotation.y -= delta * 0.1;
-      updateFlash(redSphereRef, redPositions, baseRed, isRedFlashing, t);
+      updateFlash(redSphereRef, redPositions, baseRed, isFlashing, t);
     }
 
     if (whiteCoreRef.current) {
@@ -327,7 +324,16 @@ export function EntangledParticles() {
       whiteCoreRef.current.rotation.x += delta * 0.35;
 
       const mat = whiteCoreRef.current.material as THREE.PointsMaterial;
-      if (mat) mat.opacity = 0.6; // Increased from 0.35
+      // Bridge flashes noticeably but naturally when transferring
+      if (mat) {
+        mat.opacity = isFlashing ? 0.8 : 0.4; 
+        mat.size = isFlashing ? 0.035 : 0.02;
+        mat.color.setRGB(
+          isFlashing ? 1.5 : 1.0, 
+          isFlashing ? 1.5 : 1.0, 
+          isFlashing ? 1.5 : 1.0
+        );
+      }
     }
   });
 
