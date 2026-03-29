@@ -197,20 +197,11 @@ export default function Home() {
       </header>
 
       <div className="relative z-10 w-full flex flex-col pb-0">
-        <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-28 pb-16">
+        <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-16">
           <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl">
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-xs font-medium text-gray-200 mb-8 uppercase tracking-[0.2em] shadow-xl">
-              <span>ENTANGLE</span>
-              <span className="w-1 h-1 rounded-full bg-gray-400" />
-              <span>Bittensor Subnet</span>
-            </div>
-
-            <h1 className="text-5xl md:text-[6.2rem] font-medium tracking-tight mb-12 leading-[1.02] text-metallic-premium drop-shadow-2xl">
-              AI-POWERED
-              <br />
-              CROSS-CHAIN
-              <br />
-              MESSAGING.
+            <h1 className="text-5xl md:text-[5.35rem] lg:text-[5.95rem] font-medium tracking-tight mb-8 leading-[0.9] text-metallic-premium drop-shadow-2xl max-w-[1400px]">
+              <span className="block">AI-POWERED</span>
+              <span className="block whitespace-nowrap text-[0.92em] md:text-[0.88em]">CROSS-CHAIN MESSAGING.</span>
             </h1>
 
             <div className="flex flex-wrap items-center justify-center gap-5">
@@ -358,13 +349,13 @@ export default function Home() {
           <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/5 pointer-events-none hidden xl:block"></div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid xl:grid-cols-2 gap-16 xl:gap-24 items-center relative">
-            
+
             {/* Left Column */}
             <div className="relative pr-4 xl:pr-12">
               <div className="w-5 h-5 border-t border-l border-white/20 mb-8 opacity-50"></div>
-              
+
               <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-16">
-                One contract. <span className="text-[#00d2ff]">Any<br className="hidden lg:block"/> chain.</span>
+                One contract. <span className="text-[#00d2ff]">Any<br className="hidden lg:block" /> chain.</span>
               </h2>
 
               <div className="space-y-10 relative">
@@ -456,7 +447,7 @@ entangle.sendMessage{value: fees}(
           </motion.div>
         </section>
 
-        
+
 
         <section id="chain-support" className="my-32 py-16 px-6 md:px-12 w-full max-w-5xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
@@ -476,15 +467,15 @@ entangle.sendMessage{value: fees}(
                       <div className="mb-6 h-12 flex items-center justify-center w-full">
                         {name === 'Ethereum' && (
                           <div className="w-8 h-12 relative opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(0,210,255,0.4)]">
-                            <div className="absolute top-0 left-0 right-0 h-1/2 bg-[#00d2ff] opacity-100" style={{clipPath: 'polygon(50% 0, 100% 100%, 0 100%)'}}></div>
-                            <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-[#00d2ff] opacity-70" style={{clipPath: 'polygon(0 0, 100% 0, 50% 100%)'}}></div>
+                            <div className="absolute top-0 left-0 right-0 h-1/2 bg-[#00d2ff] opacity-100" style={{ clipPath: 'polygon(50% 0, 100% 100%, 0 100%)' }}></div>
+                            <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-[#00d2ff] opacity-70" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}></div>
                           </div>
                         )}
                         {name === 'Arbitrum' && (
                           <div className="flex flex-col justify-center items-center gap-[4px] opacity-90 group-hover:opacity-100 transition-opacity scale-125">
-                            <div className="w-5 h-2.5 bg-white" style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'}}></div>
-                            <div className="w-7 h-2.5 bg-white" style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'}}></div>
-                            <div className="w-9 h-2.5 bg-white" style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'}}></div>
+                            <div className="w-5 h-2.5 bg-white" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+                            <div className="w-7 h-2.5 bg-white" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+                            <div className="w-9 h-2.5 bg-white" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
                           </div>
                         )}
                         {name === 'Optimism' && <div className="w-10 h-10 border-[6px] border-[#ff1a66] rounded-full drop-shadow-[0_0_8px_rgba(255,26,102,0.4)]"></div>}
@@ -507,27 +498,27 @@ entangle.sendMessage{value: fees}(
                       <div className="mb-6 h-12 flex items-center justify-center w-full">
                         {name === 'Solana' && (
                           <div className="w-9 h-8 flex flex-col justify-between opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,26,102,0.4)]">
-                            <div className="h-2 w-7 bg-[#ff1a66] self-end" style={{clipPath: 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)'}}></div>
-                            <div className="h-[7px] w-7 bg-[#ff1a66] self-end" style={{clipPath: 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)'}}></div>
-                            <div className="h-[7px] w-7 bg-[#ff1a66] self-start" style={{clipPath: 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)'}}></div>
+                            <div className="h-2 w-7 bg-[#ff1a66] self-end" style={{ clipPath: 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)' }}></div>
+                            <div className="h-[7px] w-7 bg-[#ff1a66] self-end" style={{ clipPath: 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)' }}></div>
+                            <div className="h-[7px] w-7 bg-[#ff1a66] self-start" style={{ clipPath: 'polygon(15% 0, 100% 0, 85% 100%, 0 100%)' }}></div>
                           </div>
                         )}
                         {name === 'SUI' && <div className="w-7 h-7 bg-[#00d2ff] rounded-full rounded-tr-[3px] rotate-45 mt-2 drop-shadow-[0_0_8px_rgba(0,210,255,0.4)]"></div>}
                         {name === 'Cosmos' && (
-                           <div className="relative flex items-center justify-center opacity-90 group-hover:opacity-100 w-12 h-12">
-                             <div className="w-2.5 h-2.5 rounded-full bg-white z-10"></div>
-                             <svg viewBox="0 0 24 24" className="w-12 h-12 text-white absolute" fill="none" stroke="currentColor" strokeWidth="1">
-                               <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(30 12 12)" />
-                               <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(-30 12 12)" />
-                               <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(90 12 12)" />
-                             </svg>
-                           </div>
+                          <div className="relative flex items-center justify-center opacity-90 group-hover:opacity-100 w-12 h-12">
+                            <div className="w-2.5 h-2.5 rounded-full bg-white z-10"></div>
+                            <svg viewBox="0 0 24 24" className="w-12 h-12 text-white absolute" fill="none" stroke="currentColor" strokeWidth="1">
+                              <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(30 12 12)" />
+                              <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(-30 12 12)" />
+                              <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(90 12 12)" />
+                            </svg>
+                          </div>
                         )}
                         {name === 'Stellar' && (
                           <div className="text-white transform opacity-90 group-hover:opacity-100">
-                             <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
-                               <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM17.2 14.12C15.65 14.12 14.35 15.17 13.88 16.59C13.57 17.51 12.63 18.23 11.53 18.23C10.05 18.23 8.85 17.03 8.85 15.55C8.85 14.16 9.9 12.98 11.23 12.87C12.38 12.77 13.43 12 13.84 10.96C14.04 10.45 14.53 10.12 15.08 10.12C16.03 10.12 16.81 10.9 16.81 11.85C16.81 12.19 16.71 12.51 16.55 12.78C16.48 12.91 16.55 13.08 16.69 13.13C16.85 13.19 17.02 13.23 17.2 13.23C17.69 13.23 18.09 13.63 18.09 14.12C18.09 14.61 17.69 15.01 17.2 15.01V14.12Z"/>
-                             </svg>
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM17.2 14.12C15.65 14.12 14.35 15.17 13.88 16.59C13.57 17.51 12.63 18.23 11.53 18.23C10.05 18.23 8.85 17.03 8.85 15.55C8.85 14.16 9.9 12.98 11.23 12.87C12.38 12.77 13.43 12 13.84 10.96C14.04 10.45 14.53 10.12 15.08 10.12C16.03 10.12 16.81 10.9 16.81 11.85C16.81 12.19 16.71 12.51 16.55 12.78C16.48 12.91 16.55 13.08 16.69 13.13C16.85 13.19 17.02 13.23 17.2 13.23C17.69 13.23 18.09 13.63 18.09 14.12C18.09 14.61 17.69 15.01 17.2 15.01V14.12Z" />
+                            </svg>
                           </div>
                         )}
                       </div>
@@ -560,7 +551,7 @@ entangle.sendMessage{value: fees}(
             </h2>
 
             <div className="relative max-w-4xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10">
-              
+
               {/* Connector Line left side (Desktop) */}
               <div className="w-4 shrink-0 relative hidden md:block">
                 <div className="absolute left-1/2 top-[70px] bottom-[70px] w-[2px] bg-gradient-to-b from-[#00d2ff] via-[#333] to-[#ff1a66] -translate-x-1/2 flex flex-col justify-between items-center z-10">
@@ -586,15 +577,15 @@ entangle.sendMessage{value: fees}(
                       </div>
                       <div className="text-gray-500 ml-2 overflow-hidden text-ellipsis whitespace-nowrap">Sender.sol (Source Chain)</div>
                     </div>
-                    
+
                     <pre className="p-6 md:p-8 leading-relaxed text-[#c9c9d1] overflow-x-auto">
                       <code>
-        <span className="text-[#ff1a66]">function</span> <span className="text-[#00d2ff]">sendCrossChain</span>(<span className="text-gray-400">uint256</span> amount) <span className="text-[#ff1a66]">external payable</span> {"{"}
-        {"\n  "}<span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> payload = abi.<span className="text-[#00d2ff]">encode</span>(amount);
-        {"\n  "}<span className="text-[#00d2ff]">uint256</span> fee = entangle.<span className="text-[#00d2ff]">getRequiredFee</span>(dstChainId, payload.length);
-        {"\n\n  "}<span className="text-gray-500">// 1. Dispatch Message</span>
-        {"\n  "}entangle.<span className="text-[#00d2ff]">sendMessage</span>{"{"}<span className="text-[#ff1a66]">value</span>: fee{"}"}(dstChainId, dstAddr, payload);
-        {"\n"}{"}"}
+                        <span className="text-[#ff1a66]">function</span> <span className="text-[#00d2ff]">sendCrossChain</span>(<span className="text-gray-400">uint256</span> amount) <span className="text-[#ff1a66]">external payable</span> {"{"}
+                        {"\n  "}<span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> payload = abi.<span className="text-[#00d2ff]">encode</span>(amount);
+                        {"\n  "}<span className="text-[#00d2ff]">uint256</span> fee = entangle.<span className="text-[#00d2ff]">getRequiredFee</span>(dstChainId, payload.length);
+                        {"\n\n  "}<span className="text-gray-500">// 1. Dispatch Message</span>
+                        {"\n  "}entangle.<span className="text-[#00d2ff]">sendMessage</span>{"{"}<span className="text-[#ff1a66]">value</span>: fee{"}"}(dstChainId, dstAddr, payload);
+                        {"\n"}{"}"}
                       </code>
                     </pre>
                   </div>
@@ -623,18 +614,18 @@ entangle.sendMessage{value: fees}(
                       </div>
                       <div className="text-gray-500 ml-2 overflow-hidden text-ellipsis whitespace-nowrap">Receiver.sol (Destination Chain)</div>
                     </div>
-                    
+
                     <pre className="p-6 md:p-8 leading-relaxed text-[#c9c9d1] overflow-x-auto">
                       <code>
-        <span className="text-[#ff1a66]">function</span> <span className="text-[#00d2ff]">receiveEntangleMessage</span>(
-        {"\n  "}<span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> payload, <span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> sigs, ...
-        {"\n"}) <span className="text-[#ff1a66]">external payable</span> {"{"}
-        {"\n  "}<span className="text-gray-500">// 2. Verify Origin (Security)</span>
-        {"\n  "}<span className="text-[#00d2ff]">require</span>(<span className="text-[#ff1a66]">msg.sender</span> == <span className="text-[#00d2ff]">address</span>(entangle), "Only Entangle");
-        {"\n\n  "}<span className="text-gray-500">// 3. Execute Logic</span>
-        {"\n  "}<span className="text-[#00d2ff]">uint256</span> amount = abi.<span className="text-[#00d2ff]">decode</span>(payload, (<span className="text-[#00d2ff]">uint256</span>));
-        {"\n  "}<span className="text-[#00d2ff]">_mint</span>(amount);
-        {"\n"}{"}"}
+                        <span className="text-[#ff1a66]">function</span> <span className="text-[#00d2ff]">receiveEntangleMessage</span>(
+                        {"\n  "}<span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> payload, <span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> sigs, ...
+                        {"\n"}) <span className="text-[#ff1a66]">external payable</span> {"{"}
+                        {"\n  "}<span className="text-gray-500">// 2. Verify Origin (Security)</span>
+                        {"\n  "}<span className="text-[#00d2ff]">require</span>(<span className="text-[#ff1a66]">msg.sender</span> == <span className="text-[#00d2ff]">address</span>(entangle), "Only Entangle");
+                        {"\n\n  "}<span className="text-gray-500">// 3. Execute Logic</span>
+                        {"\n  "}<span className="text-[#00d2ff]">uint256</span> amount = abi.<span className="text-[#00d2ff]">decode</span>(payload, (<span className="text-[#00d2ff]">uint256</span>));
+                        {"\n  "}<span className="text-[#00d2ff]">_mint</span>(amount);
+                        {"\n"}{"}"}
                       </code>
                     </pre>
                   </div>
@@ -646,12 +637,12 @@ entangle.sendMessage{value: fees}(
         </section>
 
 
-        
 
-        
+
+
         <section id="consensus" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#1a1a1a] pb-24 px-6 md:px-12">
-            
+
             {/* Horizontal Grid Lines */}
             <div className="absolute top-[160px] md:top-[180px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
             <div className="absolute top-[480px] md:top-[620px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
@@ -664,14 +655,14 @@ entangle.sendMessage{value: fees}(
             </div>
 
             <div className="relative z-10 mt-12 md:mt-16 grid lg:grid-cols-[1fr_480px] gap-12 lg:gap-8 items-center">
-              
+
               {/* Graphical representation of the consensus model */}
               <div className="relative flex flex-col items-center justify-center">
                 <div className="relative w-[280px] h-[280px]">
-                  
+
                   {/* Central Faint Blue Box */}
                   <div className="absolute inset-[35px] bg-[#0c1f26] flex items-center justify-center">
-                    
+
                     {/* Glowing Cyan Shield & Circle */}
                     <div className="w-[86px] h-[86px] rounded-full border-[1.5px] border-[#00d2ff] flex items-center justify-center z-10 shadow-[0_0_20px_rgba(0,210,255,0.2)]">
                       <svg className="w-[38px] h-[38px] text-[#00d2ff]" viewBox="0 0 24 24" fill="currentColor">
@@ -688,16 +679,16 @@ entangle.sendMessage{value: fees}(
 
                   {/* V1 - Top center */}
                   <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-[34px] h-[34px] rounded-full border border-[#ff1a66] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] font-mono flex items-center justify-center z-20 hover:bg-[#ff1a66]/20 transition-colors">V1</div>
-                  
+
                   {/* V2 - Top right */}
                   <div className="absolute top-[60px] right-[-4px] w-[34px] h-[34px] rounded-full border border-[#ff1a66] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] font-mono flex items-center justify-center z-20 hover:bg-[#ff1a66]/20 transition-colors">V2</div>
-                  
+
                   {/* V3 - Bottom right */}
                   <div className="absolute bottom-[30px] right-[10px] w-[34px] h-[34px] rounded-full border border-[#ff1a66] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] font-mono flex items-center justify-center z-20 hover:bg-[#ff1a66]/20 transition-colors">V3</div>
-                  
+
                   {/* V4 - Bottom left */}
                   <div className="absolute bottom-[30px] left-[10px] w-[34px] h-[34px] rounded-full border border-[#ff1a66] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] font-mono flex items-center justify-center z-20 hover:bg-[#ff1a66]/20 transition-colors">V4</div>
-                  
+
                   {/* V5 - Top left */}
                   <div className="absolute top-[60px] left-[-4px] w-[34px] h-[34px] rounded-full border border-[#ff1a66] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] font-mono flex items-center justify-center z-20 hover:bg-[#ff1a66]/20 transition-colors">V5</div>
                 </div>
@@ -709,7 +700,7 @@ entangle.sendMessage{value: fees}(
 
               {/* Stacked Highlighted Cards */}
               <div className="flex flex-col bg-[#050505] shadow-[0_0_60px_rgba(0,0,0,0.8)] border border-[#ffffff0a]">
-                
+
                 {/* Multi-Chain Signatures */}
                 <div className="border-b border-[#ffffff0a] border-l-[3px] border-l-[#ff1a66] p-7 md:p-9 bg-[#040404]">
                   <h3 className="text-white text-[17px] font-bold mb-5 tracking-wide">Multi-Chain Signatures</h3>
@@ -742,7 +733,7 @@ entangle.sendMessage{value: fees}(
                 </div>
 
               </div>
-              
+
             </div>
           </div>
         </section>
@@ -751,7 +742,7 @@ entangle.sendMessage{value: fees}(
 
         <section id="operators" className="w-full relative z-10 font-sans py-32 mb-10">
           <div className="max-w-[1100px] mx-auto w-full relative h-[650px] border border-[#111111] bg-[#030303] flex flex-col justify-between overflow-hidden">
-            
+
             {/* Glowing cyan orb softly placed on left */}
             <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-[#00d2ff]/[0.035] rounded-full blur-[90px] pointer-events-none"></div>
 
@@ -763,9 +754,9 @@ entangle.sendMessage{value: fees}(
                 <span className="text-white">+</span><br />
                 <span className="text-[#ff1a66]">Protocol Rewards</span>
               </h2>
-              
+
               <p className="text-[#888] text-[15px] md:text-[17px] max-w-[650px] leading-[1.65] mb-10">
-                Participate in the Entangle Subnet on Bittensor. Earn continuous rewards<br className="hidden md:block"/>
+                Participate in the Entangle Subnet on Bittensor. Earn continuous rewards<br className="hidden md:block" />
                 for securing cross-chain communication.
               </p>
 
@@ -773,7 +764,7 @@ entangle.sendMessage{value: fees}(
               <div className="relative w-full max-w-[800px] pt-[2px]">
                 {/* 1px dark grey track */}
                 <div className="absolute top-[3px] left-0 right-0 h-[1px] bg-[#1a1a1a]"></div>
-                
+
                 {/* Neon Cyan & Pink streaks resting on the track */}
                 <div className="absolute top-[2px] left-0 w-[47%] h-[3px] bg-[#00d2ff] shadow-[0_0_15px_rgba(0,210,255,0.4)]"></div>
                 <div className="absolute top-[2px] right-[4%] w-[46%] h-[3px] bg-[#ff1a66] shadow-[0_0_15px_rgba(255,26,102,0.4)]"></div>
@@ -788,7 +779,7 @@ entangle.sendMessage{value: fees}(
               <button className="px-8 py-3.5 bg-white text-black font-bold uppercase tracking-widest text-[13px] rounded-[4px] hover:bg-gray-200 transition-colors flex items-center gap-3">
                 START EARNING <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
               </button>
-              
+
               <a href="#" className="text-[#777] text-[15px] underline underline-offset-[5px] decoration-[#333] hover:text-[#aaa] hover:decoration-[#666] transition-colors leading-none pb-0.5">
                 Read the Miner Documentation
               </a>
@@ -799,7 +790,7 @@ entangle.sendMessage{value: fees}(
 
         <section id="scanner-miner" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pt-16 pb-24 px-6 md:px-12">
-            
+
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#111111] pointer-events-none z-0"></div>
 
@@ -812,84 +803,84 @@ entangle.sendMessage{value: fees}(
             <div className="relative z-10 w-full max-w-[850px] border border-[#1a1a1a] rounded-[10px] bg-[#0c1216] shadow-[0_0_80px_rgba(0,0,0,1)] overflow-hidden mt-16 md:mt-24">
               {/* Cyan top bar */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#00d2ff] shadow-[0_0_20px_rgba(0,210,255,0.4)]"></div>
-              
+
               <div className="flex flex-col md:flex-row relative">
-                 {/* Faint internal vertical divider for desktop */}
-                 <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-[#ffffff08]"></div>
+                {/* Faint internal vertical divider for desktop */}
+                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-[#ffffff08]"></div>
 
-                 {/* Left Column Component */}
-                 <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
-                    <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#00d2ff] bg-[#00d2ff]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(0,210,255,0.2)] mb-8">
-                        <svg className="w-[38px] h-[38px] text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 11c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 2c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 2.22 1.21 4.15 3 5.19l1-1.74c-1.19-.7-2-1.97-2-3.45 0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.48-.81 2.75-2 3.45l1 1.74c1.79-1.04 3-2.97 3-5.19zM12 3C7.03 3 3 7.03 3 12c0 3.32 1.8 6.22 4.5 7.79l1-1.73C6.39 16.89 5 14.61 5 12c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-1.39 4.89-3.5 6.06l1 1.73C19.2 18.22 21 15.32 21 12c0-4.97-4.03-9-9-9z"/>
-                        </svg>
-                    </div>
-                    
-                    <div className="text-[72px] font-bold text-[#00d2ff] leading-none tracking-tighter mb-4 shadow-[#00d2ff] drop-shadow-[0_0_15px_rgba(0,210,255,0.6)]">~30%</div>
-                    <div className="text-[10px] font-semibold text-[#00d2ff] tracking-[0.2em] mb-4 font-mono">SUBNET TAO EMISSIONS</div>
-                    
-                    <p className="text-[#666] text-[13px] leading-relaxed max-w-[200px]">
-                       Rewards distributed per epoch based on discovery speed and accuracy.
-                    </p>
-                 </div>
+                {/* Left Column Component */}
+                <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
+                  <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#00d2ff] bg-[#00d2ff]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(0,210,255,0.2)] mb-8">
+                    <svg className="w-[38px] h-[38px] text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 11c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 2c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 2.22 1.21 4.15 3 5.19l1-1.74c-1.19-.7-2-1.97-2-3.45 0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.48-.81 2.75-2 3.45l1 1.74c1.79-1.04 3-2.97 3-5.19zM12 3C7.03 3 3 7.03 3 12c0 3.32 1.8 6.22 4.5 7.79l1-1.73C6.39 16.89 5 14.61 5 12c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-1.39 4.89-3.5 6.06l1 1.73C19.2 18.22 21 15.32 21 12c0-4.97-4.03-9-9-9z" />
+                    </svg>
+                  </div>
 
-                 {/* Right Column Component */}
-                 <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
-                    <h3 className="text-white text-[25px] font-bold mb-3 tracking-wide">Discovery Mechanism</h3>
-                    <p className="text-[#a1a1a1] text-[15px] leading-[1.6] mb-10 w-[95%]">
-                       The Scanner Miner constantly monitor connected blockchains for activity.
-                    </p>
-                    
-                    <div className="space-y-6">
-                      <div className="flex items-start gap-4">
-                         <svg className="w-[14px] h-[14px] text-[#00d2ff] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                         </svg>
-                         <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
-                            <span className="text-white font-medium">Real-time Polling:</span> Queries RPC nodes every block to detect <span className="font-mono text-[12px] bg-[#1a1a1a]/80 text-[#ccc] px-1.5 py-0.5 rounded">MessageDispatched</span> events.
-                         </div>
-                      </div>
+                  <div className="text-[72px] font-bold text-[#00d2ff] leading-none tracking-tighter mb-4 shadow-[#00d2ff] drop-shadow-[0_0_15px_rgba(0,210,255,0.6)]">~30%</div>
+                  <div className="text-[10px] font-semibold text-[#00d2ff] tracking-[0.2em] mb-4 font-mono">SUBNET TAO EMISSIONS</div>
 
-                      <div className="flex items-start gap-4">
-                         <svg className="w-[14px] h-[14px] text-[#00d2ff] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M3 4c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v2.59c0 .27-.11.52-.29.71L15 13.41V20c0 .35-.2.66-.51.84l-4 2.33A.996.996 0 019 22v-8.59L3.29 7.3A1 1 0 013 6.59V4z" />
-                         </svg>
-                         <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
-                            <span className="text-white font-medium">Event Filtering:</span> Validates payload structure and ensures correct source contract emission.
-                         </div>
-                      </div>
+                  <p className="text-[#666] text-[13px] leading-relaxed max-w-[200px]">
+                    Rewards distributed per epoch based on discovery speed and accuracy.
+                  </p>
+                </div>
 
-                      <div className="flex items-start gap-4">
-                         <svg className="w-[14px] h-[14px] text-[#00d2ff] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                           <circle cx="18" cy="5" r="3" />
-                           <circle cx="6" cy="12" r="3" />
-                           <circle cx="18" cy="19" r="3" />
-                           <path d="M8.59 13.51l6.83 3.98m-.01-10.98l-6.82 3.98" stroke="currentColor" strokeWidth="2" />
-                         </svg>
-                         <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
-                            <span className="text-white font-medium">Validator Feed:</span> Propagates verified events to the Validator set for consensus.
-                         </div>
+                {/* Right Column Component */}
+                <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
+                  <h3 className="text-white text-[25px] font-bold mb-3 tracking-wide">Discovery Mechanism</h3>
+                  <p className="text-[#a1a1a1] text-[15px] leading-[1.6] mb-10 w-[95%]">
+                    The Scanner Miner constantly monitor connected blockchains for activity.
+                  </p>
+
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <svg className="w-[14px] h-[14px] text-[#00d2ff] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                      </svg>
+                      <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
+                        <span className="text-white font-medium">Real-time Polling:</span> Queries RPC nodes every block to detect <span className="font-mono text-[12px] bg-[#1a1a1a]/80 text-[#ccc] px-1.5 py-0.5 rounded">MessageDispatched</span> events.
                       </div>
                     </div>
-                 </div>
+
+                    <div className="flex items-start gap-4">
+                      <svg className="w-[14px] h-[14px] text-[#00d2ff] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 4c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v2.59c0 .27-.11.52-.29.71L15 13.41V20c0 .35-.2.66-.51.84l-4 2.33A.996.996 0 019 22v-8.59L3.29 7.3A1 1 0 013 6.59V4z" />
+                      </svg>
+                      <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
+                        <span className="text-white font-medium">Event Filtering:</span> Validates payload structure and ensures correct source contract emission.
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <svg className="w-[14px] h-[14px] text-[#00d2ff] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <path d="M8.59 13.51l6.83 3.98m-.01-10.98l-6.82 3.98" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                      <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
+                        <span className="text-white font-medium">Validator Feed:</span> Propagates verified events to the Validator set for consensus.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
+
               {/* Footer Panel */}
               <div className="border-t border-[#1a1a1a] bg-[#071013] px-10 py-5 flex items-center w-full">
-                 <svg className="w-[16px] h-[16px] text-[#00d2ff] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                   <polyline points="16 18 22 12 16 6"></polyline>
-                   <polyline points="8 6 2 12 8 18"></polyline>
-                 </svg>
-                 <span className="text-[#00d2ff] text-[10px] font-bold font-mono tracking-widest uppercase mt-[1px]">REQUIRED STAKE: 100 TAO TO REGISTER UID</span>
+                <svg className="w-[16px] h-[16px] text-[#00d2ff] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <span className="text-[#00d2ff] text-[10px] font-bold font-mono tracking-widest uppercase mt-[1px]">REQUIRED STAKE: 100 TAO TO REGISTER UID</span>
               </div>
             </div>
-            
+
           </div>
         </section>
 
         <section id="relay-miner" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pb-32 px-6 md:px-12">
-            
+
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#111111] pointer-events-none z-0"></div>
 
@@ -902,85 +893,85 @@ entangle.sendMessage{value: fees}(
             <div className="relative z-10 w-full max-w-[850px] border border-[#1a1a1a] rounded-[10px] bg-[#0c080a] shadow-[0_0_80px_rgba(0,0,0,1)] overflow-hidden mt-16 md:mt-24 mx-auto md:ml-0">
               {/* Pink top bar */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#ff1a66] shadow-[0_0_20px_rgba(255,26,102,0.4)]"></div>
-              
+
               <div className="flex flex-col md:flex-row relative">
-                 {/* Faint internal vertical divider for desktop */}
-                 <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-[#ffffff08]"></div>
+                {/* Faint internal vertical divider for desktop */}
+                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-[#ffffff08]"></div>
 
-                 {/* Left Column Component */}
-                 <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
-                    <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#ff1a66] bg-[#ff1a66]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(255,26,102,0.2)] mb-8">
-                        <svg className="w-[38px] h-[38px] text-[#ff1a66]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
-                    </div>
-                    
-                    <div className="text-[72px] font-bold text-[#ff1a66] leading-none tracking-tighter mb-4 shadow-[#ff1a66] drop-shadow-[0_0_15px_rgba(255,26,102,0.6)]">~70%</div>
-                    <div className="text-[10px] font-semibold text-[#ff1a66] tracking-[0.2em] mb-4 font-mono">SUBNET TAO EMISSIONS</div>
-                    
-                    <p className="text-[#666] text-[13px] leading-relaxed max-w-[200px]">
-                       Rewards earned by winning auctions and successfully executing deliveries.
-                    </p>
-                 </div>
+                {/* Left Column Component */}
+                <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
+                  <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#ff1a66] bg-[#ff1a66]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(255,26,102,0.2)] mb-8">
+                    <svg className="w-[38px] h-[38px] text-[#ff1a66]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                  </div>
 
-                 {/* Right Column Component */}
-                 <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
-                    <h3 className="text-white text-[25px] font-bold mb-3 tracking-wide">Execution Mechanism</h3>
-                    <p className="text-[#a1a1a1] text-[15px] leading-[1.6] mb-10 w-[95%]">
-                       Relay Miners actively compete to physically deliver messages across chains with speed and security.
-                    </p>
-                    
-                    <div className="space-y-6">
-                      <div className="flex items-start gap-4">
-                         <svg className="w-[14px] h-[14px] text-[#ff1a66] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M14 6l4 4L7 21l-4-4L14 6z" />
-                           <path d="M18 2l4 4-3 3-4-4 3-3z" />
-                         </svg>
-                         <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
-                            <span className="text-white font-medium">Sealed Auctions:</span> Bids latency & gas in 2s windows. Fastest + cheapest wins.
-                         </div>
-                      </div>
+                  <div className="text-[72px] font-bold text-[#ff1a66] leading-none tracking-tighter mb-4 shadow-[#ff1a66] drop-shadow-[0_0_15px_rgba(255,26,102,0.6)]">~70%</div>
+                  <div className="text-[10px] font-semibold text-[#ff1a66] tracking-[0.2em] mb-4 font-mono">SUBNET TAO EMISSIONS</div>
 
-                      <div className="flex items-start gap-4">
-                         <svg className="w-[16px] h-[16px] text-[#ff1a66] mt-0.5 shrink-0 -ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M20 8h-3V4H3v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM8 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM17.5 9.5l1.96 2.5H17.5v-2.5z" />
-                         </svg>
-                         <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
-                            <span className="text-white font-medium">Cross-Chain Delivery:</span> Executes transaction on destination contract immediately.
-                         </div>
-                      </div>
+                  <p className="text-[#666] text-[13px] leading-relaxed max-w-[200px]">
+                    Rewards earned by winning auctions and successfully executing deliveries.
+                  </p>
+                </div>
 
-                      <div className="flex items-start gap-4">
-                         <svg className="w-[14px] h-[14px] text-[#ff1a66] mt-1 shrink-0 px-[1px]" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M3 2v20l3-3 3 3 3-3 3 3 3-3 3 3V2H3zm14 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z" />
-                         </svg>
-                         <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
-                            <span className="text-white font-medium">Proof Submission:</span> Returns delivery proof on-chain to unlock fees & TAO.
-                         </div>
+                {/* Right Column Component */}
+                <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
+                  <h3 className="text-white text-[25px] font-bold mb-3 tracking-wide">Execution Mechanism</h3>
+                  <p className="text-[#a1a1a1] text-[15px] leading-[1.6] mb-10 w-[95%]">
+                    Relay Miners actively compete to physically deliver messages across chains with speed and security.
+                  </p>
+
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <svg className="w-[14px] h-[14px] text-[#ff1a66] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 6l4 4L7 21l-4-4L14 6z" />
+                        <path d="M18 2l4 4-3 3-4-4 3-3z" />
+                      </svg>
+                      <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
+                        <span className="text-white font-medium">Sealed Auctions:</span> Bids latency & gas in 2s windows. Fastest + cheapest wins.
                       </div>
                     </div>
-                 </div>
+
+                    <div className="flex items-start gap-4">
+                      <svg className="w-[16px] h-[16px] text-[#ff1a66] mt-0.5 shrink-0 -ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 8h-3V4H3v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM8 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM17.5 9.5l1.96 2.5H17.5v-2.5z" />
+                      </svg>
+                      <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
+                        <span className="text-white font-medium">Cross-Chain Delivery:</span> Executes transaction on destination contract immediately.
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <svg className="w-[14px] h-[14px] text-[#ff1a66] mt-1 shrink-0 px-[1px]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 2v20l3-3 3 3 3-3 3 3 3-3 3 3V2H3zm14 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z" />
+                      </svg>
+                      <div className="text-[#a1a1a1] text-[14px] leading-relaxed">
+                        <span className="text-white font-medium">Proof Submission:</span> Returns delivery proof on-chain to unlock fees & TAO.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
+
               {/* Footer Panel */}
               <div className="border-t border-[#1a1a1a] bg-[#140b0e] px-10 py-5 flex items-center w-full">
-                 <svg className="w-[16px] h-[16px] text-[#ff1a66] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                   <polyline points="16 18 22 12 16 6"></polyline>
-                   <polyline points="8 6 2 12 8 18"></polyline>
-                 </svg>
-                 <span className="text-[#ff1a66] text-[10px] font-bold font-mono tracking-widest uppercase mt-[1px]">VERIFIED DELIVERY: &lt; 10s LATENCY</span>
+                <svg className="w-[16px] h-[16px] text-[#ff1a66] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <span className="text-[#ff1a66] text-[10px] font-bold font-mono tracking-widest uppercase mt-[1px]">VERIFIED DELIVERY: &lt; 10s LATENCY</span>
               </div>
             </div>
-            
+
           </div>
         </section>
 
 
 
-        
+
         <section id="the-auction" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pt-16 pb-32 px-6 md:px-12 overflow-visible">
-            
+
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[170px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
 
@@ -996,11 +987,11 @@ entangle.sendMessage{value: fees}(
 
             {/* Diagram container */}
             <div className="relative flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-[60px] xl:gap-[80px] w-full mt-16 max-w-[900px] mx-auto xl:mr-auto xl:ml-0">
-              
+
               {/* 1. RELAY MINERS column */}
               <div className="flex flex-col gap-4 relative w-full sm:w-[240px] xl:w-[200px] shrink-0 xl:justify-center">
                 <div className="text-[#666] text-[10px] font-mono tracking-widest text-center xl:text-left mb-2">RELAY MINERS</div>
-                
+
                 {/* Desktop connection lines drawn behind the items */}
                 <div className="hidden xl:block absolute left-[100%] top-[45px] w-[30px] h-[155px] border-t border-b border-l-0 border-r border-[#333] translate-y-[0px] rounded-r-[6px] z-0"></div>
                 <div className="hidden xl:block absolute left-[100%] ml-[30px] top-1/2 -translate-y-[2px] w-[40px] h-[1px] bg-[#333] z-0"></div>
@@ -1013,30 +1004,30 @@ entangle.sendMessage{value: fees}(
                   { id: 'C' }
                 ].map((miner) => (
                   <div key={miner.id} className="w-full bg-[#080808] border border-[#1f1f1f] rounded-[8px] p-4 py-4 flex items-center gap-4 relative z-10 shadow-lg">
-                     <svg className="w-[18px] h-[18px] text-[#666] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                       <path d="M4 6h16v4H4zm2 1h2v2H6z"/>
-                       <path d="M4 14h16v4H4zm2 1h2v2H6z"/>
-                     </svg>
-                     <div>
-                        <div className="text-white text-[13px] font-bold font-sans">Miner {miner.id}</div>
-                        <div className="text-[#555] text-[10px] font-mono mt-[2px] whitespace-nowrap flex items-center">
-                          Sealed Bid 
-                          <svg className="w-[9px] h-[9px] ml-1.5 text-[#444] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
-                          </svg>
-                        </div>
-                     </div>
+                    <svg className="w-[18px] h-[18px] text-[#666] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M4 6h16v4H4zm2 1h2v2H6z" />
+                      <path d="M4 14h16v4H4zm2 1h2v2H6z" />
+                    </svg>
+                    <div>
+                      <div className="text-white text-[13px] font-bold font-sans">Miner {miner.id}</div>
+                      <div className="text-[#555] text-[10px] font-mono mt-[2px] whitespace-nowrap flex items-center">
+                        Sealed Bid
+                        <svg className="w-[9px] h-[9px] ml-1.5 text-[#444] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
 
               {/* 2. SCORING FORMULA container */}
               <div className="relative bg-[#050505] border border-[#222] rounded-[12px] p-8 md:p-10 w-full max-w-[440px] xl:w-[440px] shadow-[0_20px_60px_rgba(0,0,0,0.8)] z-10 shrink-0">
-                
+
                 {/* Top Floating Badge */}
                 <div className="absolute -top-[16px] left-1/2 -translate-x-1/2 bg-[#020e14] border border-[#00d2ff] rounded-[30px] px-5 py-1.5 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,210,255,0.15)] whitespace-nowrap z-20">
                   <svg className="w-3.5 h-3.5 text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                    <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
                   </svg>
                   <span className="text-[#00d2ff] font-bold text-[11px] font-mono tracking-wide mt-[1px]">2s Window</span>
                 </div>
@@ -1058,37 +1049,37 @@ entangle.sendMessage{value: fees}(
                   </div>
 
                   <div className="w-[70px] h-[70px] shrink-0 mt-5 relative">
-                     <svg className="w-[70px] h-[70px] transform -rotate-90" viewBox="0 0 36 36">
-                        {/* Background Accuracy 20% (gray ring part) */}
-                        <path
-                          className="text-[#2a2a2a]"
-                          strokeWidth="3.5"
-                          stroke="currentColor"
-                          fill="none"
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        {/* Pink 40% (bottom part) */}
-                        <path
-                          className="text-[#ff1a66]"
-                          strokeWidth="3.5"
-                          strokeDasharray="40 100"
-                          strokeDashoffset="-40"
-                          strokeLinecap="round"
-                          stroke="currentColor"
-                          fill="none"
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        {/* Cyan 40% (top right part) */}
-                        <path
-                          className="text-[#00d2ff]"
-                          strokeWidth="3.5"
-                          strokeDasharray="40 100"
-                          strokeLinecap="round"
-                          stroke="currentColor"
-                          fill="none"
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                     </svg>
+                    <svg className="w-[70px] h-[70px] transform -rotate-90" viewBox="0 0 36 36">
+                      {/* Background Accuracy 20% (gray ring part) */}
+                      <path
+                        className="text-[#2a2a2a]"
+                        strokeWidth="3.5"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      {/* Pink 40% (bottom part) */}
+                      <path
+                        className="text-[#ff1a66]"
+                        strokeWidth="3.5"
+                        strokeDasharray="40 100"
+                        strokeDashoffset="-40"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      {/* Cyan 40% (top right part) */}
+                      <path
+                        className="text-[#00d2ff]"
+                        strokeWidth="3.5"
+                        strokeDasharray="40 100"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
                   </div>
                 </div>
 
@@ -1099,12 +1090,12 @@ entangle.sendMessage{value: fees}(
 
               {/* 3. WINNER EXECUTES */}
               <div className="w-full sm:w-[240px] xl:w-[150px] bg-[#020d15] border-[1.5px] border-[#00d2ff] rounded-[8px] p-6 lg:p-7 flex flex-col items-center justify-center gap-4 relative z-10 shadow-[0_0_25px_rgba(0,210,255,0.15)] shrink-0 xl:self-center">
-                 <svg className="w-[30px] h-[30px] text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
-                   <path d="M19 5h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v2H5a1 1 0 0 0-1 1v2.22A4.78 4.78 0 0 0 8.78 13h.14a4.98 4.98 0 0 0 2.08 3h-2a1 1 0 0 0-1 1v2h-2v2h12v-2h-2v-2a1 1 0 0 0-1-1h-2a4.98 4.98 0 0 0 2.08-3h.14A4.78 4.78 0 0 0 19 8.22V6a1 1 0 0 0-1-1zM6 8.22V7h1v4.61A2.78 2.78 0 0 1 6 8.22zM17 7v1.22A2.78 2.78 0 0 1 14.39 12H18V7z"/>
-                 </svg>
-                 <div className="text-white text-[12px] font-bold text-center leading-tight tracking-wide">
-                   WINNER<br/>EXECUTES
-                 </div>
+                <svg className="w-[30px] h-[30px] text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 5h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v2H5a1 1 0 0 0-1 1v2.22A4.78 4.78 0 0 0 8.78 13h.14a4.98 4.98 0 0 0 2.08 3h-2a1 1 0 0 0-1 1v2h-2v2h12v-2h-2v-2a1 1 0 0 0-1-1h-2a4.98 4.98 0 0 0 2.08-3h.14A4.78 4.78 0 0 0 19 8.22V6a1 1 0 0 0-1-1zM6 8.22V7h1v4.61A2.78 2.78 0 0 1 6 8.22zM17 7v1.22A2.78 2.78 0 0 1 14.39 12H18V7z" />
+                </svg>
+                <div className="text-white text-[12px] font-bold text-center leading-tight tracking-wide">
+                  WINNER<br />EXECUTES
+                </div>
               </div>
 
             </div>
@@ -1113,7 +1104,7 @@ entangle.sendMessage{value: fees}(
 
         <section id="scoring" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pt-12 pb-20 px-6 md:px-12">
-            
+
             {/* The top crosshair grid line */}
             <div className="absolute top-[120px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
 
@@ -1127,71 +1118,69 @@ entangle.sendMessage{value: fees}(
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 mt-8 relative z-10 w-full max-w-[1020px] mx-auto">
-              
+
               {/* Central vertical divider line on desktop underlying the grid */}
               <div className="absolute top-[30px] bottom-[-50px] left-1/2 -translate-x-1/2 w-[1px] bg-[#1a1a1a] pointer-events-none z-0 hidden lg:block"></div>
               {/* Second horizontal line slicing the grid */}
               <div className="absolute top-[50%] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-10 hidden lg:block translate-y-[20px]"></div>
 
               {/* 1. Latency (25%) */}
-              <div className="relative border-l-[3px] border-l-[#00d2ff] bg-gradient-to-r from-[#00d2ff]/[0.05] to-transparent py-4 pl-6 pr-4 lg:pr-8 mx-0 mb-6 lg:mb-0 w-[90%]">
-                <div className="absolute top-4 right-4 bg-[#1a1a1a] text-[#555] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none">D1</div>
-                <div className="text-white text-[20px] font-bold tracking-wide mb-1">Latency</div>
-                <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-4">25%</div>
-                <div className="text-[#888] text-[13px] leading-relaxed max-w-[95%]">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#00d2ff] bg-black/60 backdrop-blur-xl rounded-r-xl py-6 pl-6 pr-4 lg:pr-8 mx-0 mb-6 lg:mb-0 w-[90%] shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D1</div>
+                <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Latency</div>
+                <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(0,210,255,0.4)]">25%</div>
+                <div className="text-gray-300 text-[13px] leading-relaxed max-w-[95%] drop-shadow-md">
                   Time from source dispatch to destination delivery measured in ms.
                 </div>
               </div>
 
               {/* 2. Confirmation (25%) */}
-              <div className="relative border-l-[3px] border-l-[#00d2ff] bg-gradient-to-r from-[#00d2ff]/[0.05] to-transparent py-4 pl-6 pr-4 lg:pr-8 mx-0 lg:ml-4 lg:mr-[20px] mb-6 lg:mb-0 z-20 w-[90%] lg:w-auto">
-                <div className="absolute top-4 right-4 bg-[#1a1a1a] text-[#555] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none">D2</div>
-                <div className="text-white text-[20px] font-bold tracking-wide mb-1">Confirmation</div>
-                <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-4">25%</div>
-                <div className="text-[#888] text-[13px] leading-relaxed max-w-[90%]">
-                  Delivery within promised deadline.<br/>Missed deadlines = zero score.
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#00d2ff] bg-black/60 backdrop-blur-xl rounded-r-xl py-6 pl-6 pr-4 lg:pr-8 mx-0 lg:ml-4 lg:mr-[20px] mb-6 lg:mb-0 z-20 w-[90%] lg:w-auto shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D2</div>
+                <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Confirmation</div>
+                <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(0,210,255,0.4)]">25%</div>
+                <div className="text-gray-300 text-[13px] leading-relaxed max-w-[90%] drop-shadow-md">
+                  Delivery within promised deadline.<br />Missed deadlines = zero score.
                 </div>
               </div>
 
               {/* 3. Gas Efficiency (20%) */}
-              <div className="relative border-l-[3px] border-l-[#ff1a66] bg-[#050102] bg-gradient-to-r from-[#ff1a66]/[0.04] to-transparent py-8 pl-8 pr-4 lg:pr-8 mx-0 lg:ml-6 mb-6 lg:mb-0 z-20 overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                <div className="absolute inset-0 border border-[#ffffff05] rounded-[4px] pointer-events-none"></div>
-                <div className="absolute top-6 right-6 bg-[#1a1a1a] text-[#555] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none">D3</div>
-                <div className="text-white text-[20px] font-bold tracking-wide mb-1">Gas Efficiency</div>
-                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-4">20%</div>
-                <div className="text-[#888] text-[13px] leading-relaxed max-w-[90%] relative z-10">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-8 pl-8 pr-4 lg:pr-8 mx-0 lg:ml-6 mb-6 lg:mb-0 z-20 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+                <div className="absolute top-6 right-6 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D3</div>
+                <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Gas Efficiency</div>
+                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(255,26,102,0.4)]">20%</div>
+                <div className="text-gray-300 text-[13px] leading-relaxed max-w-[90%] relative z-10 drop-shadow-md">
                   Optimizing on-chain costs vs. oracle estimates.
                 </div>
               </div>
 
               {/* 4. Integrity (15%) - NOTE 15% IS ON TOP */}
-              <div className="relative border-l-[3px] border-l-[#ff1a66] bg-[#050102] bg-gradient-to-r from-[#ff1a66]/[0.04] to-transparent py-8 pl-8 pr-4 lg:pr-8 mx-0 mt-8 mb-6 lg:mb-0 w-[95%] z-20 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                 <div className="absolute inset-0 border border-[#ffffff05] rounded-[4px] pointer-events-none"></div>
-                <div className="absolute top-6 right-6 bg-[#1a1a1a] text-[#555] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none">D4</div>
-                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-1">15%</div>
-                <div className="text-white text-[20px] font-bold tracking-wide mb-3">Integrity</div>
-                <div className="text-[#888] text-[13px] leading-relaxed max-w-[85%] relative z-10">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-8 pl-8 pr-4 lg:pr-8 mx-0 mt-8 mb-6 lg:mb-0 w-[95%] z-20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+                <div className="absolute top-6 right-6 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D4</div>
+                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-1 drop-shadow-[0_0_15px_rgba(255,26,102,0.4)]">15%</div>
+                <div className="text-white text-[20px] font-bold tracking-wide mb-3 drop-shadow-md">Integrity</div>
+                <div className="text-gray-300 text-[13px] leading-relaxed max-w-[85%] relative z-10 drop-shadow-md">
                   Payload hash matching source event exactly.
                 </div>
               </div>
 
               {/* 5. Reliability (15%) */}
-              <div className="relative border-l-[3px] border-l-[#ff1a66] bg-gradient-to-r from-[#ff1a66]/[0.05] to-transparent py-4 pl-6 pr-4 lg:pr-8 mx-0 mt-8 lg:ml-4 lg:mr-[20px] mb-6 lg:mb-0 w-[90%] lg:w-auto z-20">
-                <div className="absolute top-4 right-4 bg-[#1a1a1a] text-[#555] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none">D5</div>
-                <div className="text-white text-[20px] font-bold tracking-wide mb-1">Reliability</div>
-                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-4">15%</div>
-                <div className="text-[#888] text-[13px] leading-relaxed max-w-[90%]">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-6 pl-6 pr-4 lg:pr-8 mx-0 mt-8 lg:ml-4 lg:mr-[20px] mb-6 lg:mb-0 w-[90%] lg:w-auto z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D5</div>
+                <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Reliability</div>
+                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(255,26,102,0.4)]">15%</div>
+                <div className="text-gray-300 text-[13px] leading-relaxed max-w-[90%] drop-shadow-md">
                   Historical uptime and successful delivery rate.
                 </div>
               </div>
 
               {/* 6. Blended Score Box */}
-              <div className="relative border border-[#222] bg-[#0c0c0c] rounded-[4px] p-6 lg:p-8 mt-12 mx-0 lg:ml-6 shadow-2xl z-20 lg:-mr-12">
-                <div className="text-[#666] text-[10px] font-mono tracking-widest uppercase mb-6 font-bold">BLENDED SCORE</div>
-                <div className="font-mono text-[14px] leading-[1.8]">
-                   <div className="text-[#999] mb-2 font-sans tracking-wide">Score = </div>
-                   <div><span className="text-[#00d2ff]">0.70</span> <span className="text-[#555] mx-1 text-xs px-0.5">×</span> <span className="text-[#ddd]">Exec +</span></div>
-                   <div><span className="text-[#00d2ff]">0.30</span> <span className="text-[#555] mx-1 text-xs px-0.5">×</span> <span className="text-[#ddd]">Bid</span></div>
+              <div className="relative border border-white/10 bg-black/60 backdrop-blur-xl rounded-xl p-6 lg:p-8 mt-12 mx-0 lg:ml-6 shadow-2xl z-20 lg:-mr-12">
+                <div className="text-gray-400 text-[10px] font-mono tracking-widest uppercase mb-6 font-bold">BLENDED SCORE</div>
+                <div className="font-mono text-[14px] leading-[1.8] drop-shadow-md">
+                  <div className="text-gray-300 mb-2 font-sans tracking-wide">Score = </div>
+                  <div><span className="text-[#00d2ff] font-bold">0.70</span> <span className="text-white mx-1 text-xs px-0.5">×</span> <span className="text-gray-200">Exec +</span></div>
+                  <div><span className="text-[#00d2ff] font-bold">0.30</span> <span className="text-white mx-1 text-xs px-0.5">×</span> <span className="text-gray-200">Bid</span></div>
                 </div>
               </div>
 
@@ -1199,9 +1188,9 @@ entangle.sendMessage{value: fees}(
 
             {/* Sub-footer scale line */}
             <div className="relative z-10 w-full max-w-[1020px] mx-auto mt-24 mb-6 flex pl-2 pr-2">
-               {/* Exactly left side Cyan 50%, right side Pink 50% split */}
-               <div className="h-[6px] w-[50%] bg-[#00d2ff] shadow-[0_0_20px_rgba(0,210,255,0.4)]"></div>
-               <div className="h-[6px] w-[50%] bg-[#ff1a66] shadow-[0_0_20px_rgba(255,26,102,0.4)]"></div>
+              {/* Exactly left side Cyan 50%, right side Pink 50% split */}
+              <div className="h-[6px] w-[50%] bg-[#00d2ff] shadow-[0_0_20px_rgba(0,210,255,0.4)]"></div>
+              <div className="h-[6px] w-[50%] bg-[#ff1a66] shadow-[0_0_20px_rgba(255,26,102,0.4)]"></div>
             </div>
 
           </div>
@@ -1209,10 +1198,10 @@ entangle.sendMessage{value: fees}(
 
 
 
-        
+
         <section id="realtime-fees" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pt-16 pb-32 px-6 md:px-12 overflow-hidden">
-            
+
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[200px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
             {/* The faint vertical separator grid line */}
@@ -1223,32 +1212,32 @@ entangle.sendMessage{value: fees}(
                 Real-time Fees. Real-time Rewards.
               </h2>
               <p className="text-[#888] text-[16px] max-w-[600px] leading-relaxed">
-                A self-sustaining model earning native assets (ETH, SOL, USDC).<br/>
+                A self-sustaining model earning native assets (ETH, SOL, USDC).<br />
                 Revenue is independent of TAO price.
               </p>
             </div>
 
             {/* Flow Diagram Container */}
             <div className="relative flex flex-col xl:flex-row items-center justify-center gap-[40px] xl:gap-[0px] w-full max-w-[950px] mx-auto z-10">
-              
+
               {/* 1. Left Block: User / dApp */}
               <div className="w-full sm:w-[280px] xl:w-[260px] bg-[#0a0a0a] border border-[#222] rounded-[10px] p-6 relative z-10 shrink-0">
-                 <div className="flex justify-between items-start mb-6 mt-1">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-2V9h2zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z"/></svg>
-                    <div className="flex gap-2 mt-0.5 items-center">
-                       <svg className="w-[12px] h-[12px] text-[#627eea]" viewBox="0 0 32 32" fill="currentColor">
-                         <path d="M15.925 23.969L15.823 24l-7.447-4.391 7.553 10.638 7.57-10.638-7.574 4.36zM15.986 0L8.358 12.67l7.625 4.542 7.643-4.542L15.986 0z" />
-                       </svg>
-                       <div className="w-[13px] h-[13px] rounded-full bg-[#00d2ff]"></div>
-                    </div>
-                 </div>
-                 <div className="text-white text-[17px] font-bold tracking-tight mb-2">User / dApp</div>
-                 <div className="text-[#666] text-[13px] mb-6 font-mono">Calls sendMessage()</div>
-                 <div className="text-[#bbb] text-[13px] font-semibold tracking-wide">Pays Native Gas Fee</div>
-                 
-                 {/* Outbound connection line */}
-                 <div className="hidden xl:block absolute right-[-40px] top-1/2 w-[40px] h-[1px] bg-[#333] -translate-y-[0.5px] z-0"></div>
-                 <div className="hidden xl:block absolute right-[-44px] top-1/2 w-[0] h-[0] border-t-[4px] border-b-[4px] border-l-[6px] border-transparent border-l-[#333] -translate-y-[4px] z-10"></div>
+                <div className="flex justify-between items-start mb-6 mt-1">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-2V9h2zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z" /></svg>
+                  <div className="flex gap-2 mt-0.5 items-center">
+                    <svg className="w-[12px] h-[12px] text-[#627eea]" viewBox="0 0 32 32" fill="currentColor">
+                      <path d="M15.925 23.969L15.823 24l-7.447-4.391 7.553 10.638 7.57-10.638-7.574 4.36zM15.986 0L8.358 12.67l7.625 4.542 7.643-4.542L15.986 0z" />
+                    </svg>
+                    <div className="w-[13px] h-[13px] rounded-full bg-[#00d2ff]"></div>
+                  </div>
+                </div>
+                <div className="text-white text-[17px] font-bold tracking-tight mb-2">User / dApp</div>
+                <div className="text-[#666] text-[13px] mb-6 font-mono">Calls sendMessage()</div>
+                <div className="text-[#bbb] text-[13px] font-semibold tracking-wide">Pays Native Gas Fee</div>
+
+                {/* Outbound connection line */}
+                <div className="hidden xl:block absolute right-[-40px] top-1/2 w-[40px] h-[1px] bg-[#333] -translate-y-[0.5px] z-0"></div>
+                <div className="hidden xl:block absolute right-[-44px] top-1/2 w-[0] h-[0] border-t-[4px] border-b-[4px] border-l-[6px] border-transparent border-l-[#333] -translate-y-[4px] z-10"></div>
               </div>
 
               {/* spacer */}
@@ -1256,43 +1245,43 @@ entangle.sendMessage{value: fees}(
 
               {/* 2. Middle Block: ENTANGLE CORE */}
               <div className="w-[280px] bg-[#0c0c0c] border border-[#222] rounded-[8px] p-6 relative z-10 shrink-0 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
-                 <div className="absolute top-[-1px] left-0 right-0 h-[3px] bg-white rounded-t-[8px] opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
+                <div className="absolute top-[-1px] left-0 right-0 h-[3px] bg-white rounded-t-[8px] opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
 
-                 <div className="text-white text-[12px] font-bold font-mono tracking-widest uppercase mb-6 mt-1">ENTANGLE CORE</div>
-                 
-                 <div className="space-y-4">
-                    {/* Gas Oracle */}
-                    <div className="bg-[#141414] border border-[#222] rounded-[6px] p-3 flex gap-4 items-center">
-                       <div className="bg-[#00d2ff]/10 p-2.5 rounded-[4px] border border-[#00d2ff]/20">
-                         <svg className="w-[16px] h-[16px] text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M19.77 7.23l.01-.01-3.72-3.72L15 4.56l2.11 2.11C16.17 7 15.5 7.93 15.5 9v11c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-2.21-1.79-4-4-4h-1V7c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v13h8c0 1.66 1.34 3 3 3s3-1.34 3-3V9c0-.46.15-.88.4-1.22l3.37-3.37zM10 18H5V8h4.5c.28 0 .5.22.5.5v9z"/>
-                         </svg>
-                       </div>
-                       <div>
-                          <div className="text-white text-[13px] font-bold mb-0.5 tracking-wide leading-none">Gas Oracle</div>
-                          <div className="text-[#666] text-[10px]">Median price every 2m</div>
-                       </div>
-                    </div>
-                    
-                    {/* Circuit Breaker */}
-                    <div className="bg-[#141414] border border-[#222] rounded-[6px] p-3 flex gap-4 items-center">
-                       <div className="bg-[#ff1a66]/10 p-2.5 rounded-[4px] border border-[#ff1a66]/20">
-                         <svg className="w-[16px] h-[16px] text-[#ff1a66]" fill="currentColor" viewBox="0 0 24 24">
-                           <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
-                         </svg>
-                       </div>
-                       <div>
-                          <div className="text-white text-[13px] font-bold mb-0.5 tracking-wide leading-none">Circuit Breaker</div>
-                          <div className="text-[#666] text-[10px]">Staleness check &gt;50 blks</div>
-                       </div>
-                    </div>
-                 </div>
+                <div className="text-white text-[12px] font-bold font-mono tracking-widest uppercase mb-6 mt-1">ENTANGLE CORE</div>
 
-                 {/* Outbound connection lines (Forking UP and DOWN) */}
-                 {/* Top line up */}
-                 <div className="hidden xl:block absolute right-[-50px] top-[50px] w-[50px] h-[1px] bg-[#333] transform rotate-[-25deg] origin-left z-0"></div>
-                 {/* Bottom line down */}
-                 <div className="hidden xl:block absolute right-[-50px] bottom-[50px] w-[50px] h-[1px] bg-[#333] transform rotate-[25deg] origin-left z-0"></div>
+                <div className="space-y-4">
+                  {/* Gas Oracle */}
+                  <div className="bg-[#141414] border border-[#222] rounded-[6px] p-3 flex gap-4 items-center">
+                    <div className="bg-[#00d2ff]/10 p-2.5 rounded-[4px] border border-[#00d2ff]/20">
+                      <svg className="w-[16px] h-[16px] text-[#00d2ff]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.77 7.23l.01-.01-3.72-3.72L15 4.56l2.11 2.11C16.17 7 15.5 7.93 15.5 9v11c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-2.21-1.79-4-4-4h-1V7c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v13h8c0 1.66 1.34 3 3 3s3-1.34 3-3V9c0-.46.15-.88.4-1.22l3.37-3.37zM10 18H5V8h4.5c.28 0 .5.22.5.5v9z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-white text-[13px] font-bold mb-0.5 tracking-wide leading-none">Gas Oracle</div>
+                      <div className="text-[#666] text-[10px]">Median price every 2m</div>
+                    </div>
+                  </div>
+
+                  {/* Circuit Breaker */}
+                  <div className="bg-[#141414] border border-[#222] rounded-[6px] p-3 flex gap-4 items-center">
+                    <div className="bg-[#ff1a66]/10 p-2.5 rounded-[4px] border border-[#ff1a66]/20">
+                      <svg className="w-[16px] h-[16px] text-[#ff1a66]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-white text-[13px] font-bold mb-0.5 tracking-wide leading-none">Circuit Breaker</div>
+                      <div className="text-[#666] text-[10px]">Staleness check &gt;50 blks</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Outbound connection lines (Forking UP and DOWN) */}
+                {/* Top line up */}
+                <div className="hidden xl:block absolute right-[-50px] top-[50px] w-[50px] h-[1px] bg-[#333] transform rotate-[-25deg] origin-left z-0"></div>
+                {/* Bottom line down */}
+                <div className="hidden xl:block absolute right-[-50px] bottom-[50px] w-[50px] h-[1px] bg-[#333] transform rotate-[25deg] origin-left z-0"></div>
               </div>
 
               {/* gap for the branching lines */}
@@ -1300,33 +1289,33 @@ entangle.sendMessage{value: fees}(
 
               {/* 3. Right Blocks Column */}
               <div className="flex flex-col gap-8 xl:gap-8 shrink-0 w-full sm:w-[320px] xl:w-[300px]">
-                
+
                 {/* Top: 30% Protocol Treasury */}
                 <div className="bg-[#010a12] border border-[#111] border-l-[3px] border-l-[#00d2ff] rounded-[8px] p-6 shadow-[0_0_20px_rgba(0,210,255,0.06)] relative z-10 w-full overflow-hidden">
-                   <div className="absolute inset-0 border border-[#00d2ff]/[0.05] rounded-[8px] pointer-events-none"></div>
-                   <div className="text-[52px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-2 mt-1 drop-shadow-[0_0_15px_rgba(0,210,255,0.3)]">30%</div>
-                   <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-3">Protocol Treasury</div>
-                   <div className="text-[#888] text-[11px] leading-relaxed mb-6 w-[95%]">
-                     Accumulates native assets (ETH, SOL, ATOM). Funds operations and growth.
-                   </div>
-                   
-                   <div className="inline-block bg-[#00d2ff]/10 text-[#00d2ff] text-[10px] font-mono px-2 py-1 rounded-[4px] uppercase tracking-widest font-bold">
-                      ON-CHAIN
-                   </div>
+                  <div className="absolute inset-0 border border-[#00d2ff]/[0.05] rounded-[8px] pointer-events-none"></div>
+                  <div className="text-[52px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-2 mt-1 drop-shadow-[0_0_15px_rgba(0,210,255,0.3)]">30%</div>
+                  <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-3">Protocol Treasury</div>
+                  <div className="text-[#888] text-[11px] leading-relaxed mb-6 w-[95%]">
+                    Accumulates native assets (ETH, SOL, ATOM). Funds operations and growth.
+                  </div>
+
+                  <div className="inline-block bg-[#00d2ff]/10 text-[#00d2ff] text-[10px] font-mono px-2 py-1 rounded-[4px] uppercase tracking-widest font-bold">
+                    ON-CHAIN
+                  </div>
                 </div>
 
                 {/* Bottom: 70% Relay Reserve */}
                 <div className="bg-[#120104] border border-[#111] border-l-[3px] border-l-[#ff1a66] rounded-[8px] p-6 shadow-[0_0_20px_rgba(255,26,102,0.06)] relative z-10 w-full overflow-hidden">
-                   <div className="absolute inset-0 border border-[#ff1a66]/[0.05] rounded-[8px] pointer-events-none"></div>
-                   <div className="text-[52px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-2 mt-1 drop-shadow-[0_0_15px_rgba(255,26,102,0.3)]">70%</div>
-                   <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-3">Relay Reserve</div>
-                   <div className="text-[#888] text-[11px] leading-relaxed mb-6 w-[95%]">
-                     Direct rewards for Relay Miners who successfully execute transactions.
-                   </div>
-                   
-                   <div className="inline-block bg-[#ff1a66]/10 text-[#ff1a66] text-[10px] font-mono px-2 py-1 rounded-[4px] uppercase tracking-widest font-bold">
-                      MINER REWARD
-                   </div>
+                  <div className="absolute inset-0 border border-[#ff1a66]/[0.05] rounded-[8px] pointer-events-none"></div>
+                  <div className="text-[52px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-2 mt-1 drop-shadow-[0_0_15px_rgba(255,26,102,0.3)]">70%</div>
+                  <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-3">Relay Reserve</div>
+                  <div className="text-[#888] text-[11px] leading-relaxed mb-6 w-[95%]">
+                    Direct rewards for Relay Miners who successfully execute transactions.
+                  </div>
+
+                  <div className="inline-block bg-[#ff1a66]/10 text-[#ff1a66] text-[10px] font-mono px-2 py-1 rounded-[4px] uppercase tracking-widest font-bold">
+                    MINER REWARD
+                  </div>
                 </div>
 
               </div>
@@ -1336,7 +1325,7 @@ entangle.sendMessage{value: fees}(
 
         <section id="reference-run" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pt-12 pb-32 px-6 md:px-12 overflow-hidden">
-            
+
             <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
             {/* Very faint vertical separator down the middle */}
             <div className="absolute top-0 bottom-0 left-[35%] w-[1px] bg-[#1a1a1a] pointer-events-none z-0 hidden lg:block"></div>
@@ -1351,86 +1340,86 @@ entangle.sendMessage{value: fees}(
             <div className="relative z-10 flex flex-col md:flex-row gap-6 mb-16 w-full max-w-[950px] mx-auto">
               {/* 8.3s */}
               <div className="flex-1 border-l-[3px] border-[#00d2ff] bg-[#02070c] p-6 shadow-lg">
-                 <div className="text-[54px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(0,210,255,0.2)] mt-1">8.3s</div>
-                 <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">FASTEST DELIVERY</div>
-                 <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">SOLANA &rarr; ARBITRUM</div>
+                <div className="text-[54px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(0,210,255,0.2)] mt-1">8.3s</div>
+                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">FASTEST DELIVERY</div>
+                <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">SOLANA &rarr; ARBITRUM</div>
               </div>
 
               {/* 8/8 */}
               <div className="flex-1 border-l-[3px] border-[#00e65b] bg-[#020b05] p-6 shadow-lg">
-                 <div className="text-[54px] font-bold text-[#00e65b] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(0,230,91,0.2)] mt-1">8/8</div>
-                 <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">CONSECUTIVE RUNS</div>
-                 <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">100% SUCCESS RATE</div>
+                <div className="text-[54px] font-bold text-[#00e65b] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(0,230,91,0.2)] mt-1">8/8</div>
+                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">CONSECUTIVE RUNS</div>
+                <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">100% SUCCESS RATE</div>
               </div>
 
               {/* 213K */}
               <div className="flex-1 border-l-[3px] border-[#ff1a66] bg-[#0f0205] p-6 shadow-lg">
-                 <div className="text-[54px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(255,26,102,0.2)] mt-1">213K</div>
-                 <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">GAS USED</div>
-                 <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">REFERENCE DELIVERY</div>
+                <div className="text-[54px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(255,26,102,0.2)] mt-1">213K</div>
+                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">GAS USED</div>
+                <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">REFERENCE DELIVERY</div>
               </div>
             </div>
 
             {/* Main Reference Run Container */}
             <div className="relative z-10 w-full max-w-[950px] mx-auto border border-[#222] bg-[#0a0a0a] rounded-[10px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
-              
+
               {/* Header Slice */}
               <div className="bg-[#121212] px-6 py-3 flex items-center justify-between border-b border-[#222]">
                 <div className="font-mono text-[11px] tracking-widest">
-                   <span className="text-[#666] uppercase">REFERENCE RUN ID:</span>
-                   <span className="text-white font-bold ml-2">#TEST-2026-03-17-A</span>
+                  <span className="text-[#666] uppercase">REFERENCE RUN ID:</span>
+                  <span className="text-white font-bold ml-2">#TEST-2026-03-17-A</span>
                 </div>
                 <div className="bg-[#00e65b] text-black font-bold font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-[4px] flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,230,91,0.3)]">
-                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"></path></svg>
-                   VERIFIED
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"></path></svg>
+                  VERIFIED
                 </div>
               </div>
 
               {/* Execution Diagram */}
               <div className="relative px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0">
-                 
-                 {/* Connecting Line (drawn in background) */}
-                 <div className="hidden md:block absolute top-[132px] left-[18%] right-[18%] h-[1.5px] bg-gradient-to-r from-[#00d2ff]/80 via-[#111111] to-[#00d2ff]/80 z-0 shadow-[0_0_15px_rgba(0,210,255,0.4)]"></div>
 
-                 {/* Left Node (Sepolia) */}
-                 <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
-                    <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-6 z-10">
-                       <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 32 32" fill="currentColor">
-                         <path d="M15.925 23.969L15.823 24l-7.447-4.391 7.553 10.638 7.57-10.638-7.574 4.36zM15.986 0L8.358 12.67l7.625 4.542 7.643-4.542L15.986 0z" />
-                       </svg>
-                    </div>
-                    <div className="text-white text-[18px] font-bold tracking-wide mb-3">Sepolia</div>
-                    <div className="text-[#666] text-[12px] mb-2 font-mono whitespace-nowrap tracking-tight">Message Dispatched</div>
-                    <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-3 py-1 font-mono text-[11px] mb-8 min-w-[140px]">
-                       0x4f90576e...
-                    </div>
-                    <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-1">Block 10464665</div>
-                 </div>
+                {/* Connecting Line (drawn in background) */}
+                <div className="hidden md:block absolute top-[132px] left-[18%] right-[18%] h-[1.5px] bg-gradient-to-r from-[#00d2ff]/80 via-[#111111] to-[#00d2ff]/80 z-0 shadow-[0_0_15px_rgba(0,210,255,0.4)]"></div>
 
-                 {/* Middle Node (ENTANGLE RELAY) */}
-                 <div className="relative z-10 w-[170px] bg-[#141414] border border-[#2a2a2a] rounded-[8px] p-5 flex flex-col items-center text-center shadow-[0_0_40px_rgba(0,0,0,0.8)] mt-[-20px] md:mt-[-50px]">
-                    <div className="text-[#777] text-[10px] font-mono tracking-widest uppercase mb-1">ENTANGLE RELAY</div>
-                    <div className="text-white text-[28px] font-bold tracking-tight mb-0.5">8.3s</div>
-                    <div className="flex items-center gap-1 text-[#00e65b] text-[9px] font-bold uppercase tracking-widest font-mono mt-1">
-                       <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                       OPTIMIZED
-                    </div>
-                 </div>
+                {/* Left Node (Sepolia) */}
+                <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
+                  <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-6 z-10">
+                    <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 32 32" fill="currentColor">
+                      <path d="M15.925 23.969L15.823 24l-7.447-4.391 7.553 10.638 7.57-10.638-7.574 4.36zM15.986 0L8.358 12.67l7.625 4.542 7.643-4.542L15.986 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-white text-[18px] font-bold tracking-wide mb-3">Sepolia</div>
+                  <div className="text-[#666] text-[12px] mb-2 font-mono whitespace-nowrap tracking-tight">Message Dispatched</div>
+                  <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-3 py-1 font-mono text-[11px] mb-8 min-w-[140px]">
+                    0x4f90576e...
+                  </div>
+                  <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-1">Block 10464665</div>
+                </div>
 
-                 {/* Right Node (Arbitrum) */}
-                 <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
-                    <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-6 z-10">
-                       <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 2L2 7l10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5z"/>
-                       </svg>
-                    </div>
-                    <div className="text-white text-[18px] font-bold tracking-wide mb-3 whitespace-nowrap">Arbitrum Sepolia</div>
-                    <div className="text-[#666] text-[12px] mb-2 font-mono whitespace-nowrap tracking-tight">Message Received</div>
-                    <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-3 py-1 font-mono text-[11px] mb-8 min-w-[140px]">
-                       0xf802b3b6...
-                    </div>
-                    <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-1">isRelayed = true</div>
-                 </div>
+                {/* Middle Node (ENTANGLE RELAY) */}
+                <div className="relative z-10 w-[170px] bg-[#141414] border border-[#2a2a2a] rounded-[8px] p-5 flex flex-col items-center text-center shadow-[0_0_40px_rgba(0,0,0,0.8)] mt-[-20px] md:mt-[-50px]">
+                  <div className="text-[#777] text-[10px] font-mono tracking-widest uppercase mb-1">ENTANGLE RELAY</div>
+                  <div className="text-white text-[28px] font-bold tracking-tight mb-0.5">8.3s</div>
+                  <div className="flex items-center gap-1 text-[#00e65b] text-[9px] font-bold uppercase tracking-widest font-mono mt-1">
+                    <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+                    OPTIMIZED
+                  </div>
+                </div>
+
+                {/* Right Node (Arbitrum) */}
+                <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
+                  <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-6 z-10">
+                    <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5z" />
+                    </svg>
+                  </div>
+                  <div className="text-white text-[18px] font-bold tracking-wide mb-3 whitespace-nowrap">Arbitrum Sepolia</div>
+                  <div className="text-[#666] text-[12px] mb-2 font-mono whitespace-nowrap tracking-tight">Message Received</div>
+                  <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-3 py-1 font-mono text-[11px] mb-8 min-w-[140px]">
+                    0xf802b3b6...
+                  </div>
+                  <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-1">isRelayed = true</div>
+                </div>
 
               </div>
             </div>
@@ -1439,10 +1428,10 @@ entangle.sendMessage{value: fees}(
 
 
 
-        
+
         <section id="actions" className="w-full relative z-10 font-sans">
           <div className="max-w-[1100px] mx-auto w-full relative border-x border-[#111111] pt-16 pb-32 px-6 md:px-12 overflow-hidden">
-            
+
             <div className="absolute top-[120px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
 
             <div className="relative z-10 mb-16 pt-10">
@@ -1453,83 +1442,83 @@ entangle.sendMessage{value: fees}(
 
             {/* 3 Columns architecture grid */}
             <div className="relative z-10 w-full max-w-[1020px] mx-auto flex flex-col lg:flex-row shadow-[0_30px_60px_rgba(0,0,0,0.8)] border-x border-b border-[#111111] rounded-b-[4px] bg-[#020202]">
-              
+
               {/* Vertical Dividers for Desktop */}
               <div className="hidden lg:block absolute top-[0] bottom-0 left-[33.333%] w-[1px] bg-[#1a1a1a] pointer-events-none z-20"></div>
               <div className="hidden lg:block absolute top-[0] bottom-0 left-[66.666%] w-[1px] bg-[#1a1a1a] pointer-events-none z-20"></div>
 
               {/* 1. Developers */}
               <div className="flex-1 border-t-[3px] border-[#00d2ff] p-8 lg:p-10 flex flex-col relative z-10 border-b border-[#111] lg:border-b-0">
-                 <div className="w-[50px] h-[50px] rounded-full bg-[#00d2ff]/10 flex items-center justify-center mb-8">
-                    <svg className="w-5 h-5 text-[#00d2ff]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                 </div>
-                 <div className="text-white text-[28px] font-bold mb-4 tracking-tight">Developers</div>
-                 <div className="text-[#888] text-[15px] leading-[1.7] mb-8 flex-grow">
-                    Integrate omnichain messaging in minutes. One SDK for EVM, Solana, and Cosmos.
-                 </div>
-                 
-                 <div className="font-mono text-[11px] text-[#777] leading-[1.8] mb-8">
-                    <div><span className="text-[#00d2ff]">&gt;</span> npm install @entangle/sdk</div>
-                    <div><span className="text-[#00d2ff]">&gt;</span> import {'{'} Entangle {'}'}</div>
-                 </div>
+                <div className="w-[50px] h-[50px] rounded-full bg-[#00d2ff]/10 flex items-center justify-center mb-8">
+                  <svg className="w-5 h-5 text-[#00d2ff]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div className="text-white text-[28px] font-bold mb-4 tracking-tight">Developers</div>
+                <div className="text-[#888] text-[15px] leading-[1.7] mb-8 flex-grow">
+                  Integrate omnichain messaging in minutes. One SDK for EVM, Solana, and Cosmos.
+                </div>
 
-                 <button className="w-full bg-[#00d2ff] hover:bg-[#00b0d9] text-black font-bold text-[11px] uppercase tracking-widest py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(0,210,255,0.3)]">
-                    READ THE DOCS
-                 </button>
-                 
-                 <div className="text-[#888] text-[11px] font-mono uppercase tracking-widest hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg> 
-                    VIEW GITHUB
-                 </div>
+                <div className="font-mono text-[11px] text-[#777] leading-[1.8] mb-8">
+                  <div><span className="text-[#00d2ff]">&gt;</span> npm install @entangle/sdk</div>
+                  <div><span className="text-[#00d2ff]">&gt;</span> import {'{'} Entangle {'}'}</div>
+                </div>
+
+                <button className="w-full bg-[#00d2ff] hover:bg-[#00b0d9] text-black font-bold text-[11px] uppercase tracking-widest py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(0,210,255,0.3)]">
+                  READ THE DOCS
+                </button>
+
+                <div className="text-[#888] text-[11px] font-mono uppercase tracking-widest hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" /></svg>
+                  VIEW GITHUB
+                </div>
               </div>
 
               {/* 2. Operators */}
               <div className="flex-1 bg-[#020000] border-t-[3px] border-[#ff1a66] p-8 lg:p-10 flex flex-col relative z-10 border-b border-[#111] lg:border-b-0">
-                 <div className="w-[50px] h-[50px] rounded-full bg-[#ff1a66]/10 flex items-center justify-center mb-8">
-                    <svg className="w-5 h-5 text-[#ff1a66]" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v4H4zm0 8h16v4H4zm2-6h2v2H6zm0 8h2v2H6z"/></svg>
-                 </div>
-                 <div className="text-white text-[28px] font-bold mb-4 tracking-tight">Operators</div>
-                 <div className="text-[#888] text-[15px] leading-[1.7] mb-8 flex-grow">
-                    Secure the network and earn dual rewards. Run Validators, Scanners, or Relay Miners.
-                 </div>
-                 
-                 <div className="font-mono text-[11px] text-[#777] leading-[1.8] mb-8">
-                    <div><span className="text-[#ff1a66]">$</span> 70% Relay Rewards</div>
-                    <div><span className="text-[#ff1a66]">$</span> 30% Scanner Rewards</div>
-                 </div>
+                <div className="w-[50px] h-[50px] rounded-full bg-[#ff1a66]/10 flex items-center justify-center mb-8">
+                  <svg className="w-5 h-5 text-[#ff1a66]" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v4H4zm0 8h16v4H4zm2-6h2v2H6zm0 8h2v2H6z" /></svg>
+                </div>
+                <div className="text-white text-[28px] font-bold mb-4 tracking-tight">Operators</div>
+                <div className="text-[#888] text-[15px] leading-[1.7] mb-8 flex-grow">
+                  Secure the network and earn dual rewards. Run Validators, Scanners, or Relay Miners.
+                </div>
 
-                 <button className="w-full bg-[#ff1a66] hover:bg-[#e01458] text-black font-bold text-[11px] uppercase tracking-widest py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,26,102,0.3)]">
-                    RUN A NODE
-                 </button>
-                 
-                 <div className="text-[#888] text-[11px] font-mono uppercase tracking-widest hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 9h4v12H5zm7-5h4v17h-4zm7 8h4v9h-4z"/></svg>
-                    SUBNET STATS
-                 </div>
+                <div className="font-mono text-[11px] text-[#777] leading-[1.8] mb-8">
+                  <div><span className="text-[#ff1a66]">$</span> 70% Relay Rewards</div>
+                  <div><span className="text-[#ff1a66]">$</span> 30% Scanner Rewards</div>
+                </div>
+
+                <button className="w-full bg-[#ff1a66] hover:bg-[#e01458] text-black font-bold text-[11px] uppercase tracking-widest py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,26,102,0.3)]">
+                  RUN A NODE
+                </button>
+
+                <div className="text-[#888] text-[11px] font-mono uppercase tracking-widest hover:text-white cursor-pointer transition-colors flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 9h4v12H5zm7-5h4v17h-4zm7 8h4v9h-4z" /></svg>
+                  SUBNET STATS
+                </div>
               </div>
 
               {/* 3. Community */}
               <div className="flex-1 border-t-[3px] border-[#ffffff] p-8 lg:p-10 flex flex-col relative z-10 border-b lg:border-b-0 border-[#111]">
-                 <div className="w-[50px] h-[50px] rounded-full bg-[#222] flex items-center justify-center mb-8">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05.02.01.03.03.04.04 1.14.83 1.93 1.94 1.93 3.41V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                 </div>
-                 <div className="text-white text-[28px] font-bold mb-4 tracking-tight">Community</div>
-                 <div className="text-[#888] text-[15px] leading-[1.7] mb-8 flex-grow">
-                    Join the conversation. Governance proposals, ecosystem updates, and support.
-                 </div>
-                 
-                 <div className="font-mono text-[11px] text-[#777] leading-[1.8] mb-8">
-                    <div><span className="text-white">#</span> announcements</div>
-                    <div><span className="text-white">#</span> governance</div>
-                 </div>
+                <div className="w-[50px] h-[50px] rounded-full bg-[#222] flex items-center justify-center mb-8">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05.02.01.03.03.04.04 1.14.83 1.93 1.94 1.93 3.41V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" /></svg>
+                </div>
+                <div className="text-white text-[28px] font-bold mb-4 tracking-tight">Community</div>
+                <div className="text-[#888] text-[15px] leading-[1.7] mb-8 flex-grow">
+                  Join the conversation. Governance proposals, ecosystem updates, and support.
+                </div>
 
-                 <button className="w-full bg-white hover:bg-gray-200 text-black font-bold text-[11px] uppercase tracking-widest py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                    JOIN DISCORD
-                 </button>
-                 
-                 <div className="text-[#888] text-[11px] font-mono uppercase tracking-widest hover:text-white cursor-pointer transition-colors flex items-center justify-center text-center">
-                    FOLLOW US
-                 </div>
+                <div className="font-mono text-[11px] text-[#777] leading-[1.8] mb-8">
+                  <div><span className="text-white">#</span> announcements</div>
+                  <div><span className="text-white">#</span> governance</div>
+                </div>
+
+                <button className="w-full bg-white hover:bg-gray-200 text-black font-bold text-[11px] uppercase tracking-widest py-4 px-4 rounded-[4px] transition-colors mb-8 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                  JOIN DISCORD
+                </button>
+
+                <div className="text-[#888] text-[11px] font-mono uppercase tracking-widest hover:text-white cursor-pointer transition-colors flex items-center justify-center text-center">
+                  FOLLOW US
+                </div>
               </div>
 
             </div>
@@ -1542,115 +1531,115 @@ entangle.sendMessage{value: fees}(
 
               {/* Timeline Header Area */}
               <div className="relative w-full mb-10 h-[40px]">
-                 {/* Connecting horizontal lines between nodes */}
-                 <div className="absolute top-[10px] left-[16.666%] right-[50%] h-[1.5px] bg-[#00d2ff]"></div>
-                 <div className="absolute top-[10px] left-[50%] right-[16.666%] h-[1.5px] bg-[#ff1a66]"></div>
-                 <div className="absolute top-[10px] left-[83.333%] right-[0] h-[1.5px] bg-[#ffffff]"></div>
+                {/* Connecting horizontal lines between nodes */}
+                <div className="absolute top-[10px] left-[16.666%] right-[50%] h-[1.5px] bg-[#00d2ff]"></div>
+                <div className="absolute top-[10px] left-[50%] right-[16.666%] h-[1.5px] bg-[#ff1a66]"></div>
+                <div className="absolute top-[10px] left-[83.333%] right-[0] h-[1.5px] bg-[#ffffff]"></div>
 
-                 {/* Node 1 & Drop line */}
-                 <div className="absolute top-[3px] left-0 md:left-[2%]">
-                    <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#00d2ff] bg-[#0a0a0a] relative z-10"></div>
-                    <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#00d2ff]"></div>
-                 </div>
+                {/* Node 1 & Drop line */}
+                <div className="absolute top-[3px] left-0 md:left-[2%]">
+                  <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#00d2ff] bg-[#0a0a0a] relative z-10"></div>
+                  <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#00d2ff]"></div>
+                </div>
 
-                 {/* Node 2 & Drop line */}
-                 <div className="absolute top-[3px] left-[33.33%] md:left-[35.33%]">
-                    <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#ff1a66] bg-[#0a0a0a] relative z-10"></div>
-                    <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#ff1a66]"></div>
-                 </div>
+                {/* Node 2 & Drop line */}
+                <div className="absolute top-[3px] left-[33.33%] md:left-[35.33%]">
+                  <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#ff1a66] bg-[#0a0a0a] relative z-10"></div>
+                  <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#ff1a66]"></div>
+                </div>
 
-                 {/* Node 3 & Drop line */}
-                 <div className="absolute top-[3px] left-[66.66%] md:left-[68.66%]">
-                    <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#ffffff] bg-[#0a0a0a] relative z-10"></div>
-                    <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#ffffff]"></div>
-                 </div>
+                {/* Node 3 & Drop line */}
+                <div className="absolute top-[3px] left-[66.66%] md:left-[68.66%]">
+                  <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#ffffff] bg-[#0a0a0a] relative z-10"></div>
+                  <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#ffffff]"></div>
+                </div>
               </div>
 
               {/* Grid Content Area for Phases */}
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Phase 1 */}
                 <div className="relative border-t-[1.5px] border-[#00d2ff] bg-gradient-to-br from-[#00d2ff]/[0.05] to-transparent p-6 md:p-8 rounded-b-[8px] bg-[#0a0d10]">
-                   <div className="text-white text-[22px] font-bold mb-6 tracking-wide">{roadmap[0].phase}</div>
-                   
-                   <div className="inline-flex items-center gap-2 border border-[#00d2ff]/30 bg-[#00d2ff]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#00d2ff] font-mono text-[10px] tracking-[0.1em] font-bold">
-                      <div className="w-2 h-2 rounded-full bg-[#00d2ff]"></div>
-                      {roadmap[0].status}
-                   </div>
+                  <div className="text-white text-[22px] font-bold mb-6 tracking-wide">{roadmap[0].phase}</div>
 
-                   <div className="space-y-6">
-                      {roadmap[0].items.map((item, i) => {
-                         const [title, desc] = item.split(' - ');
-                         return (
-                           <div key={i} className="flex gap-4 items-start">
-                             <svg className="w-[16px] h-[16px] text-[#00d2ff] shrink-0 mt-[2px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                             <div>
-                               <div className="text-[#dedede] text-[14px] font-semibold mb-1">{title}</div>
-                               <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
-                             </div>
-                           </div>
-                         );
-                      })}
-                   </div>
+                  <div className="inline-flex items-center gap-2 border border-[#00d2ff]/30 bg-[#00d2ff]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#00d2ff] font-mono text-[10px] tracking-[0.1em] font-bold">
+                    <div className="w-2 h-2 rounded-full bg-[#00d2ff]"></div>
+                    {roadmap[0].status}
+                  </div>
+
+                  <div className="space-y-6">
+                    {roadmap[0].items.map((item, i) => {
+                      const [title, desc] = item.split(' - ');
+                      return (
+                        <div key={i} className="flex gap-4 items-start">
+                          <svg className="w-[16px] h-[16px] text-[#00d2ff] shrink-0 mt-[2px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                          <div>
+                            <div className="text-[#dedede] text-[14px] font-semibold mb-1">{title}</div>
+                            <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Phase 2 */}
                 <div className="relative border-t-[1.5px] border-[#ff1a66] bg-gradient-to-br from-[#ff1a66]/[0.05] to-transparent p-6 md:p-8 rounded-b-[8px] bg-[#12080a]">
-                   <div className="text-white text-[22px] font-bold mb-6 tracking-wide">{roadmap[1].phase}</div>
-                   
-                   <div className="inline-flex items-center gap-2 border border-[#ff1a66]/30 bg-[#ff1a66]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#ff1a66] font-mono text-[10px] tracking-[0.1em] font-bold">
-                      <svg className="w-3 h-3 text-[#ff1a66]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-                      {roadmap[1].status}
-                   </div>
+                  <div className="text-white text-[22px] font-bold mb-6 tracking-wide">{roadmap[1].phase}</div>
 
-                   <div className="space-y-6">
-                      {roadmap[1].items.map((item, i) => {
-                         const [title, desc] = item.split(' - ');
-                         return (
-                           <div key={i} className="flex gap-4 items-start">
-                             <div className="w-[16px] h-[16px] rounded-full bg-[#ff1a66] flex items-center justify-center shrink-0 mt-[2px]">
-                               <svg className="w-[10px] h-[10px] text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                             </div>
-                             <div>
-                               <div className="text-[#dedede] text-[14px] font-semibold mb-1">{title}</div>
-                               <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
-                             </div>
-                           </div>
-                         );
-                      })}
-                   </div>
+                  <div className="inline-flex items-center gap-2 border border-[#ff1a66]/30 bg-[#ff1a66]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#ff1a66] font-mono text-[10px] tracking-[0.1em] font-bold">
+                    <svg className="w-3 h-3 text-[#ff1a66]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /></svg>
+                    {roadmap[1].status}
+                  </div>
+
+                  <div className="space-y-6">
+                    {roadmap[1].items.map((item, i) => {
+                      const [title, desc] = item.split(' - ');
+                      return (
+                        <div key={i} className="flex gap-4 items-start">
+                          <div className="w-[16px] h-[16px] rounded-full bg-[#ff1a66] flex items-center justify-center shrink-0 mt-[2px]">
+                            <svg className="w-[10px] h-[10px] text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                          </div>
+                          <div>
+                            <div className="text-[#dedede] text-[14px] font-semibold mb-1">{title}</div>
+                            <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Phase 3+ */}
                 <div className="relative border-t-[1.5px] border-[#ffffff] bg-gradient-to-br from-[#ffffff]/[0.05] to-transparent p-6 md:p-8 rounded-b-[8px] bg-[#0c0c0c]">
-                   <div className="text-white text-[22px] font-bold mb-6 tracking-wide">{roadmap[2].phase}</div>
-                   
-                   <div className="inline-flex items-center gap-2 border border-[#ffffff]/30 bg-[#ffffff]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#ffffff] font-mono text-[10px] tracking-[0.1em] font-bold">
-                      <div className="w-2 h-2 rounded-full border-2 border-white bg-transparent"></div>
-                      {roadmap[2].status}
-                   </div>
+                  <div className="text-white text-[22px] font-bold mb-6 tracking-wide">{roadmap[2].phase}</div>
 
-                   <div className="space-y-6">
-                      {roadmap[2].items.map((item, i) => {
-                         const [title, desc] = item.split(' - ');
-                         return (
-                           <div key={i} className="flex gap-4 items-start">
-                             <div className="w-[14px] h-[14px] rounded-full border-[2px] border-white bg-transparent shrink-0 mt-[3px]"></div>
-                             <div>
-                               <div className="text-[#dedede] text-[14px] font-semibold mb-1">{title}</div>
-                               <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
-                             </div>
-                           </div>
-                         );
-                      })}
-                   </div>
+                  <div className="inline-flex items-center gap-2 border border-[#ffffff]/30 bg-[#ffffff]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#ffffff] font-mono text-[10px] tracking-[0.1em] font-bold">
+                    <div className="w-2 h-2 rounded-full border-2 border-white bg-transparent"></div>
+                    {roadmap[2].status}
+                  </div>
+
+                  <div className="space-y-6">
+                    {roadmap[2].items.map((item, i) => {
+                      const [title, desc] = item.split(' - ');
+                      return (
+                        <div key={i} className="flex gap-4 items-start">
+                          <div className="w-[14px] h-[14px] rounded-full border-[2px] border-white bg-transparent shrink-0 mt-[3px]"></div>
+                          <div>
+                            <div className="text-[#dedede] text-[14px] font-semibold mb-1">{title}</div>
+                            <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
               </div>
-              
+
               <div className="border-t border-[#1a1a1a] mt-12 pt-6 flex justify-end gap-5 text-white">
-                 <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-                 <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
-                 <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.946 2.4189-2.1568 2.4189z"/></svg>
+                <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /></svg>
+                <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" /></svg>
+                <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.946 2.4189-2.1568 2.4189z" /></svg>
               </div>
             </div>
           </div>

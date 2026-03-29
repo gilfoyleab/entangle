@@ -137,7 +137,7 @@ export function EntangledParticles() {
   const { positions: corePositions, colors: coreColors } = useMemo(() => generateWormhole(6000, radius), []);
 
   const smoothedScroll = useRef(0);
-  
+
   // Shared Random Flash State Timer for Entanglement
   const nextFlash = useRef(Math.random() * 1.0);
   const flashDuration = useRef(0.05 + Math.random() * 0.15);
@@ -148,21 +148,21 @@ export function EntangledParticles() {
     // Slower lerp for that "buttery" feel the user liked before
     smoothedScroll.current += (targetScroll - smoothedScroll.current) * 0.08;
     const scroll = smoothedScroll.current;
-    
+
     const t = state.clock.elapsedTime;
 
     if (groupRef.current) {
       // 1. Unwaveringly Continuous "Buttery" Ambient Rotation & Landing
       const currentY = groupRef.current.rotation.y;
-      
+
       // The ambient rotation naturally slows down as you reach the top, so it doesn't fight the lock
       const speedFactor = Math.min(1, scroll * 5.0); // 0 at exactly top, 1 when scroll > 0.2
       baseRotation.current += delta * 0.15 * speedFactor;
 
       // Continuous magnetic locking to the nearest perfect side-by-side view (multiple of PI)
       const lockZone = 0.08; // Kick in the magnetism when very close to top
-      const magnetStrength = Math.max(0, 1.0 - (scroll / lockZone)); 
-      
+      const magnetStrength = Math.max(0, 1.0 - (scroll / lockZone));
+
       if (magnetStrength > 0) {
         // Determine the mathematically closest locking angle based on where the base rotation naturally is
         const targetLockY = Math.round(baseRotation.current / Math.PI) * Math.PI;
@@ -173,7 +173,7 @@ export function EntangledParticles() {
 
       // Final target angle is simply our (potentially magnetized) base rotation + strictly scroll displacement
       const rotTargetY = baseRotation.current + (scroll * 2.5);
-      
+
       // True shortest-path modulo (handling JS negative modulus issues)
       let diffY = (rotTargetY - currentY) % (Math.PI * 2);
       if (diffY > Math.PI) diffY -= Math.PI * 2;
@@ -230,7 +230,7 @@ export function EntangledParticles() {
       // Rotating sector logic in WORLD space so both spheres look identical visually
       const angle = time * 8.0;
       const worldDir = new THREE.Vector3(Math.cos(angle), Math.sin(angle), 0);
-      
+
       // Convert world direction down to local space so the visual flash doesn't rotate with the sphere
       const invQuat = sphereRef.current.quaternion.clone().invert();
       worldDir.applyQuaternion(invQuat);
@@ -326,11 +326,11 @@ export function EntangledParticles() {
       const mat = whiteCoreRef.current.material as THREE.PointsMaterial;
       // Bridge flashes noticeably but naturally when transferring
       if (mat) {
-        mat.opacity = isFlashing ? 0.8 : 0.4; 
+        mat.opacity = isFlashing ? 0.8 : 0.4;
         mat.size = isFlashing ? 0.035 : 0.02;
         mat.color.setRGB(
-          isFlashing ? 1.5 : 1.0, 
-          isFlashing ? 1.5 : 1.0, 
+          isFlashing ? 1.5 : 1.0,
+          isFlashing ? 1.5 : 1.0,
           isFlashing ? 1.5 : 1.0
         );
       }
@@ -338,7 +338,7 @@ export function EntangledParticles() {
   });
 
   return (
-    <group ref={groupRef} position={[0, -0.2, 0]}>
+    <group ref={groupRef} position={[0, -0.45, 0]}>
       {/* Dynamic Wormhole / Laser connecting tunnel */}
       <points ref={whiteCoreRef}>
         <bufferGeometry>
