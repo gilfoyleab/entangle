@@ -282,7 +282,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section id="protocol" className="my-24 md:my-32 py-10 px-6 md:px-8 max-w-7xl mx-auto w-full surface-glass-strong rounded-[2rem] shadow-2xl relative z-10">
+        <section id="protocol" className="my-24 md:my-32 py-10 px-6 md:px-8 max-w-7xl mx-auto w-full surface-glass-extreme rounded-[2rem] shadow-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
             <div className="mb-8 px-4 w-full">
               <div className="relative inline-block z-10">

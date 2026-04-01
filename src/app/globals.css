@@ -79,9 +79,9 @@ main code .font-mono {
 }
 
 .surface-glass-extreme {
-  background: rgba(6, 6, 8, 0.8);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
+  background: rgba(4, 4, 6, 0.9);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
   border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
