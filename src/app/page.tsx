@@ -148,7 +148,8 @@ function SectionHeader({
   centered?: boolean;
 }) {
   return (
-    <div className={centered ? 'max-w-3xl mx-auto text-center' : 'max-w-3xl'}>
+    <div className={centered ? 'max-w-3xl mx-auto text-center relative z-10' : 'max-w-3xl relative z-10'}>
+      <div className="absolute -inset-x-12 -inset-y-8 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)' }}></div>
       <span className="text-gray-200 uppercase tracking-[0.2em] font-medium text-[13px] mb-5 block text-shadow-strong">{eyebrow}</span>
       <h2 className={`text-[40px] md:text-[52px] font-bold tracking-tight ${description ? 'mb-6' : 'mb-0'} text-metallic-premium drop-shadow-xl leading-[1.15]`}>{title}</h2>
       {description ? (
@@ -198,11 +199,14 @@ export default function Home() {
 
       <div className="relative z-10 w-full flex flex-col pb-0">
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-16">
-          <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl">
-            <h1 className="text-5xl md:text-[5.35rem] lg:text-[5.95rem] font-medium tracking-tight mb-8 leading-[0.9] text-metallic-premium drop-shadow-2xl max-w-[1400px]">
-              <span className="block">AI-POWERED</span>
-              <span className="block whitespace-nowrap text-[0.92em] md:text-[0.88em]">CROSS-CHAIN MESSAGING.</span>
-            </h1>
+          <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl relative z-10">
+            <div className="relative">
+              <div className="absolute -inset-x-20 -inset-y-16 bg-black/10 backdrop-blur-[24px] -z-10 rounded-[100%] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%)' }}></div>
+              <h1 className="text-5xl md:text-[5.35rem] lg:text-[5.95rem] font-medium tracking-tight mb-8 leading-[0.9] text-metallic-premium drop-shadow-2xl max-w-[1400px]">
+                <span className="block">AI-POWERED</span>
+                <span className="block whitespace-nowrap text-[0.92em] md:text-[0.88em]">CROSS-CHAIN MESSAGING.</span>
+              </h1>
+            </div>
 
             <div className="flex flex-wrap items-center justify-center gap-5">
               <button
@@ -221,7 +225,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section className="my-16 md:my-20 px-6 md:px-12 max-w-5xl mx-auto w-full relative z-10">
+        <section className="my-24 md:my-32 px-6 md:px-12 max-w-5xl mx-auto w-full relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid w-full gap-5 md:grid-cols-2">
             <div className="rounded-[2.5rem] border border-white/10 bg-black/35 px-8 py-10 backdrop-blur-md hover:bg-black/45 transition-colors">
               <div className="text-5xl md:text-6xl font-semibold tracking-tight text-white mb-4">$3.7T</div>
@@ -236,7 +240,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section className="my-16 md:my-20 py-16 px-6 md:px-12 max-w-7xl mx-auto w-full surface-glass-soft rounded-[2.5rem] shadow-2xl relative z-10">
+        <section className="my-24 md:my-32 py-10 px-6 md:px-8 max-w-7xl mx-auto w-full surface-glass-strong rounded-[2rem] shadow-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-center">
             <div>
               <SectionHeader
@@ -278,11 +282,14 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section id="protocol" className="my-16 md:my-20 py-16 px-6 md:px-12 max-w-7xl mx-auto w-full surface-glass-soft rounded-[2.5rem] shadow-2xl relative z-10">
+        <section id="protocol" className="my-24 md:my-32 py-10 px-6 md:px-8 max-w-7xl mx-auto w-full surface-glass-strong rounded-[2rem] shadow-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
             <div className="mb-8 px-4 w-full">
-              <h2 className="text-5xl font-semibold mb-4 tracking-tight text-metallic-premium drop-shadow-2xl">HOW IT FLOWS</h2>
-              <p className="text-gray-400 text-lg md:text-xl">From source transaction to destination delivery in 8 automated steps.</p>
+              <div className="relative inline-block z-10">
+                <div className="absolute -inset-x-16 -inset-y-10 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)' }}></div>
+                <h2 className="text-5xl font-semibold mb-4 tracking-tight text-metallic-premium drop-shadow-2xl">HOW IT FLOWS</h2>
+                <p className="text-gray-400 text-lg md:text-xl">From source transaction to destination delivery in 8 automated steps.</p>
+              </div>
 
               <div className="relative mt-32 mb-16 w-full max-w-5xl mx-auto overflow-x-auto md:overflow-visible pb-16 md:pb-0">
                 <div className="min-w-[800px] w-full px-12 md:px-0">
@@ -366,9 +373,11 @@ export default function Home() {
                               <div className={`absolute inset-[-6px] rounded-full border border-dashed ${isCyan ? 'border-[#00d2ff]/60' : 'border-[#ff1a66]/60'} animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}></div>
 
                               {/* Text Content */}
-                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} w-48 text-center flex flex-col items-center pointer-events-none`}>
-                                <div className={`text-[13px] font-black tracking-[0.2em] mb-1.5 ${textColorClass} uppercase drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]`}>{step[0]}</div>
-                                <div className="text-[12px] text-gray-300 leading-snug drop-shadow-[0_0_5px_rgba(0,0,0,1)] max-w-[130px]">{step[1]}</div>
+                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} w-56 text-center flex flex-col items-center pointer-events-none z-30`}>
+                                <div className="bg-black/35 backdrop-blur-xl px-4 py-3 rounded-2xl flex flex-col items-center border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+                                  <div className={`text-[12px] font-black tracking-[0.2em] mb-1.5 ${textColorClass} uppercase`}>{step[0]}</div>
+                                  <div className="text-[12px] text-gray-200 leading-snug max-w-[140px]">{step[1]}</div>
+                                </div>
                               </div>
                             </motion.div>
                           </div>
@@ -383,9 +392,12 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section className="my-16 md:my-20 px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-8 md:p-12 shadow-2xl rounded-[2.5rem]">
-            <div className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium uppercase mb-10 text-center drop-shadow-2xl">DELIVERY BENCHMARKS</div>
+        <section className="my-24 md:my-32 px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 rounded-[2rem]">
+            <div className="relative inline-block text-center w-full z-10 mb-10">
+              <div className="absolute -inset-x-12 -inset-y-8 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none left-1/2 -translate-x-1/2 w-[80%] max-w-[600px]" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)' }}></div>
+              <div className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium uppercase text-center drop-shadow-2xl">DELIVERY BENCHMARKS</div>
+            </div>
             <div className="grid md:grid-cols-3 gap-5">
               {deliveryBenchmarks.map(([value, title, subtitle]) => (
                 <div key={title} className="rounded-[2rem] border border-white/5 bg-black/60 px-8 py-10 transition-colors hover:bg-black/80">
@@ -398,8 +410,8 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section id="developers" className="my-16 md:my-20 px-6 md:px-12 w-full max-w-7xl mx-auto relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-8 md:p-12 lg:p-14 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+        <section id="developers" className="my-24 md:my-32 px-6 md:px-12 w-full max-w-7xl mx-auto relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
             {/* Background Crosshair Lines */}
             <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-white/5 pointer-events-none hidden xl:block"></div>
             <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/5 pointer-events-none hidden xl:block"></div>
@@ -410,10 +422,13 @@ export default function Home() {
               <div className="relative pr-4 xl:pr-8">
                 <div className="w-5 h-5 border-t border-l border-white/20 mb-6 opacity-50"></div>
 
-                <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] mb-8 text-metallic-premium drop-shadow-2xl">
-                  One contract.<br />
-                  <span>Any chain.</span>
-                </h2>
+                <div className="relative inline-block mb-8 z-10">
+                  <div className="absolute -inset-x-16 -inset-y-8 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)' }}></div>
+                  <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] text-metallic-premium drop-shadow-2xl">
+                    One contract.<br />
+                    <span>Any chain.</span>
+                  </h2>
+                </div>
 
                 <div className="space-y-6 relative">
                   <div className="flex gap-6">
@@ -507,11 +522,14 @@ entangle.sendMessage{value: fees}(
 
 
 
-        <section id="chain-support" className="my-16 md:my-20 px-6 md:px-12 w-full max-w-5xl mx-auto relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-8 md:p-10 lg:p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+        <section id="chain-support" className="my-24 md:my-32 px-6 md:px-12 w-full max-w-5xl mx-auto relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
             <div className="w-10 h-[3px] bg-[#ff1a66] mb-6"></div>
-            <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 mb-3 text-metallic-premium drop-shadow-2xl">Chain Support</h2>
-            <p className="text-gray-400 text-sm md:text-[15px] mb-8">One clean interface. Connecting the biggest ecosystems.</p>
+            <div className="relative inline-block mb-8 z-10">
+              <div className="absolute -inset-x-16 -inset-y-10 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)' }}></div>
+              <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 mb-3 text-metallic-premium drop-shadow-2xl">Chain Support</h2>
+              <p className="text-gray-400 text-sm md:text-[15px]">One clean interface. Connecting the biggest ecosystems.</p>
+            </div>
 
             <div className="border border-white/5 bg-black/40 rounded-2xl overflow-hidden shadow-inner">
               <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5 border-b border-white/5">
@@ -633,23 +651,26 @@ entangle.sendMessage{value: fees}(
         </section>
 
 
-        <section id="simple-integration" className="px-6 md:px-12 w-full max-w-6xl mx-auto relative z-10 my-16 md:my-20 font-sans">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-            <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 mb-20 text-metallic-premium drop-shadow-2xl">
-              Simple Integration.
-            </h2>
+        <section id="simple-integration" className="px-6 md:px-12 w-full max-w-6xl mx-auto relative z-10 my-24 md:my-32 font-sans">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-6 lg:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
+            <div className="relative inline-block mb-8 z-10">
+              <div className="absolute -inset-x-16 -inset-y-10 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)' }}></div>
+              <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
+                Simple Integration.
+              </h2>
+            </div>
 
             <div className="relative max-w-4xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10">
 
               {/* Connector Line left side (Desktop) */}
               <div className="w-4 shrink-0 relative hidden md:block">
-                <div className="absolute left-1/2 top-[70px] bottom-[70px] w-[2px] bg-gradient-to-b from-[#00d2ff] via-[#333] to-[#ff1a66] -translate-x-1/2 flex flex-col justify-between items-center z-10">
+                <div className="absolute left-1/2 top-[40px] bottom-[40px] w-[2px] bg-gradient-to-b from-[#00d2ff] via-[#333] to-[#ff1a66] -translate-x-1/2 flex flex-col justify-between items-center z-10">
                   <div className="w-[10px] h-[10px] rounded-full bg-[#00d2ff] -mt-1 shadow-[0_0_10px_rgba(0,210,255,0.8)]"></div>
                   <div className="w-[10px] h-[10px] rounded-full bg-[#ff1a66] -mb-1 shadow-[0_0_10px_rgba(255,26,102,0.8)]"></div>
                 </div>
               </div>
 
-              <div className="flex-1 flex flex-col gap-6 relative">
+              <div className="flex-1 flex flex-col gap-4 relative">
 
                 {/* Source Block Wrapper */}
                 <div className="relative pt-6">
@@ -657,8 +678,8 @@ entangle.sendMessage{value: fees}(
                     SOURCE <span className="text-sm md:text-lg leading-none">&rarr;</span>
                   </div>
 
-                  <div className="rounded-[12px] border border-[#00d2ff]/20 bg-[#000000] shadow-[0_0_30px_rgba(0,0,0,0.4)] w-full font-mono text-[12px] sm:text-[13px] md:text-[14px]">
-                    <div className="bg-[#050505] border-b border-[#ffffff10] py-3 px-5 flex items-center gap-3">
+                  <div className="rounded-[12px] border border-[#00d2ff]/20 bg-[#000000] shadow-[0_0_30px_rgba(0,0,0,0.4)] w-full font-mono text-[11px] sm:text-[12px] md:text-[13px]">
+                    <div className="bg-[#050505] border-b border-[#ffffff10] py-2 px-4 md:py-3 md:px-5 flex items-center gap-3">
                       <div className="flex gap-2 shrink-0">
                         <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
                         <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
@@ -667,12 +688,12 @@ entangle.sendMessage{value: fees}(
                       <div className="text-gray-500 ml-2 overflow-hidden text-ellipsis whitespace-nowrap">Sender.sol (Source Chain)</div>
                     </div>
 
-                    <pre className="p-6 md:p-8 leading-relaxed text-[#c9c9d1] overflow-x-auto">
+                    <pre className="px-4 py-3 md:px-6 md:py-4 leading-snug text-[#c9c9d1] overflow-x-auto">
                       <code>
                         <span className="text-[#ff1a66]">function</span> <span className="text-[#00d2ff]">sendCrossChain</span>(<span className="text-gray-400">uint256</span> amount) <span className="text-[#ff1a66]">external payable</span> {"{"}
                         {"\n  "}<span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> payload = abi.<span className="text-[#00d2ff]">encode</span>(amount);
                         {"\n  "}<span className="text-[#00d2ff]">uint256</span> fee = entangle.<span className="text-[#00d2ff]">getRequiredFee</span>(dstChainId, payload.length);
-                        {"\n\n  "}<span className="text-gray-500">// 1. Dispatch Message</span>
+                        {"\n  "}<span className="text-gray-500">// 1. Dispatch Message</span>
                         {"\n  "}entangle.<span className="text-[#00d2ff]">sendMessage</span>{"{"}<span className="text-[#ff1a66]">value</span>: fee{"}"}(dstChainId, dstAddr, payload);
                         {"\n"}{"}"}
                       </code>
@@ -681,7 +702,7 @@ entangle.sendMessage{value: fees}(
                 </div>
 
                 {/* Arrow down */}
-                <div className="flex justify-center -my-2 relative z-10 py-2">
+                <div className="flex justify-center -my-1 relative z-10 py-1">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <polyline points="19 12 12 19 5 12"></polyline>
@@ -694,8 +715,8 @@ entangle.sendMessage{value: fees}(
                     DESTINATION <span className="text-sm md:text-lg leading-none">&rarr;</span>
                   </div>
 
-                  <div className="rounded-[12px] border border-[#ff1a66]/20 bg-[#000000] shadow-[0_0_30px_rgba(0,0,0,0.4)] w-full font-mono text-[12px] sm:text-[13px] md:text-[14px]">
-                    <div className="bg-[#050505] border-b border-[#ffffff10] py-3 px-5 flex items-center gap-3">
+                  <div className="rounded-[12px] border border-[#ff1a66]/20 bg-[#000000] shadow-[0_0_30px_rgba(0,0,0,0.4)] w-full font-mono text-[11px] sm:text-[12px] md:text-[13px]">
+                    <div className="bg-[#050505] border-b border-[#ffffff10] py-2 px-4 md:py-3 md:px-5 flex items-center gap-3">
                       <div className="flex gap-2 shrink-0">
                         <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
                         <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
@@ -704,14 +725,14 @@ entangle.sendMessage{value: fees}(
                       <div className="text-gray-500 ml-2 overflow-hidden text-ellipsis whitespace-nowrap">Receiver.sol (Destination Chain)</div>
                     </div>
 
-                    <pre className="p-6 md:p-8 leading-relaxed text-[#c9c9d1] overflow-x-auto">
+                    <pre className="px-4 py-3 md:px-6 md:py-4 leading-snug text-[#c9c9d1] overflow-x-auto">
                       <code>
                         <span className="text-[#ff1a66]">function</span> <span className="text-[#00d2ff]">receiveEntangleMessage</span>(
                         {"\n  "}<span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> payload, <span className="text-[#00d2ff]">bytes</span> <span className="text-[#ff1a66]">memory</span> sigs, ...
                         {"\n"}) <span className="text-[#ff1a66]">external payable</span> {"{"}
                         {"\n  "}<span className="text-gray-500">// 2. Verify Origin (Security)</span>
                         {"\n  "}<span className="text-[#00d2ff]">require</span>(<span className="text-[#ff1a66]">msg.sender</span> == <span className="text-[#00d2ff]">address</span>(entangle), "Only Entangle");
-                        {"\n\n  "}<span className="text-gray-500">// 3. Execute Logic</span>
+                        {"\n  "}<span className="text-gray-500">// 3. Execute Logic</span>
                         {"\n  "}<span className="text-[#00d2ff]">uint256</span> amount = abi.<span className="text-[#00d2ff]">decode</span>(payload, (<span className="text-[#00d2ff]">uint256</span>));
                         {"\n  "}<span className="text-[#00d2ff]">_mint</span>(amount);
                         {"\n"}{"}"}
@@ -729,21 +750,24 @@ entangle.sendMessage{value: fees}(
 
 
 
-        <section id="consensus" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
+        <section id="consensus" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
             {/* Horizontal Grid Lines */}
             <div className="absolute top-[160px] md:top-[180px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
             <div className="absolute top-[480px] md:top-[620px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
 
-            <div className="relative z-10 pt-16 md:pt-20">
-              <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
-                Threshold signatures.<br />
-                <span>No single validator.</span>
-              </h2>
+            <div className="relative z-10 pt-4 md:pt-8">
+              <div className="relative inline-block z-10">
+                <div className="absolute -inset-x-16 -inset-y-10 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)' }}></div>
+                <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
+                  Threshold signatures.<br />
+                  <span>No single validator.</span>
+                </h2>
+              </div>
             </div>
 
-            <div className="relative z-10 mt-12 md:mt-16 grid lg:grid-cols-[1fr_480px] gap-12 lg:gap-8 items-center">
+            <div className="relative z-10 mt-8 md:mt-10 grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-8 items-center">
 
               {/* Graphical representation of the consensus model */}
               <div className="relative flex flex-col items-center justify-center">
@@ -791,9 +815,9 @@ entangle.sendMessage{value: fees}(
               <div className="flex flex-col bg-[#050505] shadow-[0_0_60px_rgba(0,0,0,0.8)] border border-[#ffffff0a]">
 
                 {/* Multi-Chain Signatures */}
-                <div className="border-b border-[#ffffff0a] border-l-[3px] border-l-[#ff1a66] p-7 md:p-9 bg-[#040404]">
-                  <h3 className="text-white text-[17px] font-bold mb-5 tracking-wide">Multi-Chain Signatures</h3>
-                  <div className="text-[14px]">
+                <div className="border-b border-[#ffffff0a] border-l-[3px] border-l-[#ff1a66] p-5 md:p-6 bg-[#040404]">
+                  <h3 className="text-white text-[16px] md:text-[17px] font-bold mb-3 md:mb-4 tracking-wide">Multi-Chain Signatures</h3>
+                  <div className="text-[13px] md:text-[14px]">
                     <div className="mb-2">
                       <span className="text-white">EVM:</span> <span className="bg-[#0b1d26] text-[#00d2ff] px-2 py-0.5 rounded text-[13px] mx-1 border border-[#00d2ff]/10 font-mono">secp256k1</span> <span className="text-[#888]">/ ecrecover</span>
                     </div>
@@ -804,18 +828,18 @@ entangle.sendMessage{value: fees}(
                 </div>
 
                 {/* On-Chain Verification */}
-                <div className="border-b border-[#ffffff0a] border-l-[3px] border-l-[#00d2ff] p-7 md:p-9 bg-[#040404]">
-                  <h3 className="text-white text-[17px] font-bold mb-4 tracking-wide">On-Chain Verification</h3>
-                  <p className="text-[#888] text-[14px] mb-5">Smart contracts enforce cryptographic proofs.</p>
+                <div className="border-b border-[#ffffff0a] border-l-[3px] border-l-[#00d2ff] p-5 md:p-6 bg-[#040404]">
+                  <h3 className="text-white text-[16px] md:text-[17px] font-bold mb-3 md:mb-4 tracking-wide">On-Chain Verification</h3>
+                  <p className="text-[#888] text-[13px] md:text-[14px] mb-4">Smart contracts enforce cryptographic proofs.</p>
                   <div className="bg-[#0b1d26] border border-[#00d2ff]/10 text-[#00d2ff] font-mono text-[13px] px-3 py-1.5 inline-block rounded">
                     verifyMessage(msg_hash, sig_bundle)
                   </div>
                 </div>
 
                 {/* Trust Minimized */}
-                <div className="border-l-[3px] border-l-[#cccccc] p-7 md:p-9 bg-[#040404]">
-                  <h3 className="text-white text-[17px] font-bold mb-4 tracking-wide">Trust Minimized</h3>
-                  <p className="text-[#888] text-[14px] leading-relaxed max-w-sm">
+                <div className="border-l-[3px] border-l-[#cccccc] p-5 md:p-6 bg-[#040404]">
+                  <h3 className="text-white text-[16px] md:text-[17px] font-bold mb-3 md:mb-4 tracking-wide">Trust Minimized</h3>
+                  <p className="text-[#888] text-[13px] md:text-[14px] leading-relaxed max-w-sm">
                     No single validator can authorize a delivery.<br />
                     Consensus threshold required for all ops.
                   </p>
@@ -829,65 +853,51 @@ entangle.sendMessage{value: fees}(
 
 
 
-        <section id="operators" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative min-h-[650px] max-w-[1100px] mx-auto w-full flex flex-col justify-between overflow-hidden">
+        <section id="operators" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             {/* Glowing cyan orb softly placed on left */}
             <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-[#00d2ff]/[0.035] rounded-full blur-[90px] pointer-events-none"></div>
 
-            {/* Top Content Area */}
-            <div className="p-10 md:p-14 lg:p-20 relative z-10">
-              <h2 className="text-5xl font-semibold tracking-tight mb-6 text-metallic-premium drop-shadow-2xl whitespace-nowrap">
-                Dual Income: Native Fees +<br />
+            <div className="p-8 md:p-12 lg:p-16 relative z-10">
+              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-metallic-premium drop-shadow-2xl">
+                Dual Income: Native Fees +<br className="hidden md:block"/>
                 Protocol Rewards
               </h2>
 
-              <p className="text-[#888] text-[15px] md:text-[17px] max-w-[650px] leading-[1.65] mb-10">
+              <p className="text-[#888] text-[15px] md:text-[17px] max-w-[650px] leading-[1.65] mb-12">
                 Participate in the Entangle Subnet on Bittensor. Earn continuous rewards<br className="hidden md:block" />
                 for securing cross-chain communication.
               </p>
 
-              {/* Graphical Line Break element */}
-              <div className="relative w-full max-w-[800px] pt-[2px]">
-                {/* 1px dark grey track */}
-                <div className="absolute top-[3px] left-0 right-0 h-[1px] bg-[#1a1a1a]"></div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 backdrop-blur-md max-w-[700px] shadow-inner">
+                <button className="px-8 py-3.5 bg-white text-black font-bold uppercase tracking-widest text-[13px] rounded-[4px] hover:bg-gray-200 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                  START EARNING <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
+                </button>
 
-                {/* Neon Cyan & Pink streaks resting on the track */}
-                <div className="absolute top-[2px] left-0 w-[47%] h-[3px] bg-[#00d2ff] shadow-[0_0_15px_rgba(0,210,255,0.4)]"></div>
-                <div className="absolute top-[2px] right-[4%] w-[46%] h-[3px] bg-[#ff1a66] shadow-[0_0_15px_rgba(255,26,102,0.4)]"></div>
-
-                {/* Central grey node block */}
-                <div className="absolute top-[18px] left-[48.5%] -translate-x-1/2 w-[34px] h-[34px] bg-[#1c1c1e] rounded-[8px] shadow-lg border border-[#2a2a2a] opacity-90 backdrop-blur-md"></div>
+                <a href="#" className="text-[#999] text-[14px] md:text-[15px] underline underline-offset-[5px] decoration-[#444] hover:text-white hover:decoration-white transition-colors leading-none">
+                  Read the Miner Documentation
+                </a>
               </div>
-            </div>
-
-            {/* Bottom Content Area */}
-            <div className="p-10 md:p-14 lg:p-20 flex items-center gap-8 relative z-10">
-              <button className="px-8 py-3.5 bg-white text-black font-bold uppercase tracking-widest text-[13px] rounded-[4px] hover:bg-gray-200 transition-colors flex items-center gap-3">
-                START EARNING <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
-              </button>
-
-              <a href="#" className="text-[#777] text-[15px] underline underline-offset-[5px] decoration-[#333] hover:text-[#aaa] hover:decoration-[#666] transition-colors leading-none pb-0.5">
-                Read the Miner Documentation
-              </a>
             </div>
 
           </div>
         </section>
 
-        <section id="scanner-miner" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
+        <section id="scanner-miner" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#111111] pointer-events-none z-0"></div>
 
-            <div className="relative z-10 mb-10">
-              <h2 className="text-5xl font-semibold tracking-tight text-metallic-premium drop-shadow-2xl">
+            <div className="relative z-10 mb-8 w-full text-left pl-2">
+              <div className="absolute -inset-x-8 -inset-y-4 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none w-full max-w-[400px]" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)' }}></div>
+              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-metallic-premium drop-shadow-2xl">
                 Scanner Miner
               </h2>
             </div>
 
-            <div className="relative z-10 w-full max-w-[850px] border border-[#1a1a1a] rounded-[10px] bg-[#0c1216] shadow-[0_0_80px_rgba(0,0,0,1)] overflow-hidden mt-16 md:mt-24">
+            <div className="rounded-[1.5rem] bg-[#000000]/60 border border-white/5 shadow-2xl relative mx-auto w-full max-w-[900px] overflow-hidden mt-8 md:mt-10">
               {/* Cyan top bar */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#00d2ff] shadow-[0_0_20px_rgba(0,210,255,0.4)]"></div>
 
@@ -965,19 +975,20 @@ entangle.sendMessage{value: fees}(
           </div>
         </section>
 
-        <section id="relay-miner" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
+        <section id="relay-miner" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#111111] pointer-events-none z-0"></div>
 
-            <div className="relative z-10 mb-10 pt-16">
-              <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
+            <div className="relative z-10 mb-8 w-full text-left pl-2">
+              <div className="absolute -inset-x-8 -inset-y-4 bg-black/10 backdrop-blur-xl -z-10 rounded-[3rem] pointer-events-none w-full max-w-[400px]" style={{ maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)' }}></div>
+              <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
                 Relay Miner
               </h2>
             </div>
 
-            <div className="relative z-10 w-full max-w-[850px] border border-[#1a1a1a] rounded-[10px] bg-[#0c080a] shadow-[0_0_80px_rgba(0,0,0,1)] overflow-hidden mt-16 md:mt-24 mx-auto md:ml-0">
+            <div className="rounded-[1.5rem] bg-[#0c080a] border border-[#ff1a66]/10 shadow-[0_0_80px_rgba(0,0,0,1)] relative mx-auto md:ml-0 w-full max-w-[900px] overflow-hidden mt-8 md:mt-10">
               {/* Pink top bar */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#ff1a66] shadow-[0_0_20px_rgba(255,26,102,0.4)]"></div>
 
@@ -1056,11 +1067,10 @@ entangle.sendMessage{value: fees}(
 
 
 
-        <section id="the-auction" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-visible">
+        <section id="the-auction" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-visible">
 
-            {/* Horizontal Line separating sections */}
-            <div className="absolute top-[170px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
+
 
             <div className="relative z-10 mb-20 pt-10">
               <div className="text-[11px] font-mono tracking-[0.3em] text-[#ff1a66] uppercase mb-5 font-bold">THE AUCTION</div>
@@ -1189,13 +1199,13 @@ entangle.sendMessage{value: fees}(
           </div>
         </section>
 
-        <section id="scoring" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+        <section id="scoring" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             {/* The top crosshair grid line */}
             <div className="absolute top-[120px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
 
-            <div className="relative z-10 mb-16 pt-5 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+            <div className="relative z-10 mb-8 pt-5 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
               <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
                 5-Dimension Scoring.
               </h2>
@@ -1204,15 +1214,15 @@ entangle.sendMessage{value: fees}(
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 mt-8 relative z-10 w-full max-w-[1020px] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 mt-4 relative z-10 w-full max-w-[1020px] mx-auto">
 
               {/* Central vertical divider line on desktop underlying the grid */}
-              <div className="absolute top-[30px] bottom-[-50px] left-1/2 -translate-x-1/2 w-[1px] bg-[#1a1a1a] pointer-events-none z-0 hidden lg:block"></div>
+              <div className="absolute top-[30px] bottom-[-20px] left-1/2 -translate-x-1/2 w-[1px] bg-[#1a1a1a] pointer-events-none z-0 hidden lg:block"></div>
               {/* Second horizontal line slicing the grid */}
               <div className="absolute top-[50%] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-10 hidden lg:block translate-y-[20px]"></div>
 
               {/* 1. Latency (25%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#00d2ff] bg-black/60 backdrop-blur-xl rounded-r-xl py-6 pl-6 pr-4 lg:pr-8 mx-0 mb-6 lg:mb-0 w-[90%] shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#00d2ff] bg-black/60 backdrop-blur-xl rounded-r-xl py-5 pl-6 pr-4 lg:pr-6 mx-0 mb-4 lg:mb-0 w-[90%] shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D1</div>
                 <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Latency</div>
                 <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(0,210,255,0.4)]">25%</div>
@@ -1222,7 +1232,7 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* 2. Confirmation (25%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#00d2ff] bg-black/60 backdrop-blur-xl rounded-r-xl py-6 pl-6 pr-4 lg:pr-8 mx-0 lg:ml-4 lg:mr-[20px] mb-6 lg:mb-0 z-20 w-[90%] lg:w-auto shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#00d2ff] bg-black/60 backdrop-blur-xl rounded-r-xl py-5 pl-6 pr-4 lg:pr-6 mx-0 lg:ml-4 lg:mr-[20px] mb-4 lg:mb-0 z-20 w-[90%] lg:w-auto shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D2</div>
                 <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Confirmation</div>
                 <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(0,210,255,0.4)]">25%</div>
@@ -1232,8 +1242,8 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* 3. Gas Efficiency (20%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-8 pl-8 pr-4 lg:pr-8 mx-0 lg:ml-6 mb-6 lg:mb-0 z-20 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
-                <div className="absolute top-6 right-6 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D3</div>
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-5 pl-6 pr-4 lg:pr-6 mx-0 lg:ml-6 mb-4 lg:mb-0 z-20 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D3</div>
                 <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Gas Efficiency</div>
                 <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(255,26,102,0.4)]">20%</div>
                 <div className="text-gray-300 text-[13px] leading-relaxed max-w-[90%] relative z-10 drop-shadow-md">
@@ -1242,8 +1252,8 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* 4. Integrity (15%) - NOTE 15% IS ON TOP */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-8 pl-8 pr-4 lg:pr-8 mx-0 mt-8 mb-6 lg:mb-0 w-[95%] z-20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
-                <div className="absolute top-6 right-6 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D4</div>
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-5 pl-6 pr-4 lg:pr-6 mx-0 mt-2 mb-4 lg:mb-0 w-[95%] z-20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D4</div>
                 <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-1 drop-shadow-[0_0_15px_rgba(255,26,102,0.4)]">15%</div>
                 <div className="text-white text-[20px] font-bold tracking-wide mb-3 drop-shadow-md">Integrity</div>
                 <div className="text-gray-300 text-[13px] leading-relaxed max-w-[85%] relative z-10 drop-shadow-md">
@@ -1252,7 +1262,7 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* 5. Reliability (15%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-6 pl-6 pr-4 lg:pr-8 mx-0 mt-8 lg:ml-4 lg:mr-[20px] mb-6 lg:mb-0 w-[90%] lg:w-auto z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+              <div className="relative border border-white/10 border-l-[3px] border-l-[#ff1a66] bg-black/60 backdrop-blur-xl rounded-r-xl py-5 pl-6 pr-4 lg:pr-6 mx-0 mt-2 lg:ml-4 lg:mr-[20px] mb-4 lg:mb-0 w-[90%] lg:w-auto z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] font-mono px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D5</div>
                 <div className="text-white text-[20px] font-bold tracking-wide mb-1 drop-shadow-md">Reliability</div>
                 <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-4 drop-shadow-[0_0_15px_rgba(255,26,102,0.4)]">15%</div>
@@ -1262,7 +1272,7 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* 6. Blended Score Box */}
-              <div className="relative border border-white/10 bg-black/60 backdrop-blur-xl rounded-xl p-6 lg:p-8 mt-12 mx-0 lg:ml-6 shadow-2xl z-20 lg:-mr-12">
+              <div className="relative border border-white/10 bg-black/60 backdrop-blur-xl rounded-xl p-5 lg:p-6 mt-4 mx-0 lg:ml-6 shadow-2xl z-20 lg:-mr-12">
                 <div className="text-gray-400 text-[10px] font-mono tracking-widest uppercase mb-6 font-bold">BLENDED SCORE</div>
                 <div className="font-mono text-[14px] leading-[1.8] drop-shadow-md">
                   <div className="text-gray-300 mb-2 font-sans tracking-wide">Score = </div>
@@ -1274,7 +1284,7 @@ entangle.sendMessage{value: fees}(
             </div>
 
             {/* Sub-footer scale line */}
-            <div className="relative z-10 w-full max-w-[1020px] mx-auto mt-24 mb-6 flex pl-2 pr-2">
+            <div className="relative z-10 w-full max-w-[1020px] mx-auto mt-12 mb-4 flex pl-2 pr-2">
               {/* Exactly left side Cyan 50%, right side Pink 50% split */}
               <div className="h-[6px] w-[50%] bg-[#00d2ff] shadow-[0_0_20px_rgba(0,210,255,0.4)]"></div>
               <div className="h-[6px] w-[50%] bg-[#ff1a66] shadow-[0_0_20px_rgba(255,26,102,0.4)]"></div>
@@ -1286,16 +1296,16 @@ entangle.sendMessage{value: fees}(
 
 
 
-        <section id="realtime-fees" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+        <section id="realtime-fees" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
             {/* Horizontal Line separating sections */}
             <div className="absolute top-[200px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
             {/* The faint vertical separator grid line */}
             <div className="absolute top-0 bottom-[100px] left-[35%] w-[1px] bg-[#1a1a1a] pointer-events-none z-0 hidden xl:block"></div>
 
-            <div className="relative z-10 mb-20 pt-10">
-              <h2 className="text-5xl font-semibold tracking-tight mb-5 text-metallic-premium drop-shadow-2xl">
+            <div className="relative z-10 mb-12 pt-6">
+              <h2 className="text-5xl font-semibold tracking-tight mb-4 text-metallic-premium drop-shadow-2xl">
                 Real-time Fees. Real-time Rewards.
               </h2>
               <p className="text-[#888] text-[16px] max-w-[600px] leading-relaxed">
@@ -1308,8 +1318,8 @@ entangle.sendMessage{value: fees}(
             <div className="relative flex flex-col xl:flex-row items-center justify-center gap-[40px] xl:gap-[0px] w-full max-w-[950px] mx-auto z-10">
 
               {/* 1. Left Block: User / dApp */}
-              <div className="w-full sm:w-[280px] xl:w-[260px] bg-[#0a0a0a] border border-[#222] rounded-[10px] p-6 relative z-10 shrink-0">
-                <div className="flex justify-between items-start mb-6 mt-1">
+              <div className="w-full sm:w-[280px] xl:w-[260px] bg-[#0a0a0a] border border-[#222] rounded-[10px] p-5 relative z-10 shrink-0">
+                <div className="flex justify-between items-start mb-4 mt-1">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-2V9h2zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z" /></svg>
                   <div className="flex gap-2 mt-0.5 items-center">
                     <svg className="w-[12px] h-[12px] text-[#627eea]" viewBox="0 0 32 32" fill="currentColor">
@@ -1318,8 +1328,8 @@ entangle.sendMessage{value: fees}(
                     <div className="w-[13px] h-[13px] rounded-full bg-[#00d2ff]"></div>
                   </div>
                 </div>
-                <div className="text-white text-[17px] font-bold tracking-tight mb-2">User / dApp</div>
-                <div className="text-[#666] text-[13px] mb-6 font-mono">Calls sendMessage()</div>
+                <div className="text-white text-[17px] font-bold tracking-tight mb-1">User / dApp</div>
+                <div className="text-[#666] text-[13px] mb-4 font-mono">Calls sendMessage()</div>
                 <div className="text-[#bbb] text-[13px] font-semibold tracking-wide">Pays Native Gas Fee</div>
 
                 {/* Outbound connection line */}
@@ -1331,10 +1341,10 @@ entangle.sendMessage{value: fees}(
               <div className="hidden xl:block w-[40px] shrink-0"></div>
 
               {/* 2. Middle Block: ENTANGLE CORE */}
-              <div className="w-[280px] bg-[#0c0c0c] border border-[#222] rounded-[8px] p-6 relative z-10 shrink-0 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+              <div className="w-[280px] bg-[#0c0c0c] border border-[#222] rounded-[8px] p-5 relative z-10 shrink-0 shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
                 <div className="absolute top-[-1px] left-0 right-0 h-[3px] bg-white rounded-t-[8px] opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
 
-                <div className="text-white text-[12px] font-bold font-mono tracking-widest uppercase mb-6 mt-1">ENTANGLE CORE</div>
+                <div className="text-white text-[12px] font-bold font-mono tracking-widest uppercase mb-4 mt-0.5">ENTANGLE CORE</div>
 
                 <div className="space-y-4">
                   {/* Gas Oracle */}
@@ -1375,14 +1385,14 @@ entangle.sendMessage{value: fees}(
               <div className="hidden xl:block w-[50px] shrink-0 relative z-0"></div>
 
               {/* 3. Right Blocks Column */}
-              <div className="flex flex-col gap-8 xl:gap-8 shrink-0 w-full sm:w-[320px] xl:w-[300px]">
+              <div className="flex flex-col gap-4 xl:gap-4 shrink-0 w-full sm:w-[320px] xl:w-[300px]">
 
                 {/* Top: 30% Protocol Treasury */}
-                <div className="bg-[#010a12] border border-[#111] border-l-[3px] border-l-[#00d2ff] rounded-[8px] p-6 shadow-[0_0_20px_rgba(0,210,255,0.06)] relative z-10 w-full overflow-hidden">
+                <div className="bg-[#010a12] border border-[#111] border-l-[3px] border-l-[#00d2ff] rounded-[8px] p-5 shadow-[0_0_20px_rgba(0,210,255,0.06)] relative z-10 w-full overflow-hidden">
                   <div className="absolute inset-0 border border-[#00d2ff]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[52px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-2 mt-1 drop-shadow-[0_0_15px_rgba(0,210,255,0.3)]">30%</div>
-                  <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-3">Protocol Treasury</div>
-                  <div className="text-[#888] text-[11px] leading-relaxed mb-6 w-[95%]">
+                  <div className="text-[48px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(0,210,255,0.3)]">30%</div>
+                  <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-2">Protocol Treasury</div>
+                  <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
                     Accumulates native assets (ETH, SOL, ATOM). Funds operations and growth.
                   </div>
 
@@ -1392,11 +1402,11 @@ entangle.sendMessage{value: fees}(
                 </div>
 
                 {/* Bottom: 70% Relay Reserve */}
-                <div className="bg-[#120104] border border-[#111] border-l-[3px] border-l-[#ff1a66] rounded-[8px] p-6 shadow-[0_0_20px_rgba(255,26,102,0.06)] relative z-10 w-full overflow-hidden">
+                <div className="bg-[#120104] border border-[#111] border-l-[3px] border-l-[#ff1a66] rounded-[8px] p-5 shadow-[0_0_20px_rgba(255,26,102,0.06)] relative z-10 w-full overflow-hidden">
                   <div className="absolute inset-0 border border-[#ff1a66]/[0.05] rounded-[8px] pointer-events-none"></div>
-                  <div className="text-[52px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-2 mt-1 drop-shadow-[0_0_15px_rgba(255,26,102,0.3)]">70%</div>
-                  <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-3">Relay Reserve</div>
-                  <div className="text-[#888] text-[11px] leading-relaxed mb-6 w-[95%]">
+                  <div className="text-[48px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-1 mt-0.5 drop-shadow-[0_0_15px_rgba(255,26,102,0.3)]">70%</div>
+                  <div className="text-white text-[15px] xl:text-[17px] font-bold tracking-tight mb-2">Relay Reserve</div>
+                  <div className="text-[#888] text-[11px] leading-relaxed mb-4 w-[95%]">
                     Direct rewards for Relay Miners who successfully execute transactions.
                   </div>
 
@@ -1410,39 +1420,38 @@ entangle.sendMessage{value: fees}(
           </div>
         </section>
 
-        <section id="reference-run" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+        <section id="reference-run" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
             {/* Very faint vertical separator down the middle */}
             <div className="absolute top-0 bottom-0 left-[35%] w-[1px] bg-[#1a1a1a] pointer-events-none z-0 hidden lg:block"></div>
 
-            <div className="relative z-10 mb-16 pt-5">
-              <h2 className="text-5xl font-semibold tracking-tight mb-5 text-metallic-premium drop-shadow-2xl">
+            <div className="relative z-10 mb-6 pt-3">
+              <h2 className="text-5xl font-semibold tracking-tight mb-2 text-metallic-premium drop-shadow-2xl">
                 It&apos;s Live.
               </h2>
             </div>
 
             {/* Top Metrics Row */}
-            <div className="relative z-10 flex flex-col md:flex-row gap-6 mb-16 w-full max-w-[950px] mx-auto">
+            <div className="relative z-10 flex flex-col md:flex-row gap-4 mb-8 w-full max-w-[950px] mx-auto">
               {/* 8.3s */}
-              <div className="flex-1 border-l-[3px] border-[#00d2ff] bg-[#02070c] p-6 shadow-lg">
-                <div className="text-[54px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(0,210,255,0.2)] mt-1">8.3s</div>
-                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">FASTEST DELIVERY</div>
+              <div className="flex-1 border-l-[3px] border-[#00d2ff] bg-[#02070c] p-5 shadow-lg">
+                <div className="text-[44px] font-bold text-[#00d2ff] tracking-tighter leading-none mb-2 drop-shadow-[0_0_15px_rgba(0,210,255,0.2)] mt-1">8.3s</div>
+                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1 font-semibold">FASTEST DELIVERY</div>
                 <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">SOLANA &rarr; ARBITRUM</div>
               </div>
 
               {/* 8/8 */}
-              <div className="flex-1 border-l-[3px] border-[#00e65b] bg-[#020b05] p-6 shadow-lg">
-                <div className="text-[54px] font-bold text-[#00e65b] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(0,230,91,0.2)] mt-1">8/8</div>
-                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">CONSECUTIVE RUNS</div>
+              <div className="flex-1 border-l-[3px] border-[#00e65b] bg-[#020b05] p-5 shadow-lg">
+                <div className="text-[44px] font-bold text-[#00e65b] tracking-tighter leading-none mb-2 drop-shadow-[0_0_15px_rgba(0,230,91,0.2)] mt-1">8/8</div>
+                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1 font-semibold">CONSECUTIVE RUNS</div>
                 <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">100% SUCCESS RATE</div>
               </div>
 
               {/* 213K */}
-              <div className="flex-1 border-l-[3px] border-[#ff1a66] bg-[#0f0205] p-6 shadow-lg">
-                <div className="text-[54px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-3 drop-shadow-[0_0_15px_rgba(255,26,102,0.2)] mt-1">213K</div>
-                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1.5 font-semibold">GAS USED</div>
+              <div className="flex-1 border-l-[3px] border-[#ff1a66] bg-[#0f0205] p-5 shadow-lg">
+                <div className="text-[44px] font-bold text-[#ff1a66] tracking-tighter leading-none mb-2 drop-shadow-[0_0_15px_rgba(255,26,102,0.2)] mt-1">213K</div>
+                <div className="text-[#888] text-[10px] uppercase font-mono tracking-widest mb-1 font-semibold">GAS USED</div>
                 <div className="text-[#555] text-[10px] uppercase font-mono tracking-widest leading-relaxed">REFERENCE DELIVERY</div>
               </div>
             </div>
@@ -1451,7 +1460,7 @@ entangle.sendMessage{value: fees}(
             <div className="relative z-10 w-full max-w-[950px] mx-auto border border-[#222] bg-[#0a0a0a] rounded-[10px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
 
               {/* Header Slice */}
-              <div className="bg-[#121212] px-6 py-3 flex items-center justify-between border-b border-[#222]">
+              <div className="bg-[#121212] px-5 py-2 flex items-center justify-between border-b border-[#222]">
                 <div className="font-mono text-[11px] tracking-widest">
                   <span className="text-[#666] uppercase">REFERENCE RUN ID:</span>
                   <span className="text-white font-bold ml-2">#TEST-2026-03-17-A</span>
@@ -1463,31 +1472,31 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* Execution Diagram */}
-              <div className="relative px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0">
+              <div className="relative px-5 py-10 md:py-14 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
 
                 {/* Connecting Line (drawn in background) */}
-                <div className="hidden md:block absolute top-[132px] left-[18%] right-[18%] h-[1.5px] bg-gradient-to-r from-[#00d2ff]/80 via-[#111111] to-[#00d2ff]/80 z-0 shadow-[0_0_15px_rgba(0,210,255,0.4)]"></div>
+                <div className="hidden md:block absolute top-[92px] left-[18%] right-[18%] h-[1.5px] bg-gradient-to-r from-[#00d2ff]/80 via-[#111111] to-[#00d2ff]/80 z-0 shadow-[0_0_15px_rgba(0,210,255,0.4)]"></div>
 
                 {/* Left Node (Sepolia) */}
                 <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
-                  <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-6 z-10">
+                  <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-3 z-10">
                     <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 32 32" fill="currentColor">
                       <path d="M15.925 23.969L15.823 24l-7.447-4.391 7.553 10.638 7.57-10.638-7.574 4.36zM15.986 0L8.358 12.67l7.625 4.542 7.643-4.542L15.986 0z" />
                     </svg>
                   </div>
-                  <div className="text-white text-[18px] font-bold tracking-wide mb-3">Sepolia</div>
-                  <div className="text-[#666] text-[12px] mb-2 font-mono whitespace-nowrap tracking-tight">Message Dispatched</div>
-                  <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-3 py-1 font-mono text-[11px] mb-8 min-w-[140px]">
+                  <div className="text-white text-[17px] font-bold tracking-wide mb-1.5">Sepolia</div>
+                  <div className="text-[#666] text-[12px] mb-1.5 font-mono whitespace-nowrap tracking-tight">Message Dispatched</div>
+                  <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-2.5 py-1 font-mono text-[11px] mb-3 min-w-[130px]">
                     0x4f90576e...
                   </div>
-                  <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-1">Block 10464665</div>
+                  <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-0.5">Block 10464665</div>
                 </div>
 
                 {/* Middle Node (ENTANGLE RELAY) */}
-                <div className="relative z-10 w-[170px] bg-[#141414] border border-[#2a2a2a] rounded-[8px] p-5 flex flex-col items-center text-center shadow-[0_0_40px_rgba(0,0,0,0.8)] mt-[-20px] md:mt-[-50px]">
+                <div className="relative z-10 w-[170px] bg-[#141414] border border-[#2a2a2a] rounded-[8px] p-4 flex flex-col items-center text-center shadow-[0_0_40px_rgba(0,0,0,0.8)] mt-[-20px] md:mt-[-40px]">
                   <div className="text-[#777] text-[10px] font-mono tracking-widest uppercase mb-1">ENTANGLE RELAY</div>
-                  <div className="text-white text-[28px] font-bold tracking-tight mb-0.5">8.3s</div>
-                  <div className="flex items-center gap-1 text-[#00e65b] text-[9px] font-bold uppercase tracking-widest font-mono mt-1">
+                  <div className="text-white text-[26px] font-bold tracking-tight mb-0.5">8.3s</div>
+                  <div className="flex items-center gap-1 text-[#00e65b] text-[9px] font-bold uppercase tracking-widest font-mono mt-0.5">
                     <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
                     OPTIMIZED
                   </div>
@@ -1495,17 +1504,17 @@ entangle.sendMessage{value: fees}(
 
                 {/* Right Node (Arbitrum) */}
                 <div className="relative z-10 flex flex-col items-center text-center w-full md:w-[180px]">
-                  <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-6 z-10">
+                  <div className="w-[72px] h-[72px] rounded-full border-[2px] border-[#00d2ff] bg-[#020406] shadow-[0_0_20px_rgba(0,210,255,0.3)] flex items-center justify-center mb-3 z-10">
                     <svg className="w-[30px] h-[30px] text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2L2 7l10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5zm0 6l-10 5 10 5 10-5-10-5z" />
                     </svg>
                   </div>
-                  <div className="text-white text-[18px] font-bold tracking-wide mb-3 whitespace-nowrap">Arbitrum Sepolia</div>
-                  <div className="text-[#666] text-[12px] mb-2 font-mono whitespace-nowrap tracking-tight">Message Received</div>
-                  <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-3 py-1 font-mono text-[11px] mb-8 min-w-[140px]">
+                  <div className="text-white text-[17px] font-bold tracking-wide mb-1.5 whitespace-nowrap">Arbitrum Sepolia</div>
+                  <div className="text-[#666] text-[12px] mb-1.5 font-mono whitespace-nowrap tracking-tight">Message Received</div>
+                  <div className="bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/20 rounded-[4px] px-2.5 py-1 font-mono text-[11px] mb-3 min-w-[130px]">
                     0xf802b3b6...
                   </div>
-                  <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-1">isRelayed = true</div>
+                  <div className="text-[#555] text-[10px] bg-transparent font-mono tracking-widest mt-0.5">isRelayed = true</div>
                 </div>
 
               </div>
@@ -1516,13 +1525,13 @@ entangle.sendMessage{value: fees}(
 
 
 
-        <section id="actions" className="w-full relative z-10 font-sans my-16 md:my-20 px-6">
-          <div className="surface-glass-strong p-8 md:p-10 lg:p-12 rounded-[2.5rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+        <section id="actions" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            <div className="absolute top-[120px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
+            <div className="absolute top-[90px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
 
-            <div className="relative z-10 mb-16 pt-10">
-              <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 mb-8 text-metallic-premium drop-shadow-2xl">
+            <div className="relative z-10 mb-8 pt-4">
+              <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 mb-2 text-metallic-premium drop-shadow-2xl">
                 Start Building. Start Earning.
               </h2>
             </div>
@@ -1609,37 +1618,44 @@ entangle.sendMessage{value: fees}(
               </div>
 
             </div>
+          </div>
+        </section>
 
+        <section id="roadmap" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
+          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            <div className="mt-20 w-full max-w-[1020px] mx-auto surface-solid-accent rounded-[16px] p-10 md:p-14 mb-10 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+            <div className="w-full max-w-[1020px] mx-auto mb-4">
               <h2 className="text-5xl font-semibold tracking-tight mb-8 text-metallic-premium drop-shadow-2xl uppercase">
                 Roadmap to Scale.
               </h2>
 
               {/* Timeline Header Area */}
-              <div className="relative w-full mb-10 h-[40px]">
-                {/* Connecting horizontal lines between nodes */}
-                <div className="absolute top-[10px] left-[16.666%] right-[50%] h-[1.5px] bg-[#00d2ff]"></div>
-                <div className="absolute top-[10px] left-[50%] right-[16.666%] h-[1.5px] bg-[#ff1a66]"></div>
-                <div className="absolute top-[10px] left-[83.333%] right-[0] h-[1.5px] bg-[#ffffff]"></div>
-
-                {/* Node 1 & Drop line */}
-                <div className="absolute top-[3px] left-0 md:left-[2%]">
-                  <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#00d2ff] bg-[#0a0a0a] relative z-10"></div>
-                  <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#00d2ff]"></div>
+              <div className="hidden lg:grid grid-cols-3 gap-8 w-full mb-[0px] h-[45px]">
+                
+                {/* Node 1 */}
+                <div className="relative h-full w-[calc(100%-32px)] ml-8 border-l-[1.5px] border-[#00d2ff] border-opacity-70">
+                  {/* Circle */}
+                  <div className="absolute top-[-7px] left-[-9px] w-[16px] h-[16px] rounded-full border-[3px] border-[#00d2ff] bg-[#0a0a0a] z-10 transition-transform hover:scale-110"></div>
+                  {/* Horizontal Line connecting to Node 2 */}
+                  <div className="absolute top-[0px] left-0 w-[calc(100%+64px)] h-[1.5px] bg-[#00d2ff] z-0 opacity-70"></div>
                 </div>
 
-                {/* Node 2 & Drop line */}
-                <div className="absolute top-[3px] left-[33.33%] md:left-[35.33%]">
-                  <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#ff1a66] bg-[#0a0a0a] relative z-10"></div>
-                  <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#ff1a66]"></div>
+                {/* Node 2 */}
+                <div className="relative h-full w-[calc(100%-32px)] ml-8 border-l-[1.5px] border-[#ff1a66] border-opacity-70">
+                  {/* Circle */}
+                  <div className="absolute top-[-7px] left-[-9px] w-[16px] h-[16px] rounded-full border-[3px] border-[#ff1a66] bg-[#0a0a0a] z-10 transition-transform hover:scale-110"></div>
+                  {/* Horizontal Line connecting to Node 3 */}
+                  <div className="absolute top-[0px] left-0 w-[calc(100%+64px)] h-[1.5px] bg-[#ff1a66] z-0 opacity-70"></div>
                 </div>
 
-                {/* Node 3 & Drop line */}
-                <div className="absolute top-[3px] left-[66.66%] md:left-[68.66%]">
-                  <div className="w-[16px] h-[16px] rounded-full border-[3px] border-[#ffffff] bg-[#0a0a0a] relative z-10"></div>
-                  <div className="absolute top-[14px] left-[7px] w-[1.5px] h-[34px] bg-[#ffffff]"></div>
+                {/* Node 3 */}
+                <div className="relative h-full w-[calc(100%-32px)] ml-8 border-l-[1.5px] border-[#ffffff] border-opacity-70">
+                  {/* Circle */}
+                  <div className="absolute top-[-7px] left-[-9px] w-[16px] h-[16px] rounded-full border-[3px] border-[#ffffff] bg-[#0a0a0a] z-10 transition-transform hover:scale-110"></div>
+                  {/* Horizontal Line trailing off to edge */}
+                  <div className="absolute top-[0px] left-0 w-full h-[1.5px] bg-[#ffffff] z-0 opacity-70"></div>
                 </div>
+
               </div>
 
               {/* Grid Content Area for Phases */}
@@ -1723,7 +1739,7 @@ entangle.sendMessage{value: fees}(
 
               </div>
 
-              <div className="border-t border-[#1a1a1a] mt-12 pt-6 flex justify-end gap-5 text-white">
+              <div className="border-t border-[#1a1a1a] mt-6 pt-4 flex justify-end gap-5 text-white">
                 <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /></svg>
                 <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" /></svg>
                 <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.946 2.4189-2.1568 2.4189z" /></svg>
