@@ -293,17 +293,6 @@ export default function Home() {
 
               <div className="relative mt-32 mb-16 w-full max-w-5xl mx-auto overflow-x-auto md:overflow-visible pb-16 md:pb-0">
                 <div className="min-w-[800px] w-full px-12 md:px-0">
-                  {/* Background Contrast Orbs */}
-                  <div className="absolute top-1/2 left-[25%] -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none mix-blend-screen opacity-70 flex items-center justify-center">
-                    <div className="absolute w-[350px] h-[350px] rounded-full bg-[#ff1a66] opacity-[0.15] blur-[80px] animate-pulse-slow"></div>
-                    <div className="absolute w-[200px] h-[200px] rounded-full bg-[#ff1a66] opacity-[0.25] blur-[60px]"></div>
-                  </div>
-
-                  <div className="absolute top-1/2 left-[75%] -translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none mix-blend-screen opacity-70 flex items-center justify-center">
-                    <div className="absolute w-[350px] h-[350px] rounded-full bg-[#00d2ff] opacity-[0.15] blur-[80px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-                    <div className="absolute w-[200px] h-[200px] rounded-full bg-[#00d2ff] opacity-[0.25] blur-[60px]"></div>
-                  </div>
-
                   <div className="relative z-10 w-full h-[200px] mt-16 mb-24 flex items-center">
 
                     {/* The Flowing Sine Wave Path */}
@@ -352,8 +341,12 @@ export default function Home() {
                         let textPos = 'bottom';
                         if (i === 1 || i === 3 || i === 5) { y = 0; textPos = 'top'; }
                         else if (i === 2 || i === 4 || i === 6) { y = 100; textPos = 'bottom'; }
-                        else if (i === 0) { y = 50; textPos = 'top'; }
-                        else if (i === 7) { y = 50; textPos = 'bottom'; }
+                        else if (i === 0) { y = 50; textPos = 'bottom'; } // Changed to bottom
+                        else if (i === 7) { y = 50; textPos = 'top'; }    // Changed to top
+
+                        let alignStyle: React.CSSProperties = {};
+                        if (i === 0) alignStyle = { transform: 'translateX(28%)' };
+                        if (i === 7) alignStyle = { transform: 'translateX(-28%)' };
 
                         return (
                           <div key={i} style={{ left: `${x}%`, top: `${y}%` }} className="absolute z-20 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 group">
@@ -373,7 +366,7 @@ export default function Home() {
                               <div className={`absolute inset-[-6px] rounded-full border border-dashed ${isCyan ? 'border-[#00d2ff]/60' : 'border-[#ff1a66]/60'} animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}></div>
 
                               {/* Text Content */}
-                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} w-56 text-center flex flex-col items-center pointer-events-none z-30`}>
+                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} w-56 text-center flex flex-col items-center pointer-events-none z-30`} style={alignStyle}>
                                 <div className="bg-black/35 backdrop-blur-xl px-4 py-3 rounded-2xl flex flex-col items-center border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
                                   <div className={`text-[12px] font-black tracking-[0.2em] mb-1.5 ${textColorClass} uppercase`}>{step[0]}</div>
                                   <div className="text-[12px] text-gray-200 leading-snug max-w-[140px]">{step[1]}</div>

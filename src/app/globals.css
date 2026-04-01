@@ -78,6 +78,13 @@ main code .font-mono {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.surface-glass-extreme {
+  background: rgba(6, 6, 8, 0.8);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
 .surface-solid-accent {
   background: #0a0a0a;
   border: 1px solid #1a1a1a;
