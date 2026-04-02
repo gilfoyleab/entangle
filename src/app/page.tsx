@@ -290,59 +290,95 @@ export default function Home() {
 
               <div className="relative z-10 mt-32 mb-16 w-full max-w-5xl mx-auto overflow-x-auto md:overflow-visible pb-16 md:pb-0">
                 <div className="min-w-[800px] w-full px-12 md:px-0">
-                  <div className="relative z-10 w-full h-[200px] mt-16 mb-24 flex items-center">
+                  <div className="relative z-10 w-full h-[180px] mt-24 mb-24 flex items-center">
 
-                    {/* The Flowing Sine Wave Path */}
+                    {/* The Bus Topology Path */}
                     <div className="absolute inset-x-8 md:inset-x-0 inset-y-0 pointer-events-none">
                       <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
                         <defs>
                           <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#cccccc" />
-                            <stop offset="100%" stopColor="#cccccc" />
+                            <stop offset="0%" stopColor="#cccccc" stopOpacity="0.1" />
+                            <stop offset="15%" stopColor="#cccccc" />
+                            <stop offset="85%" stopColor="#cccccc" />
+                            <stop offset="100%" stopColor="#cccccc" stopOpacity="0.1" />
                           </linearGradient>
                           <filter id="glowFlow" x="-20%" y="-20%" width="140%" height="140%">
                             <feGaussianBlur stdDeviation="3" result="blur" />
                             <feComposite in="SourceGraphic" in2="blur" operator="over" />
                           </filter>
                         </defs>
+
+                        {/* Main Bus Line */}
                         <path
-                          d="M 0,50 C 7.1428,50 7.1428,0 14.2857,0 C 21.4285,0 21.4285,100 28.5714,100 C 35.7142,100 35.7142,0 42.8571,0 C 49.9999,0 49.9999,100 57.1428,100 C 64.2856,100 64.2856,0 71.4285,0 C 78.5713,0 78.5713,100 85.7142,100 C 92.8570,100 92.8570,50 100,50"
+                          d="M 0,50 L 100,50"
                           fill="none"
                           stroke="rgba(255,255,255,0.08)"
-                          strokeWidth="2"
+                          strokeWidth="1.5"
                           vectorEffect="non-scaling-stroke"
                         />
                         <motion.path
                           initial={{ pathLength: 0, opacity: 0 }}
                           whileInView={{ pathLength: 1, opacity: 1 }}
                           viewport={{ once: true, margin: "-100px" }}
-                          transition={{ duration: 2.5, ease: "easeInOut" }}
-                          d="M 0,50 C 7.1428,50 7.1428,0 14.2857,0 C 21.4285,0 21.4285,100 28.5714,100 C 35.7142,100 35.7142,0 42.8571,0 C 49.9999,0 49.9999,100 57.1428,100 C 64.2856,100 64.2856,0 71.4285,0 C 78.5713,0 78.5713,100 85.7142,100 C 92.8570,100 92.8570,50 100,50"
+                          transition={{ duration: 1.5, ease: "easeInOut" }}
+                          d="M 0,50 L 100,50"
                           fill="none"
                           stroke="url(#flowGradient)"
-                          strokeWidth="3"
+                          strokeWidth="2.5"
                           vectorEffect="non-scaling-stroke"
                           filter="url(#glowFlow)"
                         />
+
+                        {/* Connector Branches */}
+                        {flowSteps.map((_, i) => {
+                          const x = 10 + i * (80 / 7);
+                          const isTop = (i % 2 === 0);
+                          const yNodeBox = isTop ? -25 : 125;
+                          return (
+                            <motion.line
+                              key={i}
+                              x1={x}
+                              y1="50"
+                              x2={x}
+                              y2={yNodeBox}
+                              stroke="rgba(204,204,204,0.3)"
+                              strokeWidth="1.5"
+                              vectorEffect="non-scaling-stroke"
+                              initial={{ pathLength: 0, opacity: 0 }}
+                              whileInView={{ pathLength: 1, opacity: 1 }}
+                              viewport={{ once: true, margin: "-100px" }}
+                              transition={{ duration: 0.4, delay: 0.8 + (i * 0.1) }}
+                            />
+                          );
+                        })}
                       </svg>
                     </div>
 
                     <div className="absolute inset-x-8 md:inset-x-0 inset-y-0">
+                      {/* Junction Dots overlay */}
+                      {flowSteps.map((_, i) => {
+                        const x = 10 + i * (80 / 7);
+                        return (
+                          <motion.div
+                            key={`junction-${i}`}
+                            initial={{ scale: 0, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            viewport={{ once: true, margin: '-50px' }}
+                            transition={{ duration: 0.3, delay: 1.0 + (i * 0.1) }}
+                            className="absolute w-[6px] h-[6px] rounded-full bg-[#0a0d10] border-[1.5px] border-[#cccccc] pointer-events-none"
+                            style={{ left: `${x}%`, top: `50%`, transform: 'translate(-50%, -50%)', zIndex: 10 }}
+                          />
+                        )
+                      })}
+
                       {flowSteps.map((step, i) => {
                         const colorClass = 'bg-[#cccccc]';
                         const textColorClass = 'text-[#cccccc]';
 
-                        const x = i * (100 / 7);
-                        let y = 50;
-                        let textPos = 'bottom';
-                        if (i === 1 || i === 3 || i === 5) { y = 0; textPos = 'top'; }
-                        else if (i === 2 || i === 4 || i === 6) { y = 100; textPos = 'bottom'; }
-                        else if (i === 0) { y = 50; textPos = 'bottom'; } // Changed to bottom
-                        else if (i === 7) { y = 50; textPos = 'top'; }    // Changed to top
-
-                        let alignStyle: React.CSSProperties = {};
-                        if (i === 0) alignStyle = { transform: 'translateX(28%)' };
-                        if (i === 7) alignStyle = { transform: 'translateX(-28%)' };
+                        const x = 10 + i * (80 / 7);
+                        const isTop = (i % 2 === 0);
+                        const y = isTop ? 0 : 100;
+                        const textPos = isTop ? 'top' : 'bottom';
 
                         return (
                           <div key={i} style={{ left: `${x}%`, top: `${y}%` }} className="absolute z-20 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 group">
@@ -350,22 +386,22 @@ export default function Home() {
                               initial={{ opacity: 0, scale: 0 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               viewport={{ once: true, margin: '-50px' }}
-                              transition={{ duration: 0.6, delay: 0.2 + (i * 0.15), type: 'spring', stiffness: 200, damping: 20 }}
+                              transition={{ duration: 0.5, delay: 0.2 + (i * 0.15), type: 'spring', stiffness: 200, damping: 20 }}
                               className="relative flex items-center justify-center"
                             >
                               {/* Circle Node */}
-                              <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-black text-[14px] relative z-20 ${colorClass} shadow-[0_0_20px_rgba(0,0,0,0.8)] border-2 border-transparent group-hover:border-white/50 transition-all duration-300 group-hover:scale-110`}>
+                              <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-black text-[12px] relative z-20 ${colorClass} shadow-[0_0_15px_rgba(204,204,204,0.5)] border-[1.5px] border-transparent group-hover:border-white/50 transition-all duration-300 group-hover:scale-110`}>
                                 {i + 1}
                               </div>
 
                               {/* Outer Rotating Ring */}
-                              <div className="absolute inset-[-6px] rounded-full border border-dashed border-[#cccccc]/60 animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                              <div className="absolute inset-[-5px] rounded-full border border-dashed border-[#cccccc]/50 animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
                               {/* Text Content */}
-                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} w-56 text-center flex flex-col items-center pointer-events-none z-30`} style={alignStyle}>
-                                <div className="bg-black/35 backdrop-blur-xl px-4 py-3 rounded-2xl flex flex-col items-center border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-                                  <div className={`text-[12px] font-black tracking-[0.2em] mb-1.5 ${textColorClass} uppercase`}>{step[0]}</div>
-                                  <div className="text-[12px] text-gray-200 leading-snug max-w-[140px]">{step[1]}</div>
+                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} text-center flex flex-col items-center pointer-events-none z-30`}>
+                                <div className="w-[140px] h-[76px] bg-black/90 backdrop-blur-md px-3 py-2 rounded-[12px] flex flex-col items-center justify-center border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+                                  <div className={`text-[10px] font-black tracking-[0.1em] mb-1 ${textColorClass} uppercase text-center w-full`}>{step[0]}</div>
+                                  <div className="text-[10px] text-gray-400 leading-[1.3] text-center w-full">{step[1]}</div>
                                 </div>
                               </div>
                             </motion.div>
@@ -402,72 +438,63 @@ export default function Home() {
 
         <section id="developers" className="my-24 md:my-32 px-6 md:px-12 w-full max-w-7xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
-            {/* Background Crosshair Lines */}
-            <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-white/5 pointer-events-none hidden xl:block"></div>
-            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/5 pointer-events-none hidden xl:block"></div>
-
-            <div className="grid xl:grid-cols-2 gap-12 xl:gap-20 items-center relative z-10">
+            <div className="grid xl:grid-cols-2 gap-12 xl:gap-20 items-stretch relative z-10">
 
               {/* Left Column */}
-              <div className="relative pr-4 xl:pr-8">
-                <div className="w-5 h-5 border-t border-l border-white/20 mb-6 opacity-50"></div>
-
-                <div className="inline-block relative z-10 mb-8">
-                  <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] text-metallic-premium drop-shadow-2xl">
-                    One contract.<br />
-                    <span>Any chain.</span>
-                  </h2>
-                </div>
-
-                <div className="space-y-6 relative">
-                  <div className="flex gap-6">
-                    <div className="w-6 shrink-0"></div>
-                    <div>
-                      <h3 className="text-[17px] font-bold text-white mb-1.5">Standardized Interface</h3>
-                      <p className="text-gray-400 text-[13px] leading-relaxed">Write once using our Solidity SDK. Deploy to EVM, Solana, Cosmos, and Stellar without changes.</p>
-                    </div>
+              <div className="relative z-10 w-full h-full group py-6 xl:py-0 flex flex-col">
+                <div className="rounded-xl border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner p-8 md:p-10 flex-1 flex flex-col justify-center">
+                  <div className="inline-block relative z-10 mb-8">
+                    <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] text-metallic-premium drop-shadow-2xl">
+                      One contract.<br />
+                      <span>Any chain.</span>
+                    </h2>
                   </div>
 
-                  <div className="flex gap-6 relative">
-                    <div className="w-6 shrink-0 flex items-start justify-center pt-1">
-                      <Shield className="w-5 h-5 text-[#cccccc]" />
-                    </div>
-                    <div>
-                      <h3 className="text-[17px] font-bold text-white mb-1.5">Automated Security</h3>
-                      <p className="text-gray-400 text-[13px] leading-relaxed">Signatures verified on-chain. Fees calculated automatically. No manual oracle management needed.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-6 relative">
-                    <div className="w-6 shrink-0 flex items-start justify-center pt-1">
-                      <Zap className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-[17px] font-bold text-white mb-1.5">Instant Integration</h3>
-                      <p className="text-gray-400 text-[13px] leading-relaxed">Copy our interface. Call sendMessage(). You're cross-chain in under 10 minutes.</p>
+                  <div className="space-y-6 relative">
+                    <div className="flex gap-6">
+                      <div className="w-6 shrink-0"></div>
+                      <div>
+                        <h3 className="text-[17px] font-bold text-white mb-1.5">Standardized Interface</h3>
+                        <p className="text-gray-400 text-[13px] leading-relaxed">Write once using our Solidity SDK. Deploy to EVM, Solana, Cosmos, and Stellar without changes.</p>
+                      </div>
                     </div>
 
-                    {/* Faint connector line going to code block - only visible on xl */}
-                    <div className="hidden xl:block absolute -right-12 top-4 w-12 h-[1px] bg-[#ffffff33] pointer-events-none"></div>
-                    <div className="hidden xl:block absolute right-[-48px] top-4 w-[1px] h-[64px] bg-[#ffffff33] pointer-events-none"></div>
-                    <div className="hidden xl:block absolute -right-20 top-[68px] w-8 h-[1px] bg-[#ffffff33] pointer-events-none"></div>
-                  </div>
+                    <div className="flex gap-6 relative">
+                      <div className="w-6 shrink-0 flex items-start justify-center pt-1">
+                        <Shield className="w-5 h-5 text-[#cccccc]" />
+                      </div>
+                      <div>
+                        <h3 className="text-[17px] font-bold text-white mb-1.5">Automated Security</h3>
+                        <p className="text-gray-400 text-[13px] leading-relaxed">Signatures verified on-chain. Fees calculated automatically. No manual oracle management needed.</p>
+                      </div>
+                    </div>
 
-                  <div className="ml-12 pt-2">
-                    <button
-                      onClick={() => scrollTo('actions')}
-                      className="flex items-center gap-2 px-5 py-3 bg-[#cccccc] hover:bg-gray-300 text-black font-extrabold text-[12px] tracking-wide transition-colors"
-                    >
-                      START BUILDING
-                      <ArrowRight className="w-4 h-4 text-black" strokeWidth={3} />
-                    </button>
+                    <div className="flex gap-6 relative">
+                      <div className="w-6 shrink-0 flex items-start justify-center pt-1">
+                        <Zap className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-[17px] font-bold text-white mb-1.5">Instant Integration</h3>
+                        <p className="text-gray-400 text-[13px] leading-relaxed">Copy our interface. Call sendMessage(). You're cross-chain in under 10 minutes.</p>
+                      </div>
+                    </div>
+
+                    <div className="ml-12 pt-4">
+                      <button
+                        onClick={() => scrollTo('actions')}
+                        className="flex items-center gap-2 px-5 py-3 bg-[#cccccc] hover:bg-gray-300 text-black font-extrabold text-[12px] tracking-wide transition-colors"
+                      >
+                        START BUILDING
+                        <ArrowRight className="w-4 h-4 text-black" strokeWidth={3} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Right Column */}
-              <div className="relative z-10 w-full max-w-lg mx-auto xl:mx-0 xl:ml-auto group py-10 xl:py-0">
-                <div className="rounded-xl overflow-hidden border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner">
+              <div className="relative z-10 w-full h-full max-w-lg mx-auto xl:mx-0 xl:ml-auto group py-10 xl:py-0 flex flex-col">
+                <div className="rounded-xl overflow-hidden border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner flex-1 flex flex-col">
                   <div className="bg-black/40 border-b border-white/5 py-3 px-4 flex items-center backdrop-blur-sm">
                     <div className="flex gap-2">
                       <div className="w-3 h-3 rounded-full bg-[#b5b5b5]" />
@@ -513,7 +540,6 @@ entangle.sendMessage{value: fees}(
 
         <section id="chain-support" className="my-24 md:my-32 px-6 md:px-12 w-full max-w-5xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
-            <div className="w-10 h-[3px] bg-[#cccccc] mb-6 relative z-10"></div>
             <div className="inline-block relative z-10 mb-8">
               <h2 className="text-5xl font-semibold tracking-tight leading-[1.1] pb-1 mb-3 text-metallic-premium drop-shadow-2xl">Chain Support</h2>
               <p className="text-gray-400 text-sm md:text-[15px]">One clean interface. Connecting the biggest ecosystems.</p>
@@ -740,11 +766,6 @@ entangle.sendMessage{value: fees}(
         <section id="consensus" className="w-full relative z-10 font-sans my-24 md:my-32 px-6">
           <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
-
-            {/* Horizontal Grid Lines */}
-            <div className="absolute top-[160px] md:top-[180px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
-            <div className="absolute top-[480px] md:top-[620px] left-[-20vw] right-[-20vw] h-[1px] bg-[#1a1a1a] pointer-events-none z-0"></div>
-
             <div className="relative z-10 pt-4 md:pt-8">
               <div className="inline-block relative z-10">
                 <h2 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] pb-1 text-metallic-premium drop-shadow-2xl">
@@ -757,8 +778,12 @@ entangle.sendMessage{value: fees}(
             <div className="relative z-10 mt-8 md:mt-10 grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-8 items-center">
 
               {/* Graphical representation of the consensus model */}
-              <div className="relative flex flex-col items-center justify-center">
-                <div className="relative w-[280px] h-[280px]">
+              <div className="relative flex flex-col items-center justify-center h-full">
+                
+                {/* Properly Aligned Dashed Schematic Crosshairs */}
+                <div className="absolute top-[140px] left-[-50vw] w-[200vw] border-t border-dashed border-white/5 pointer-events-none z-0"></div>
+
+                <div className="relative w-[280px] h-[280px] z-10">
 
                   {/* Central Faint Blue Box */}
                   <div className="absolute inset-[35px] bg-[#0c1f26] flex items-center justify-center">
@@ -848,7 +873,7 @@ entangle.sendMessage{value: fees}(
 
             <div className="p-8 md:p-12 lg:p-16 relative z-10">
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6 text-metallic-premium drop-shadow-2xl">
-                Dual Income: Native Fees +<br className="hidden md:block"/>
+                Dual Income: Native Fees +<br className="hidden md:block" />
                 Protocol Rewards
               </h2>
 
@@ -875,7 +900,7 @@ entangle.sendMessage{value: fees}(
           <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
             {/* Horizontal Line separating sections yaa do it */}
-            
+
             <div className="absolute top-[100px] left-[-20vw] right-[-20vw] h-[1px] bg-[#111111] pointer-events-none z-0"></div>
 
             <div className="inline-block relative z-10 mb-8 pl-2">
@@ -1618,7 +1643,7 @@ entangle.sendMessage{value: fees}(
 
               {/* Timeline Header Area */}
               <div className="hidden lg:grid grid-cols-3 gap-8 w-full mb-[0px] h-[45px]">
-                
+
                 {/* Node 1 */}
                 <div className="relative h-full w-[calc(100%-32px)] ml-8 border-l-[1.5px] border-[#cccccc] border-opacity-70">
                   {/* Circle */}
