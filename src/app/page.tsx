@@ -502,31 +502,17 @@ export default function Home() {
                     </div>
                     <div className="text-xs font-medium text-gray-500 flex-1 text-center pr-12">CrossChainSwap.sol</div>
                   </div>
-                  {/* Code syntax left uncolored explicitly as requested */}
+                  {/* Code syntax mostly uncolored, but comments specifically dimmed */}
                   <pre className="p-6 md:p-8 text-[13px] leading-relaxed text-gray-300 overflow-x-auto bg-transparent">
-                    <code>{`import "IEntangle.sol";
-
-// 1. Define destination
-string memory dstChain = "arbitrum";
-bytes memory dstAddr = abi.encode(user);
-
-// 2. Pack your payload
-bytes memory payload = abi.encode(
-  "SWAP",
-  tokenAddress,
-  amount
-);
-
-// 3. Send message!
-uint256 fees = entangle.getFee(
-  dstChain, payload.length
-);
-
-entangle.sendMessage{value: fees}(
-  dstChain,
-  dstAddr,
-  payload
-);`}</code>
+                    <code>
+                      {`import "IEntangle.sol";\n\n`}
+                      <span className="text-gray-500">{`// 1. Define destination`}</span>
+                      {`\nstring memory dstChain = "arbitrum";\nbytes memory dstAddr = abi.encode(user);\n\n`}
+                      <span className="text-gray-500">{`// 2. Pack your payload`}</span>
+                      {`\nbytes memory payload = abi.encode(\n  "SWAP",\n  tokenAddress,\n  amount\n);\n\n`}
+                      <span className="text-gray-500">{`// 3. Send message!`}</span>
+                      {`\nuint256 fees = entangle.getFee(\n  dstChain, payload.length\n);\n\nentangle.sendMessage{value: fees}(\n  dstChain,\n  dstAddr,\n  payload\n);`}
+                    </code>
                   </pre>
                 </div>
               </div>
@@ -822,11 +808,11 @@ entangle.sendMessage{value: fees}(
                 </div>
               </div>
 
-              {/* Stacked Highlighted Cards */}
-              <div className="flex flex-col bg-black/20 backdrop-blur-md shadow-inner rounded-2xl overflow-hidden border border-white/5">
+              {/* Separated Highlighted Cards */}
+              <div className="flex flex-col gap-4">
 
                 {/* Multi-Chain Signatures */}
-                <div className="border-b border-white/5 border-l-[3px] border-l-[#cccccc] p-5 md:p-6 bg-transparent hover:bg-white/5 transition-colors">
+                <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
                   <h3 className="text-white text-[17px] font-bold mb-3 md:mb-4">Multi-Chain Signatures</h3>
                   <div className="text-[13px] md:text-[14px]">
                     <div className="mb-2">
@@ -839,7 +825,7 @@ entangle.sendMessage{value: fees}(
                 </div>
 
                 {/* On-Chain Verification */}
-                <div className="border-b border-white/5 border-l-[3px] border-l-[#cccccc] p-5 md:p-6 bg-transparent hover:bg-white/5 transition-colors">
+                <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
                   <h3 className="text-white text-[17px] font-bold mb-3 md:mb-4">On-Chain Verification</h3>
                   <p className="text-[#888] text-[13px] md:text-[14px] mb-4">Smart contracts enforce cryptographic proofs.</p>
                   <div className="bg-[#0b1d26] border border-[#cccccc]/10 text-[#cccccc] text-[13px] px-3 py-1.5 inline-block rounded">
@@ -848,7 +834,7 @@ entangle.sendMessage{value: fees}(
                 </div>
 
                 {/* Trust Minimized */}
-                <div className="border-l-[3px] border-l-[#cccccc] p-5 md:p-6 bg-transparent hover:bg-white/5 transition-colors">
+                <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
                   <h3 className="text-white text-[17px] font-bold mb-3 md:mb-4">Trust Minimized</h3>
                   <p className="text-[#888] text-[13px] md:text-[14px] leading-relaxed max-w-sm">
                     No single validator can authorize a delivery.<br />
@@ -914,17 +900,17 @@ entangle.sendMessage{value: fees}(
 
               <div className="flex flex-col md:flex-row relative">
                 {/* Faint internal vertical divider for desktop */}
-                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-[#ffffff08]"></div>
+                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-white/20"></div>
 
                 {/* Left Column Component */}
                 <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
                   <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#cccccc] bg-[#cccccc]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(204,204,204,0.2)] mb-8">
-                    <svg className="w-[38px] h-[38px] text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 11c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 2c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 2.22 1.21 4.15 3 5.19l1-1.74c-1.19-.7-2-1.97-2-3.45 0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.48-.81 2.75-2 3.45l1 1.74c1.79-1.04 3-2.97 3-5.19zM12 3C7.03 3 3 7.03 3 12c0 3.32 1.8 6.22 4.5 7.79l1-1.73C6.39 16.89 5 14.61 5 12c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.61-1.39 4.89-3.5 6.06l1 1.73C19.2 18.22 21 15.32 21 12c0-4.97-4.03-9-9-9z" />
+                    <svg className="w-[40px] h-[40px] text-[#cccccc]" fill="currentColor" viewBox="0 0 512 512">
+                      <path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
                     </svg>
                   </div>
 
-                  <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4 shadow-[#cccccc] drop-shadow-[0_0_15px_rgba(204,204,204,0.6)]">~30%</div>
+                  <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4">~30%</div>
                   <div className="text-[10px] font-semibold text-[#cccccc] mb-4">SUBNET TAO EMISSIONS</div>
 
                   <p className="text-[#666] text-[13px] leading-relaxed max-w-[200px]">
@@ -1005,7 +991,7 @@ entangle.sendMessage{value: fees}(
 
               <div className="flex flex-col md:flex-row relative">
                 {/* Faint internal vertical divider for desktop */}
-                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-[#ffffff08]"></div>
+                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-white/20"></div>
 
                 {/* Left Column Component */}
                 <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
@@ -1015,7 +1001,7 @@ entangle.sendMessage{value: fees}(
                     </svg>
                   </div>
 
-                  <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4 shadow-[#cccccc] drop-shadow-[0_0_15px_rgba(204,204,204,0.6)]">~70%</div>
+                  <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4">~70%</div>
                   <div className="text-[10px] font-semibold text-[#cccccc] mb-4">SUBNET TAO EMISSIONS</div>
 
                   <p className="text-[#666] text-[13px] leading-relaxed max-w-[200px]">
@@ -1278,14 +1264,17 @@ entangle.sendMessage{value: fees}(
               </div>
 
               {/* 6. Blended Score Box */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 shadow-2xl z-20">
-                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">Σ</div>
+              <div className="relative border border-white/10 bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                 <div className="text-white text-[20px] font-bold mb-1 drop-shadow-md">Blended Score</div>
-                <div className="text-gray-400 text-[10px] uppercase mb-4 font-bold">FINAL FORMULA</div>
-                <div className="text-[14px] leading-[1.8] drop-shadow-md">
-                  <div className="text-gray-300 mb-2">Score = </div>
-                  <div><span className="text-[#cccccc] font-bold">0.70</span> <span className="text-white mx-1 text-xs px-0.5">×</span> <span className="text-gray-200">Exec +</span></div>
-                  <div><span className="text-[#cccccc] font-bold">0.30</span> <span className="text-white mx-1 text-xs px-0.5">×</span> <span className="text-gray-200">Bid</span></div>
+                <div className="text-gray-400 text-[10px] uppercase mb-3 font-bold tracking-[0.1em]">FINAL FORMULA</div>
+                <div className="text-[16px] leading-[1.6] font-mono whitespace-nowrap drop-shadow-md">
+                  <div className="text-white mb-1">Score =</div>
+                  <div>
+                    <span className="text-[#cccccc]">0.70</span> <span className="text-[#666]">×</span> <span className="text-white">Exec</span> <span className="text-[#666]"> +</span>
+                  </div>
+                  <div>
+                    <span className="text-[#cccccc]">0.30</span> <span className="text-[#666]">×</span> <span className="text-white">Bid</span>
+                  </div>
                 </div>
               </div>
 
