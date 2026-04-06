@@ -4,6 +4,7 @@ import { Scene } from '@/components/canvas/Scene';
 import Image from 'next/image';
 import logoImg from '@/app/asset/logo.png';
 import entImg from '@/app/asset/ep_graphic_elements_compressed.png';
+import { ChainIcons } from '@/app/ChainIcons';
 import {
   Activity,
   ArrowRight,
@@ -45,20 +46,20 @@ const heroVariant: Variants = {
 };
 
 const flowSteps = [
-  ['SEND', 'dApp calls sendMessage()'],
-  ['EMIT', 'Event Dispatched on-chain'],
-  ['SCAN', 'Miner detects event'],
-  ['CHECK', 'Validator verifies'],
-  ['ATTEST', 'Validators Threshold signatures'],
-  ['AUCTION', '2s sealed bid window'],
-  ['DELIVER', 'Winner executes tx'],
-  ['SCORE', 'Proof verified & recorded'],
+  ['Send', 'dApp calls sendMessage()'],
+  ['Emit', 'Event dispatched on-chain'],
+  ['Scan', 'Miner detects event'],
+  ['Check', 'Validator verifies'],
+  ['Attest', 'Validators threshold signatures'],
+  ['Auction', '2s sealed bid window'],
+  ['Deliver', 'Winner executes tx'],
+  ['Score', 'Proof verified & recorded'],
 ] as const;
 
 const deliveryBenchmarks = [
-  ['5 - 12s', 'SOLANA & HIGH PERF', '(SUI/STELLAR)'],
-  ['8 - 25s', 'EVM L2S (ARB, BASE)', ''],
-  ['60s+', 'ETHEREUM L1 (FINALITY)', ''],
+  ['5 - 12s', 'Solana & High Perf', '(Sui/Stellar)'],
+  ['8 - 25s', 'EVM L2s (Arb, Base)', ''],
+  ['60s+', 'Ethereum L1 (Finality)', ''],
 ] as const;
 
 const developerPillars = [
@@ -189,6 +190,24 @@ export default function Home() {
           <span className="font-light text-lg lowercase text-gray-200">entangle protocol</span>
         </div>
 
+        <nav className="hidden md:flex items-center gap-8">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => scrollTo('developers')}
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Developer
+          </button>
+          <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+            White Paper
+          </a>
+        </nav>
+
         <button
           onClick={() => scrollTo('actions')}
           className="px-6 py-2 text-sm font-medium text-white transition-all bg-white/10 border rounded-full shadow-xl border-white/20 hover:bg-white/20 backdrop-blur-sm"
@@ -202,7 +221,7 @@ export default function Home() {
           <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl relative z-10">
             <div className="relative">
               <h1 className="type-display mb-8 text-metallic-premium drop-shadow-2xl max-w-[1400px] overflow-visible">
-                <span className="block">AI-Powered</span>
+                <span className="block text-[0.92em] md:text-[0.88em]">AI-Powered</span>
                 <span className="block whitespace-nowrap text-[0.92em] md:text-[0.88em] pb-3">Cross-Chain Messaging</span>
               </h1>
             </div>
@@ -229,12 +248,12 @@ export default function Home() {
             <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
               <div className="type-display text-white mb-4">$3.7T</div>
               <div className="type-body text-white mb-2">Blockchains don&apos;t talk.</div>
-              <div className="type-label text-gray-400 leading-relaxed">Trapped in isolated ecosystems.</div>
+              <div className="type-body text-gray-400 leading-relaxed">Trapped in isolated ecosystems.</div>
             </div>
             <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
               <div className="type-display text-white mb-4">$2.7B</div>
               <div className="type-body text-white mb-2">Stolen from bridges.</div>
-              <div className="type-label text-gray-400 leading-relaxed">(2021-2023). Users chain-jailed. Adoption stalls.</div>
+              <div className="type-body text-gray-400 leading-relaxed">(2021-2023). Users chain-jailed. Adoption stalls.</div>
             </div>
           </motion.div>
         </section>
@@ -279,10 +298,13 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative w-full flex justify-center overflow-visible"
             >
+              <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+                <div className="h-[88%] w-[90%] rounded-[999px] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.7)_46%,rgba(0,0,0,0)_76%)] blur-[26px]"></div>
+              </div>
               <Image
                 src={entImg}
                 alt="Entangle Protocol Network Structure"
-                className="w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out"
+                className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out"
                 priority
               />
             </motion.div>
@@ -409,7 +431,7 @@ export default function Home() {
                               {/* Text Content */}
                               <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} text-center flex flex-col items-center pointer-events-none z-30`}>
                                 <div className="w-[160px] h-[95px] bg-black/20 backdrop-blur-md px-4 py-3 rounded-[12px] flex flex-col items-center justify-center gap-1.5 border border-white/10 shadow-inner hover:bg-white/5 transition-colors">
-                                  <div className={`type-subtitle ${textColorClass} uppercase text-center w-full leading-tight`}>{step[0]}</div>
+                                  <div className={`type-subtitle ${textColorClass} text-center w-full leading-tight`}>{step[0]}</div>
                                   <div className="text-[11px] md:text-[12px] text-gray-400 leading-[1.3] text-center w-full">{step[1]}</div>
                                 </div>
                               </div>
@@ -437,7 +459,7 @@ export default function Home() {
               {deliveryBenchmarks.map(([value, title, subtitle]) => (
                 <div key={title} className="rounded-[2rem] border border-white/5 bg-black/20 backdrop-blur-md shadow-inner px-8 py-10 transition-colors hover:bg-white/5">
                   <div className="type-title text-white mb-5">{value}</div>
-                  <div className="type-body uppercase text-gray-300 mb-2 font-medium">{title}</div>
+                  <div className="type-body text-gray-300 mb-2 font-medium">{title}</div>
                   {subtitle ? <div className="text-xs text-gray-400 mt-2">{subtitle}</div> : null}
                 </div>
               ))}
@@ -460,8 +482,10 @@ export default function Home() {
                   </div>
 
                   <div className="space-y-6 relative">
-                    <div className="flex gap-6">
-                      <div className="w-6 shrink-0"></div>
+                    <div className="flex gap-6 relative">
+                      <div className="w-6 shrink-0 flex items-start justify-center pt-1">
+                        <Network className="w-5 h-5 text-[#cccccc]" />
+                      </div>
                       <div>
                         <h3 className="type-subtitle text-white mb-1.5">Standardized Interface</h3>
                         <p className="type-body text-gray-400">Write once using our Solidity SDK. Deploy to EVM, Solana, Cosmos, and Stellar without changes.</p>
@@ -550,31 +574,29 @@ export default function Home() {
                     <div key={name} className={`flex flex-col items-center justify-center pb-6 bg-transparent hover:bg-white/5 transition-colors ${extra} relative group`}>
                       <div className="mb-4 h-12 flex items-center justify-center w-full">
                         {name === 'Ethereum' && (
-                          <div className="w-8 h-[52px] relative opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)] flex flex-col items-center">
-                            <svg width="34" height="52" viewBox="0 0 256 417" fill="none">
-                              <path d="M127.962 0L0 212.32l127.962 75.639V0z" fill="#cccccc" />
-                              <path d="M127.961 0v287.958l127.962-75.638L127.961 0z" fill="#888888" />
-                              <path d="M127.962 416.905v-104.72L0 236.585z" fill="#999999" />
-                              <path d="M127.961 416.905v-104.718L256 236.587z" fill="#555555" />
-                            </svg>
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]">
+                            <ChainIcons.ethereum className="w-[38px] h-[38px] text-white" />
                           </div>
                         )}
                         {name === 'Arbitrum' && (
-                          <div className="flex flex-col justify-center items-center opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
-                            <svg width="44" height="44" viewBox="0 0 24 24" fill="white">
-                              <path d="M12 2L1 7l11 5 11-5L12 2zm0 13.5L1.5 10l-1 .5L12 16l11.5-5.5-1-.5L12 15.5zm0 4.5L1.5 14.5l-1 .5L12 20.5l11.5-5.5-1-.5L12 20z" />
-                            </svg>
+                          <div className="flex flex-col justify-center items-center opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.35)]">
+                            <img
+                              src="/chain-logos/arbitrum.svg"
+                              alt="Arbitrum logo"
+                              className="w-[44px] h-[44px] [filter:grayscale(1)_brightness(1.45)_contrast(1.1)]"
+                            />
                           </div>
                         )}
                         {name === 'Optimism' && (
                           <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]">
-                            <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="#cccccc" strokeWidth="6.5">
-                              {/* Gap perfectly in the top-middle (12 o'clock) */}
-                              <path d="M 30 7 A 18 18 0 1 1 18 7" />
-                            </svg>
+                            <ChainIcons.optimism className="w-[42px] h-[42px] text-white" />
                           </div>
                         )}
-                        {name === 'Base' && <div className="w-[42px] h-[42px] rounded-full bg-[#cccccc] drop-shadow-[0_0_8px_rgba(204,204,204,0.5)] opacity-90 group-hover:opacity-100 transition-opacity"></div>}
+                        {name === 'Base' && (
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.45)]">
+                            <ChainIcons.base className="w-[38px] h-[38px] text-white ring-1 ring-white/20 rounded-[8px]" />
+                          </div>
+                        )}
                       </div>
                       <div className="type-subtitle text-white mb-2">{name}</div>
                       <div className="type-label text-gray-500">{type}</div>
@@ -592,48 +614,41 @@ export default function Home() {
                     <div key={name} className={`flex flex-col items-center justify-center pb-6 bg-transparent hover:bg-white/5 transition-colors ${extra} relative group`}>
                       <div className="mb-4 h-12 flex items-center justify-center w-full">
                         {name === 'Solana' && (
-                          <svg
-                            className="mt-1 opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
-                            width="46"
-                            height="46"
-                            viewBox="0 0 64 64"
-                            fill="#cccccc"
-                            aria-hidden="true"
-                          >
-                            <path d="M40.5 6.5c1.8-1.8 4.8 0 4 2.4l-6.8 20H50c2.7 0 4.2 3.1 2.4 5.1l-24.7 27c-1.8 2-5 0.3-4.3-2.2l6.5-22.1H17.5c-2.7 0-4.2-3.1-2.4-5.1l25.4-25.1z" />
-                          </svg>
+                          <div
+                            aria-label="Solana logo"
+                            className="mt-1 w-[46px] h-[46px] bg-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)]"
+                            style={{
+                              WebkitMaskImage: "url('/chain-logos/solana.svg')",
+                              maskImage: "url('/chain-logos/solana.svg')",
+                              WebkitMaskRepeat: 'no-repeat',
+                              maskRepeat: 'no-repeat',
+                              WebkitMaskPosition: 'center',
+                              maskPosition: 'center',
+                              WebkitMaskSize: 'contain',
+                              maskSize: 'contain',
+                            }}
+                          />
                         )}
                         {name === 'SUI' && (
                           <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(204,204,204,0.5)] mt-1">
-                            <svg width="40" height="48" viewBox="0 0 64 64" fill="#cccccc">
+                            <svg width="40" height="48" viewBox="0 0 64 64" fill="#ffffff">
                               <path d="M32 4c9 0 22 21 22 32 0 12.2-9.8 22-22 22S10 48.2 10 36C10 25 23 4 32 4z" />
                               <path d="M23 36c0 5 4 9 9 9 2.8 0 5.3-1.2 7-3.1" fill="none" stroke="#020205" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </div>
                         )}
                         {name === 'Cosmos' && (
-                          <div className="relative flex items-center justify-center opacity-90 group-hover:opacity-100 w-[50px] h-[50px] transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mt-1">
-                            <div className="w-[11px] h-[11px] rounded-full bg-white z-10"></div>
-                            <svg viewBox="0 0 24 24" className="w-[50px] h-[50px] text-white absolute" fill="none" stroke="currentColor" strokeWidth="2.2">
-                              <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(30 12 12)" />
-                              <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(-30 12 12)" />
-                              <ellipse cx="12" cy="12" rx="4" ry="11" transform="rotate(90 12 12)" />
-                            </svg>
+                          <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.45)] mt-1">
+                            <img
+                              src="/chain-logos/cosmos.svg"
+                              alt="Cosmos logo"
+                              className="w-[50px] h-[50px] [filter:grayscale(1)_brightness(1.8)_contrast(1.05)]"
+                            />
                           </div>
                         )}
                         {name === 'Stellar' && (
                           <div className="opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] mt-1">
-                            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                              <g transform="rotate(-45 24 24)">
-                                {/* Single unified rocket body + fins shape */}
-                                <path
-                                  d="M24 4 Q19 4 16 16 Q14 24 14 32 L8 38 L12 40 L16 35 Q18 42 24 42 Q30 42 32 35 L36 40 L40 38 L34 32 Q34 24 32 16 Q29 4 24 4 Z"
-                                  fill="#ffffff"
-                                />
-                                {/* Porthole window */}
-                                <circle cx="24" cy="20" r="4" fill="#0a0a0a" />
-                              </g>
-                            </svg>
+                            <ChainIcons.stellar className="w-[44px] h-[44px] text-white" />
                           </div>
                         )}
                       </div>
@@ -867,8 +882,8 @@ export default function Home() {
 
             <div className="p-8 md:p-12 lg:p-16 relative z-10 flex flex-col items-center text-center">
               <h2 className="type-title mb-6 text-metallic-premium drop-shadow-2xl">
-                Dual Income: Native Fees +<br className="hidden md:block" />
-                Protocol Rewards
+                Dual Incentive Mechanism:<br className="hidden md:block" />
+                Native Token Fees + Subnet Rewards
               </h2>
 
               <p className="type-body text-[#888] max-w-[650px] leading-[1.65] mb-12">
