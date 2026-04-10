@@ -192,9 +192,9 @@ export default function Home() {
         </div>
 
         <button
-          className="px-6 py-2 text-sm font-medium text-white transition-all bg-white/10 border rounded-full shadow-xl border-white/20 hover:bg-white/20 backdrop-blur-sm lowercase"
+          className="px-6 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)]"
         >
-          whitepaper
+          Whitepaper
         </button>
       </header>
 
@@ -203,8 +203,8 @@ export default function Home() {
           <motion.div initial="hidden" animate="visible" variants={heroVariant} className="flex flex-col items-center w-full max-w-6xl relative z-10">
             <div className="relative">
               <h1 className="type-display mb-8 text-metallic-premium drop-shadow-2xl max-w-[1400px] overflow-visible">
-                <span className="block text-[0.92em] md:text-[0.88em]">Seamless Messaging</span>
-                <span className="block whitespace-nowrap text-[0.92em] md:text-[0.88em] pb-3">Across Everychain</span>
+                <span className="block text-[0.92em] md:text-[0.88em]">Seamless&nbsp;Messaging</span>
+                <span className="block whitespace-nowrap text-[0.92em] md:text-[0.88em] pb-3">Across&nbsp;Every&nbsp;Chain</span>
               </h1>
             </div>
 
@@ -226,23 +226,23 @@ export default function Home() {
         </section>
 
         {false && (
-        <section className="my-24 md:my-32 px-6 md:px-12 max-w-5xl mx-auto w-full relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid w-full gap-5 md:grid-cols-2">
-            <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
-              <div className="type-display text-white mb-4">$3.7T</div>
-              <div className="type-body text-white mb-2">Blockchains don&apos;t talk.</div>
-              <div className="type-body text-gray-400 leading-relaxed">Trapped in isolated ecosystems.</div>
-            </div>
-            <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
-              <div className="type-display text-white mb-4">$2.7B</div>
-              <div className="type-body text-white mb-2">Stolen from bridges.</div>
-              <div className="type-body text-gray-400 leading-relaxed">(2021-2023). Users chain-jailed. Adoption stalls.</div>
-            </div>
-          </motion.div>
-        </section>
+          <section className="my-24 md:my-32 px-6 md:px-12 max-w-5xl mx-auto w-full relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid w-full gap-5 md:grid-cols-2">
+              <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
+                <div className="type-display text-white mb-4">$3.7T</div>
+                <div className="type-body text-white mb-2">Blockchains don&apos;t talk.</div>
+                <div className="type-body text-gray-400 leading-relaxed">Trapped in isolated ecosystems.</div>
+              </div>
+              <div className="rounded-[2.5rem] border border-white/10 bg-black/20 px-8 py-10 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors">
+                <div className="type-display text-white mb-4">$2.7B</div>
+                <div className="type-body text-white mb-2">Stolen from bridges.</div>
+                <div className="type-body text-gray-400 leading-relaxed">(2021-2023). Users chain-jailed. Adoption stalls.</div>
+              </div>
+            </motion.div>
+          </section>
         )}
 
-        <section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full surface-glass-strong rounded-[2.5rem] shadow-xl relative z-10 border border-white/5 overflow-hidden">
+        <section className="my-24 md:my-32 py-20 px-8 md:px-16 lg:py-24 lg:px-20 max-w-[1300px] mx-auto w-full surface-glass-extreme rounded-[2.5rem] shadow-2xl relative z-10 border border-white/5 overflow-hidden">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
 
             <motion.div
@@ -252,21 +252,16 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative w-full flex justify-center overflow-visible"
             >
-              <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
-                <div className="h-[88%] w-[90%] rounded-[999px] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.7)_46%,rgba(0,0,0,0)_76%)] blur-[26px]"></div>
-              </div>
+
               <Image
                 src={entImg}
                 alt="Entangle Protocol Network Structure"
-                className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out"
+                className="relative z-10 w-full h-auto object-contain scale-125 drop-shadow-[0_0_20px_rgba(204,204,204,0.15)] hover:scale-[1.30] transition-transform duration-700 ease-out opacity-80"
                 priority
               />
             </motion.div>
 
             <div className="flex flex-col justify-center h-full xl:pl-10 relative">
-              {/* Premium background glow behind text */}
-              <div className="absolute -top-[60px] -right-[80px] w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)] pointer-events-none z-0"></div>
-              <div className="absolute top-[40%] -right-[40px] w-[300px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(204,204,204,0.04)_0%,transparent_70%)] pointer-events-none z-0 blur-[20px]"></div>
 
               <div className="relative z-10">
                 <SectionHeader
@@ -452,142 +447,142 @@ export default function Home() {
 
 
         {false && (
-        <section id="protocol" className="my-24 md:my-32 py-16 md:py-24 px-6 max-w-[1400px] mx-auto w-full surface-glass-strong rounded-[2rem] shadow-2xl relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
-            <div className="mb-8 px-4 w-full relative z-10">
-              <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
-                <h2 className="type-title mb-5 text-metallic-premium drop-shadow-2xl">How It Flows</h2>
-                <p className="type-body text-gray-400 max-w-2xl">From source transaction to destination delivery in 8 automated steps.</p>
-              </div>
+          <section id="protocol" className="my-24 md:my-32 py-16 md:py-24 px-6 max-w-[1400px] mx-auto w-full surface-glass-strong rounded-[2rem] shadow-2xl relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant}>
+              <div className="mb-8 px-4 w-full relative z-10">
+                <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
+                  <h2 className="type-title mb-5 text-metallic-premium drop-shadow-2xl">How It Flows</h2>
+                  <p className="type-body text-gray-400 max-w-2xl">From source transaction to destination delivery in 8 automated steps.</p>
+                </div>
 
-              <div className="relative z-10 mt-40 mb-16 w-full mx-auto overflow-x-auto md:overflow-visible pb-16 md:pb-0">
-                <div className="min-w-[1200px] w-full px-12 md:px-0">
-                  <div className="relative z-10 w-full h-[180px] mt-24 mb-24 flex items-center">
+                <div className="relative z-10 mt-40 mb-16 w-full mx-auto overflow-x-auto md:overflow-visible pb-16 md:pb-0">
+                  <div className="min-w-[1200px] w-full px-12 md:px-0">
+                    <div className="relative z-10 w-full h-[180px] mt-24 mb-24 flex items-center">
 
-                    {/* The Bus Topology Path */}
-                    <div className="absolute inset-x-8 md:inset-x-0 inset-y-0 pointer-events-none">
-                      <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <defs>
-                          <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#cccccc" stopOpacity="0.1" />
-                            <stop offset="15%" stopColor="#cccccc" />
-                            <stop offset="85%" stopColor="#cccccc" />
-                            <stop offset="100%" stopColor="#cccccc" stopOpacity="0.1" />
-                          </linearGradient>
-                          <filter id="glowFlow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="3" result="blur" />
-                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                          </filter>
-                        </defs>
+                      {/* The Bus Topology Path */}
+                      <div className="absolute inset-x-8 md:inset-x-0 inset-y-0 pointer-events-none">
+                        <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                          <defs>
+                            <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#cccccc" stopOpacity="0.1" />
+                              <stop offset="15%" stopColor="#cccccc" />
+                              <stop offset="85%" stopColor="#cccccc" />
+                              <stop offset="100%" stopColor="#cccccc" stopOpacity="0.1" />
+                            </linearGradient>
+                            <filter id="glowFlow" x="-20%" y="-20%" width="140%" height="140%">
+                              <feGaussianBlur stdDeviation="3" result="blur" />
+                              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                          </defs>
 
-                        {/* Main Bus Line */}
-                        <path
-                          d="M 0,50 L 100,50"
-                          fill="none"
-                          stroke="rgba(255,255,255,0.08)"
-                          strokeWidth="1.5"
-                          vectorEffect="non-scaling-stroke"
-                        />
-                        <motion.path
-                          initial={{ pathLength: 0, opacity: 0 }}
-                          whileInView={{ pathLength: 1, opacity: 1 }}
-                          viewport={{ once: true, margin: "-100px" }}
-                          transition={{ duration: 1.5, ease: "easeInOut" }}
-                          d="M 0,50 L 100,50"
-                          fill="none"
-                          stroke="url(#flowGradient)"
-                          strokeWidth="2.5"
-                          vectorEffect="non-scaling-stroke"
-                          filter="url(#glowFlow)"
-                        />
+                          {/* Main Bus Line */}
+                          <path
+                            d="M 0,50 L 100,50"
+                            fill="none"
+                            stroke="rgba(255,255,255,0.08)"
+                            strokeWidth="1.5"
+                            vectorEffect="non-scaling-stroke"
+                          />
+                          <motion.path
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            whileInView={{ pathLength: 1, opacity: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            d="M 0,50 L 100,50"
+                            fill="none"
+                            stroke="url(#flowGradient)"
+                            strokeWidth="2.5"
+                            vectorEffect="non-scaling-stroke"
+                            filter="url(#glowFlow)"
+                          />
 
-                        {/* Connector Branches */}
+                          {/* Connector Branches */}
+                          {flowSteps.map((_, i) => {
+                            const x = 10 + i * (80 / 7);
+                            const isTop = (i % 2 === 0);
+                            const yNodeBox = isTop ? -25 : 125;
+                            return (
+                              <motion.line
+                                key={i}
+                                x1={x}
+                                y1="50"
+                                x2={x}
+                                y2={yNodeBox}
+                                stroke="rgba(204,204,204,0.3)"
+                                strokeWidth="1.5"
+                                vectorEffect="non-scaling-stroke"
+                                initial={{ pathLength: 0, opacity: 0 }}
+                                whileInView={{ pathLength: 1, opacity: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.4, delay: 0.8 + (i * 0.1) }}
+                              />
+                            );
+                          })}
+                        </svg>
+                      </div>
+
+                      <div className="absolute inset-x-8 md:inset-x-0 inset-y-0">
+                        {/* Junction Dots overlay */}
                         {flowSteps.map((_, i) => {
                           const x = 10 + i * (80 / 7);
-                          const isTop = (i % 2 === 0);
-                          const yNodeBox = isTop ? -25 : 125;
                           return (
-                            <motion.line
-                              key={i}
-                              x1={x}
-                              y1="50"
-                              x2={x}
-                              y2={yNodeBox}
-                              stroke="rgba(204,204,204,0.3)"
-                              strokeWidth="1.5"
-                              vectorEffect="non-scaling-stroke"
-                              initial={{ pathLength: 0, opacity: 0 }}
-                              whileInView={{ pathLength: 1, opacity: 1 }}
-                              viewport={{ once: true, margin: "-100px" }}
-                              transition={{ duration: 0.4, delay: 0.8 + (i * 0.1) }}
+                            <motion.div
+                              key={`junction-${i}`}
+                              initial={{ scale: 0, opacity: 0 }}
+                              whileInView={{ scale: 1, opacity: 1 }}
+                              viewport={{ once: true, margin: '-50px' }}
+                              transition={{ duration: 0.3, delay: 1.0 + (i * 0.1) }}
+                              className="absolute w-[6px] h-[6px] rounded-full bg-[#0a0d10] border-[1.5px] border-[#cccccc] pointer-events-none"
+                              style={{ left: `${x}%`, top: `50%`, transform: 'translate(-50%, -50%)', zIndex: 10 }}
                             />
+                          )
+                        })}
+
+                        {flowSteps.map((step, i) => {
+                          const colorClass = 'bg-[#cccccc]';
+                          const textColorClass = 'text-[#cccccc]';
+
+                          const x = 10 + i * (80 / 7);
+                          const isTop = (i % 2 === 0);
+                          const y = isTop ? 0 : 100;
+                          const textPos = isTop ? 'top' : 'bottom';
+
+                          return (
+                            <div key={i} style={{ left: `${x}%`, top: `${y}%` }} className="absolute z-20 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 group">
+                              <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true, margin: '-50px' }}
+                                transition={{ duration: 0.5, delay: 0.2 + (i * 0.15), type: 'spring', stiffness: 200, damping: 20 }}
+                                className="relative flex items-center justify-center"
+                              >
+                                {/* Circle Node */}
+                                <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-black text-[12px] relative z-20 ${colorClass} shadow-[0_0_15px_rgba(204,204,204,0.5)] border-[1.5px] border-transparent group-hover:border-white/50 transition-all duration-300 group-hover:scale-110`}>
+                                  {i + 1}
+                                </div>
+
+                                {/* Outer Rotating Ring */}
+                                <div className="absolute inset-[-5px] rounded-full border border-dashed border-[#cccccc]/50 animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+                                {/* Text Content */}
+                                <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} text-center flex flex-col items-center pointer-events-none z-30`}>
+                                  <div className="w-[160px] h-[95px] bg-black/20 backdrop-blur-md px-4 py-3 rounded-[12px] flex flex-col items-center justify-center gap-1.5 border border-white/10 shadow-inner hover:bg-white/5 transition-colors">
+                                    <div className={`type-subtitle ${textColorClass} text-center w-full leading-tight`}>{step[0]}</div>
+                                    <div className="text-[11px] md:text-[12px] text-gray-400 leading-[1.3] text-center w-full">{step[1]}</div>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            </div>
                           );
                         })}
-                      </svg>
-                    </div>
-
-                    <div className="absolute inset-x-8 md:inset-x-0 inset-y-0">
-                      {/* Junction Dots overlay */}
-                      {flowSteps.map((_, i) => {
-                        const x = 10 + i * (80 / 7);
-                        return (
-                          <motion.div
-                            key={`junction-${i}`}
-                            initial={{ scale: 0, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true, margin: '-50px' }}
-                            transition={{ duration: 0.3, delay: 1.0 + (i * 0.1) }}
-                            className="absolute w-[6px] h-[6px] rounded-full bg-[#0a0d10] border-[1.5px] border-[#cccccc] pointer-events-none"
-                            style={{ left: `${x}%`, top: `50%`, transform: 'translate(-50%, -50%)', zIndex: 10 }}
-                          />
-                        )
-                      })}
-
-                      {flowSteps.map((step, i) => {
-                        const colorClass = 'bg-[#cccccc]';
-                        const textColorClass = 'text-[#cccccc]';
-
-                        const x = 10 + i * (80 / 7);
-                        const isTop = (i % 2 === 0);
-                        const y = isTop ? 0 : 100;
-                        const textPos = isTop ? 'top' : 'bottom';
-
-                        return (
-                          <div key={i} style={{ left: `${x}%`, top: `${y}%` }} className="absolute z-20 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 group">
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0 }}
-                              whileInView={{ opacity: 1, scale: 1 }}
-                              viewport={{ once: true, margin: '-50px' }}
-                              transition={{ duration: 0.5, delay: 0.2 + (i * 0.15), type: 'spring', stiffness: 200, damping: 20 }}
-                              className="relative flex items-center justify-center"
-                            >
-                              {/* Circle Node */}
-                              <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-black text-[12px] relative z-20 ${colorClass} shadow-[0_0_15px_rgba(204,204,204,0.5)] border-[1.5px] border-transparent group-hover:border-white/50 transition-all duration-300 group-hover:scale-110`}>
-                                {i + 1}
-                              </div>
-
-                              {/* Outer Rotating Ring */}
-                              <div className="absolute inset-[-5px] rounded-full border border-dashed border-[#cccccc]/50 animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-                              {/* Text Content */}
-                              <div className={`absolute ${textPos === 'top' ? 'bottom-[100%] mb-4' : 'top-[100%] mt-4'} text-center flex flex-col items-center pointer-events-none z-30`}>
-                                <div className="w-[160px] h-[95px] bg-black/20 backdrop-blur-md px-4 py-3 rounded-[12px] flex flex-col items-center justify-center gap-1.5 border border-white/10 shadow-inner hover:bg-white/5 transition-colors">
-                                  <div className={`type-subtitle ${textColorClass} text-center w-full leading-tight`}>{step[0]}</div>
-                                  <div className="text-[11px] md:text-[12px] text-gray-400 leading-[1.3] text-center w-full">{step[1]}</div>
-                                </div>
-                              </div>
-                            </motion.div>
-                          </div>
-                        );
-                      })}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-          </motion.div>
-        </section>
+            </motion.div>
+          </section>
         )}
 
         <section className="my-24 md:my-32 px-6 md:px-12 max-w-7xl mx-auto w-full relative z-10">
@@ -610,92 +605,92 @@ export default function Home() {
         </section>
 
         {false && (
-        <section id="developers" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
-            <div className="grid xl:grid-cols-2 gap-12 xl:gap-20 items-stretch relative z-10">
+          <section id="developers" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
+              <div className="grid xl:grid-cols-2 gap-12 xl:gap-20 items-stretch relative z-10">
 
-              {/* Left Column */}
-              <div className="relative z-10 w-full h-full group py-6 xl:py-0 flex flex-col">
-                <div className="rounded-xl border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner p-8 md:p-10 flex-1 flex flex-col justify-center">
-                  <div className="inline-block relative z-10 mb-8">
-                    <h2 className="type-title text-metallic-premium drop-shadow-2xl">
-                      One contract<br />
-                      <span>Any chain</span>
-                    </h2>
-                  </div>
-
-                  <div className="space-y-6 relative">
-                    <div className="flex gap-6 relative">
-                      <div className="w-6 shrink-0 flex items-start justify-center pt-1">
-                        <Network className="w-5 h-5 text-[#cccccc]" />
-                      </div>
-                      <div>
-                        <h3 className="type-subtitle text-white mb-1.5">Standardized Interface</h3>
-                        <p className="type-body text-gray-400">Write once using our Solidity SDK. Deploy to EVM, Solana, Cosmos, and Stellar without changes.</p>
-                      </div>
+                {/* Left Column */}
+                <div className="relative z-10 w-full h-full group py-6 xl:py-0 flex flex-col">
+                  <div className="rounded-xl border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner p-8 md:p-10 flex-1 flex flex-col justify-center">
+                    <div className="inline-block relative z-10 mb-8">
+                      <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+                        One contract<br />
+                        <span>Any chain</span>
+                      </h2>
                     </div>
 
-                    <div className="flex gap-6 relative">
-                      <div className="w-6 shrink-0 flex items-start justify-center pt-1">
-                        <Shield className="w-5 h-5 text-[#cccccc]" />
+                    <div className="space-y-6 relative">
+                      <div className="flex gap-6 relative">
+                        <div className="w-6 shrink-0 flex items-start justify-center pt-1">
+                          <Network className="w-5 h-5 text-[#cccccc]" />
+                        </div>
+                        <div>
+                          <h3 className="type-subtitle text-white mb-1.5">Standardized Interface</h3>
+                          <p className="type-body text-gray-400">Write once using our Solidity SDK. Deploy to EVM, Solana, Cosmos, and Stellar without changes.</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="type-subtitle text-white mb-1.5">Automated Security</h3>
-                        <p className="type-body text-gray-400">Signatures verified on-chain. Fees calculated automatically. No manual oracle management needed.</p>
-                      </div>
-                    </div>
 
-                    <div className="flex gap-6 relative">
-                      <div className="w-6 shrink-0 flex items-start justify-center pt-1">
-                        <Zap className="w-5 h-5 text-white" />
+                      <div className="flex gap-6 relative">
+                        <div className="w-6 shrink-0 flex items-start justify-center pt-1">
+                          <Shield className="w-5 h-5 text-[#cccccc]" />
+                        </div>
+                        <div>
+                          <h3 className="type-subtitle text-white mb-1.5">Automated Security</h3>
+                          <p className="type-body text-gray-400">Signatures verified on-chain. Fees calculated automatically. No manual oracle management needed.</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="type-subtitle text-white mb-1.5">Instant Integration</h3>
-                        <p className="type-body text-gray-400">Copy our interface. Call <span className="bg-[#0b1d26] text-[#cccccc] px-1.5 py-0.5 rounded text-[12px] border border-[#cccccc]/10 font-mono">sendMessage()</span>. You&apos;re cross-chain in under 10 minutes.</p>
-                      </div>
-                    </div>
 
-                    <div className="ml-12 pt-4">
-                      <button
-                        onClick={() => scrollTo('actions')}
-                        className="px-6 py-3 bg-white text-black font-bold text-[12px] rounded-[4px] hover:bg-gray-200 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2.5 shadow-[0_0_20px_rgba(255,255,255,0.4)]"
-                      >
-                        Start Building <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
-                      </button>
+                      <div className="flex gap-6 relative">
+                        <div className="w-6 shrink-0 flex items-start justify-center pt-1">
+                          <Zap className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="type-subtitle text-white mb-1.5">Instant Integration</h3>
+                          <p className="type-body text-gray-400">Copy our interface. Call <span className="bg-[#0b1d26] text-[#cccccc] px-1.5 py-0.5 rounded text-[12px] border border-[#cccccc]/10 font-mono">sendMessage()</span>. You&apos;re cross-chain in under 10 minutes.</p>
+                        </div>
+                      </div>
+
+                      <div className="ml-12 pt-4">
+                        <button
+                          onClick={() => scrollTo('actions')}
+                          className="px-6 py-3 bg-white text-black font-bold text-[12px] rounded-[4px] hover:bg-gray-200 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2.5 shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                        >
+                          Start Building <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Right Column */}
-              <div className="relative z-10 w-full h-full max-w-lg mx-auto xl:mx-0 xl:ml-auto group py-10 xl:py-0 flex flex-col">
-                <div className="rounded-xl overflow-hidden border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner flex-1 flex flex-col">
-                  <div className="bg-black/40 border-b border-white/5 py-3 px-4 flex items-center backdrop-blur-sm">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#b5b5b5]" />
-                      <div className="w-3 h-3 rounded-full bg-[#8a8a8a]" />
-                      <div className="w-3 h-3 rounded-full bg-[#d8d8d8]" />
+                {/* Right Column */}
+                <div className="relative z-10 w-full h-full max-w-lg mx-auto xl:mx-0 xl:ml-auto group py-10 xl:py-0 flex flex-col">
+                  <div className="rounded-xl overflow-hidden border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative shadow-inner flex-1 flex flex-col">
+                    <div className="bg-black/40 border-b border-white/5 py-3 px-4 flex items-center backdrop-blur-sm">
+                      <div className="flex gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#b5b5b5]" />
+                        <div className="w-3 h-3 rounded-full bg-[#8a8a8a]" />
+                        <div className="w-3 h-3 rounded-full bg-[#d8d8d8]" />
+                      </div>
+                      <div className="type-label font-medium text-gray-500 flex-1 text-center pr-12 tracking-widest">CrossChainSwap.sol</div>
                     </div>
-                    <div className="type-label font-medium text-gray-500 flex-1 text-center pr-12 tracking-widest">CrossChainSwap.sol</div>
+                    {/* Code syntax mostly uncolored, but comments specifically dimmed */}
+                    <pre className="p-6 md:p-8 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed text-gray-300 overflow-x-auto bg-transparent font-mono">
+                      <code>
+                        {`import "IEntangle.sol";\n\n`}
+                        <span className="text-gray-500">{`// 1. Define destination`}</span>
+                        {`\nstring memory dstChain = "arbitrum";\nbytes memory dstAddr = abi.encode(user);\n\n`}
+                        <span className="text-gray-500">{`// 2. Pack your payload`}</span>
+                        {`\nbytes memory payload = abi.encode(\n  "SWAP",\n  tokenAddress,\n  amount\n);\n\n`}
+                        <span className="text-gray-500">{`// 3. Send message!`}</span>
+                        {`\nuint256 fees = entangle.getFee(\n  dstChain, payload.length\n);\n\nentangle.sendMessage{value: fees}(\n  dstChain,\n  dstAddr,\n  payload\n);`}
+                      </code>
+                    </pre>
                   </div>
-                  {/* Code syntax mostly uncolored, but comments specifically dimmed */}
-                  <pre className="p-6 md:p-8 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed text-gray-300 overflow-x-auto bg-transparent font-mono">
-                    <code>
-                      {`import "IEntangle.sol";\n\n`}
-                      <span className="text-gray-500">{`// 1. Define destination`}</span>
-                      {`\nstring memory dstChain = "arbitrum";\nbytes memory dstAddr = abi.encode(user);\n\n`}
-                      <span className="text-gray-500">{`// 2. Pack your payload`}</span>
-                      {`\nbytes memory payload = abi.encode(\n  "SWAP",\n  tokenAddress,\n  amount\n);\n\n`}
-                      <span className="text-gray-500">{`// 3. Send message!`}</span>
-                      {`\nuint256 fees = entangle.getFee(\n  dstChain, payload.length\n);\n\nentangle.sendMessage{value: fees}(\n  dstChain,\n  dstAddr,\n  payload\n);`}
-                    </code>
-                  </pre>
                 </div>
-              </div>
 
-            </div>
-          </motion.div>
-        </section>
+              </div>
+            </motion.div>
+          </section>
         )}
 
 
@@ -703,7 +698,7 @@ export default function Home() {
         <section id="chain-support" className="my-24 md:my-32 px-6 w-full max-w-[1100px] mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="surface-glass-strong p-6 md:p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-10">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">Supported Chains</h2>
+              <h2 className="type-title text-metallic-premium drop-shadow-2xl">Five Ecosystem. One relay layer.</h2>
             </div>
 
             <div className="border border-white/5 bg-black/20 backdrop-blur-md rounded-2xl overflow-hidden shadow-inner relative z-10">
@@ -822,7 +817,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center text-center w-full relative z-10 mb-8 pt-4">
               <h2 className="type-title mb-2 text-metallic-premium drop-shadow-2xl">
-                Build. Earn. Scale.
+                Infrastructure for a Multi-chain World
               </h2>
             </div>
 
@@ -911,553 +906,553 @@ export default function Home() {
 
 
         {false && (
-        <section id="consensus" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
+          <section id="consensus" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
-            <div className="relative z-10 pt-4 md:pt-8">
+              <div className="relative z-10 pt-4 md:pt-8">
+                <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
+                  <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+                    Threshold Signatures<br />
+                    <span>No Single Validator</span>
+                  </h2>
+                </div>
+              </div>
+
+              <div className="relative z-10 mt-8 md:mt-10 grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-8 items-center">
+
+                {/* Graphical representation of the consensus model */}
+                <div className="relative flex flex-col items-center justify-center h-full">
+
+                  {/* Properly Aligned Dashed Schematic Crosshairs */}
+                  <div className="absolute top-[140px] left-[-50vw] w-[200vw] border-t border-dashed border-white/5 pointer-events-none z-0"></div>
+
+                  <div className="relative w-[280px] h-[280px] z-10">
+
+                    {/* Central Faint Blue Box */}
+                    <div className="absolute inset-[35px] bg-[#0c1f26] flex items-center justify-center">
+
+                      {/* Glowing Cyan Shield & Circle */}
+                      <div className="w-[86px] h-[86px] rounded-full border-[1.5px] border-[#cccccc] flex items-center justify-center z-10 shadow-[0_0_20px_rgba(204,204,204,0.2)]">
+                        <svg className="w-[38px] h-[38px] text-[#cccccc]" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                      </div>
+
+                      {/* Faint corner lines pointing perfectly strictly to the 4 corners of the box */}
+                      <div className="absolute -top-[16px] -left-[16px] w-[32px] h-[1px] bg-[#555] rotate-45"></div>
+                      <div className="absolute -top-[16px] -right-[16px] w-[32px] h-[1px] bg-[#555] -rotate-45"></div>
+                      <div className="absolute -bottom-[16px] -left-[16px] w-[32px] h-[1px] bg-[#555] -rotate-45"></div>
+                      <div className="absolute -bottom-[16px] -right-[16px] w-[32px] h-[1px] bg-[#555] rotate-45"></div>
+                    </div>
+
+                    {/* V1 - Top center */}
+                    <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V1</div>
+
+                    {/* V2 - Top right */}
+                    <div className="absolute top-[60px] right-[-4px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V2</div>
+
+                    {/* V3 - Bottom right */}
+                    <div className="absolute bottom-[30px] right-[10px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V3</div>
+
+                    {/* V4 - Bottom left */}
+                    <div className="absolute bottom-[30px] left-[10px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V4</div>
+
+                    {/* V5 - Top left */}
+                    <div className="absolute top-[60px] left-[-4px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V5</div>
+                  </div>
+
+                  <div className="mt-8 text-center text-[#555] text-[10px]">
+                    N-of-M Consensus Model
+                  </div>
+                </div>
+
+                {/* Separated Highlighted Cards */}
+                <div className="flex flex-col gap-4">
+
+                  {/* Multi-Chain Signatures */}
+                  <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
+                    <h3 className="type-subtitle text-white mb-3 md:mb-4">Multi-Chain Signatures</h3>
+                    <div className="type-body">
+                      <div className="mb-2">
+                        <span className="text-white">EVM:</span> <span className="bg-[#0b1d26] text-[#cccccc] px-2 py-0.5 rounded type-body mx-1 border border-[#cccccc]/10">secp256k1</span> <span className="text-[#888]">/ ecrecover</span>
+                      </div>
+                      <div>
+                        <span className="text-white inline-block mt-0.5">Non-EVM:</span> <span className="bg-[#0b1d26] text-[#cccccc] px-2 py-0.5 rounded type-body mx-1 border border-[#cccccc]/10">ed25519</span> <span className="text-[#888]">(Solana, Sui, Cosmos)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* On-Chain Verification */}
+                  <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
+                    <h3 className="type-subtitle text-white mb-3 md:mb-4">On-Chain Verification</h3>
+                    <p className="text-[#888] type-body mb-4">Smart contracts enforce cryptographic proofs.</p>
+                    <div className="bg-[#0b1d26] border border-[#cccccc]/10 text-[#cccccc] type-body px-3 py-1.5 inline-block rounded">
+                      verifyMessage(msg_hash, sig_bundle)
+                    </div>
+                  </div>
+
+                  {/* Trust Minimized */}
+                  <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
+                    <h3 className="type-subtitle text-white mb-3 md:mb-4">Trust Minimized</h3>
+                    <p className="text-[#888] type-body max-w-sm">
+                      No single validator can authorize a delivery.<br />
+                      Consensus threshold required for all ops.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </section>
+        )}
+
+
+
+        {false && (
+          <section id="operators" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+              {/* Glowing cyan orb softly placed on left */}
+              <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-[#cccccc]/[0.035] rounded-full blur-[90px] pointer-events-none"></div>
+
+              <div className="p-8 md:p-12 lg:p-16 relative z-10 flex flex-col items-center text-center">
+                <h2 className="type-title mb-6 text-metallic-premium drop-shadow-2xl">
+                  Dual Incentive Mechanism:<br className="hidden md:block" />
+                  Native Token Fees + Subnet Rewards
+                </h2>
+
+                <p className="type-body text-[#888] max-w-[650px] leading-[1.65] mb-12">
+                  Participate in the Entangle Subnet on Bittensor. Earn continuous rewards<br className="hidden md:block" />
+                  for securing cross-chain communication.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 backdrop-blur-md max-w-[700px] w-full shadow-inner">
+                  <button className="px-8 py-3.5 bg-white text-black font-bold type-body rounded-[4px] hover:bg-gray-200 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                    Start Earning <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
+                  </button>
+
+                  <a href="#" className="text-[#999] type-body underline underline-offset-[5px] decoration-[#444] hover:text-white hover:decoration-white transition-colors leading-none">
+                    Read the Miner Documentation
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        )}
+
+        {false && (
+          <section id="scanner-miner" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
+
+
+
               <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
                 <h2 className="type-title text-metallic-premium drop-shadow-2xl">
-                  Threshold Signatures<br />
-                  <span>No Single Validator</span>
+                  Scanner Miner
                 </h2>
               </div>
-            </div>
 
-            <div className="relative z-10 mt-8 md:mt-10 grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-8 items-center">
+              <div className="rounded-[1.5rem] bg-black/20 backdrop-blur-md shadow-inner border border-white/10 relative mx-auto w-full max-w-[900px] overflow-hidden mt-8 md:mt-10 hover:bg-black/30 transition-colors">
+                {/* Cyan top bar */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#cccccc] shadow-[0_0_20px_rgba(204,204,204,0.4)]"></div>
 
-              {/* Graphical representation of the consensus model */}
-              <div className="relative flex flex-col items-center justify-center h-full">
+                <div className="flex flex-col md:flex-row relative">
+                  {/* Faint internal vertical divider for desktop */}
+                  <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-white/20"></div>
 
-                {/* Properly Aligned Dashed Schematic Crosshairs */}
-                <div className="absolute top-[140px] left-[-50vw] w-[200vw] border-t border-dashed border-white/5 pointer-events-none z-0"></div>
-
-                <div className="relative w-[280px] h-[280px] z-10">
-
-                  {/* Central Faint Blue Box */}
-                  <div className="absolute inset-[35px] bg-[#0c1f26] flex items-center justify-center">
-
-                    {/* Glowing Cyan Shield & Circle */}
-                    <div className="w-[86px] h-[86px] rounded-full border-[1.5px] border-[#cccccc] flex items-center justify-center z-10 shadow-[0_0_20px_rgba(204,204,204,0.2)]">
-                      <svg className="w-[38px] h-[38px] text-[#cccccc]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  {/* Left Column Component */}
+                  <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
+                    <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#cccccc] bg-[#cccccc]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(204,204,204,0.2)] mb-8">
+                      <svg className="w-[40px] h-[40px] text-[#cccccc]" fill="currentColor" viewBox="0 0 512 512">
+                        <path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
                       </svg>
                     </div>
 
-                    {/* Faint corner lines pointing perfectly strictly to the 4 corners of the box */}
-                    <div className="absolute -top-[16px] -left-[16px] w-[32px] h-[1px] bg-[#555] rotate-45"></div>
-                    <div className="absolute -top-[16px] -right-[16px] w-[32px] h-[1px] bg-[#555] -rotate-45"></div>
-                    <div className="absolute -bottom-[16px] -left-[16px] w-[32px] h-[1px] bg-[#555] -rotate-45"></div>
-                    <div className="absolute -bottom-[16px] -right-[16px] w-[32px] h-[1px] bg-[#555] rotate-45"></div>
+                    <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4">~30%</div>
+                    <div className="type-label text-[#cccccc] mb-4">Subnet TAO Emissions</div>
+
+                    <p className="text-[#666] type-body max-w-[200px]">
+                      Rewards distributed per epoch based on discovery speed and accuracy.
+                    </p>
                   </div>
 
-                  {/* V1 - Top center */}
-                  <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V1</div>
+                  {/* Right Column Component */}
+                  <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
+                    <h3 className="type-subtitle text-white mb-3">Discovery Mechanism</h3>
+                    <p className="text-[#a1a1a1] type-body mb-10 w-[95%]">
+                      The Scanner Miner constantly monitor connected blockchains for activity.
+                    </p>
 
-                  {/* V2 - Top right */}
-                  <div className="absolute top-[60px] right-[-4px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V2</div>
-
-                  {/* V3 - Bottom right */}
-                  <div className="absolute bottom-[30px] right-[10px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V3</div>
-
-                  {/* V4 - Bottom left */}
-                  <div className="absolute bottom-[30px] left-[10px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V4</div>
-
-                  {/* V5 - Top left */}
-                  <div className="absolute top-[60px] left-[-4px] w-[34px] h-[34px] rounded-full border border-[#cccccc] bg-[#000] text-[#ccc] text-[10px] sm:text-[11px] flex items-center justify-center z-20 hover:bg-[#cccccc]/20 transition-colors">V5</div>
-                </div>
-
-                <div className="mt-8 text-center text-[#555] text-[10px]">
-                  N-of-M Consensus Model
-                </div>
-              </div>
-
-              {/* Separated Highlighted Cards */}
-              <div className="flex flex-col gap-4">
-
-                {/* Multi-Chain Signatures */}
-                <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
-                  <h3 className="type-subtitle text-white mb-3 md:mb-4">Multi-Chain Signatures</h3>
-                  <div className="type-body">
-                    <div className="mb-2">
-                      <span className="text-white">EVM:</span> <span className="bg-[#0b1d26] text-[#cccccc] px-2 py-0.5 rounded type-body mx-1 border border-[#cccccc]/10">secp256k1</span> <span className="text-[#888]">/ ecrecover</span>
-                    </div>
-                    <div>
-                      <span className="text-white inline-block mt-0.5">Non-EVM:</span> <span className="bg-[#0b1d26] text-[#cccccc] px-2 py-0.5 rounded type-body mx-1 border border-[#cccccc]/10">ed25519</span> <span className="text-[#888]">(Solana, Sui, Cosmos)</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* On-Chain Verification */}
-                <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
-                  <h3 className="type-subtitle text-white mb-3 md:mb-4">On-Chain Verification</h3>
-                  <p className="text-[#888] type-body mb-4">Smart contracts enforce cryptographic proofs.</p>
-                  <div className="bg-[#0b1d26] border border-[#cccccc]/10 text-[#cccccc] type-body px-3 py-1.5 inline-block rounded">
-                    verifyMessage(msg_hash, sig_bundle)
-                  </div>
-                </div>
-
-                {/* Trust Minimized */}
-                <div className="border border-white/5 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner rounded-r-xl p-5 md:p-6 hover:bg-white/5 transition-colors">
-                  <h3 className="type-subtitle text-white mb-3 md:mb-4">Trust Minimized</h3>
-                  <p className="text-[#888] type-body max-w-sm">
-                    No single validator can authorize a delivery.<br />
-                    Consensus threshold required for all ops.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </section>
-        )}
-
-
-
-        {false && (
-        <section id="operators" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
-
-            {/* Glowing cyan orb softly placed on left */}
-            <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-[#cccccc]/[0.035] rounded-full blur-[90px] pointer-events-none"></div>
-
-            <div className="p-8 md:p-12 lg:p-16 relative z-10 flex flex-col items-center text-center">
-              <h2 className="type-title mb-6 text-metallic-premium drop-shadow-2xl">
-                Dual Incentive Mechanism:<br className="hidden md:block" />
-                Native Token Fees + Subnet Rewards
-              </h2>
-
-              <p className="type-body text-[#888] max-w-[650px] leading-[1.65] mb-12">
-                Participate in the Entangle Subnet on Bittensor. Earn continuous rewards<br className="hidden md:block" />
-                for securing cross-chain communication.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 backdrop-blur-md max-w-[700px] w-full shadow-inner">
-                <button className="px-8 py-3.5 bg-white text-black font-bold type-body rounded-[4px] hover:bg-gray-200 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(255,255,255,0.4)]">
-                  Start Earning <span className="text-lg leading-none font-normal relative top-[1px]">&rarr;</span>
-                </button>
-
-                <a href="#" className="text-[#999] type-body underline underline-offset-[5px] decoration-[#444] hover:text-white hover:decoration-white transition-colors leading-none">
-                  Read the Miner Documentation
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section>
-        )}
-
-        {false && (
-        <section id="scanner-miner" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
-
-
-
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
-                Scanner Miner
-              </h2>
-            </div>
-
-            <div className="rounded-[1.5rem] bg-black/20 backdrop-blur-md shadow-inner border border-white/10 relative mx-auto w-full max-w-[900px] overflow-hidden mt-8 md:mt-10 hover:bg-black/30 transition-colors">
-              {/* Cyan top bar */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#cccccc] shadow-[0_0_20px_rgba(204,204,204,0.4)]"></div>
-
-              <div className="flex flex-col md:flex-row relative">
-                {/* Faint internal vertical divider for desktop */}
-                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-white/20"></div>
-
-                {/* Left Column Component */}
-                <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
-                  <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#cccccc] bg-[#cccccc]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(204,204,204,0.2)] mb-8">
-                    <svg className="w-[40px] h-[40px] text-[#cccccc]" fill="currentColor" viewBox="0 0 512 512">
-                      <path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32zM60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3zM224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
-                    </svg>
-                  </div>
-
-                  <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4">~30%</div>
-                  <div className="type-label text-[#cccccc] mb-4">Subnet TAO Emissions</div>
-
-                  <p className="text-[#666] type-body max-w-[200px]">
-                    Rewards distributed per epoch based on discovery speed and accuracy.
-                  </p>
-                </div>
-
-                {/* Right Column Component */}
-                <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
-                  <h3 className="type-subtitle text-white mb-3">Discovery Mechanism</h3>
-                  <p className="text-[#a1a1a1] type-body mb-10 w-[95%]">
-                    The Scanner Miner constantly monitor connected blockchains for activity.
-                  </p>
-
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                      </svg>
-                      <div className="text-[#a1a1a1] type-body">
-                        <span className="text-white font-medium">Real-time Polling:</span> Queries RPC nodes every block to detect <span className="text-[12px] bg-[#1a1a1a]/80 text-[#ccc] px-1.5 py-0.5 rounded">MessageDispatched</span> events.
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-4">
+                        <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                        <div className="text-[#a1a1a1] type-body">
+                          <span className="text-white font-medium">Real-time Polling:</span> Queries RPC nodes every block to detect <span className="text-[12px] bg-[#1a1a1a]/80 text-[#ccc] px-1.5 py-0.5 rounded">MessageDispatched</span> events.
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="flex items-start gap-4">
-                      <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3 4c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v2.59c0 .27-.11.52-.29.71L15 13.41V20c0 .35-.2.66-.51.84l-4 2.33A.996.996 0 019 22v-8.59L3.29 7.3A1 1 0 013 6.59V4z" />
-                      </svg>
-                      <div className="text-[#a1a1a1] type-body">
-                        <span className="text-white font-medium">Event Filtering:</span> Validates payload structure and ensures correct source contract emission.
+                      <div className="flex items-start gap-4">
+                        <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M3 4c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v2.59c0 .27-.11.52-.29.71L15 13.41V20c0 .35-.2.66-.51.84l-4 2.33A.996.996 0 019 22v-8.59L3.29 7.3A1 1 0 013 6.59V4z" />
+                        </svg>
+                        <div className="text-[#a1a1a1] type-body">
+                          <span className="text-white font-medium">Event Filtering:</span> Validates payload structure and ensures correct source contract emission.
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="flex items-start gap-4">
-                      <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <circle cx="18" cy="5" r="3" />
-                        <circle cx="6" cy="12" r="3" />
-                        <circle cx="18" cy="19" r="3" />
-                        <path d="M8.59 13.51l6.83 3.98m-.01-10.98l-6.82 3.98" stroke="currentColor" strokeWidth="2" />
-                      </svg>
-                      <div className="text-[#a1a1a1] type-body">
-                        <span className="text-white font-medium">Validator Feed:</span> Propagates verified events to the Validator set for consensus.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Footer Panel */}
-              <div className="border-t border-white/5 bg-transparent hover:bg-white/5 transition-colors px-10 py-5 flex items-center w-full">
-                <svg className="w-[16px] h-[16px] text-[#cccccc] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-                <span className="text-[#cccccc] type-label mt-[1px]">Required Stake: 100 TAO to register UID</span>
-              </div>
-            </div>
-
-          </div>
-        </section>
-        )}
-
-        {false && (
-        <section id="relay-miner" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
-
-
-
-
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
-                Relay Miner
-              </h2>
-            </div>
-
-            <div className="rounded-[1.5rem] bg-black/20 backdrop-blur-md shadow-inner border border-white/10 relative mx-auto w-full max-w-[900px] overflow-hidden mt-8 md:mt-10 hover:bg-black/30 transition-colors">
-              {/* Neutral top bar */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#cccccc] shadow-[0_0_20px_rgba(204,204,204,0.4)]"></div>
-
-              <div className="flex flex-col md:flex-row relative">
-                {/* Faint internal vertical divider for desktop */}
-                <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-white/20"></div>
-
-                {/* Left Column Component */}
-                <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
-                  <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#cccccc] bg-[#cccccc]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(204,204,204,0.2)] mb-8">
-                    <svg className="w-[38px] h-[38px] text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                  </div>
-
-                  <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4">~70%</div>
-                  <div className="type-label text-[#cccccc] mb-4">Subnet TAO Emissions</div>
-
-                  <p className="text-[#666] type-body max-w-[200px]">
-                    Rewards earned by winning auctions and successfully executing deliveries.
-                  </p>
-                </div>
-
-                {/* Right Column Component */}
-                <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
-                  <h3 className="type-subtitle text-white mb-3">Execution Mechanism</h3>
-                  <p className="text-[#a1a1a1] type-body mb-10 w-[95%]">
-                    Relay Miners actively compete to physically deliver messages across chains with speed and security.
-                  </p>
-
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 6l4 4L7 21l-4-4L14 6z" />
-                        <path d="M18 2l4 4-3 3-4-4 3-3z" />
-                      </svg>
-                      <div className="text-[#a1a1a1] type-body">
-                        <span className="text-white font-medium">Sealed Auctions:</span> Bids latency & gas in 2s windows. Fastest + cheapest wins.
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <svg className="w-[16px] h-[16px] text-[#cccccc] mt-0.5 shrink-0 -ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 8h-3V4H3v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM8 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM17.5 9.5l1.96 2.5H17.5v-2.5z" />
-                      </svg>
-                      <div className="text-[#a1a1a1] type-body">
-                        <span className="text-white font-medium">Cross-Chain Delivery:</span> Executes transaction on destination contract immediately.
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0 px-[1px]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3 2v20l3-3 3 3 3-3 3 3 3-3 3 3V2H3zm14 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z" />
-                      </svg>
-                      <div className="text-[#a1a1a1] type-body">
-                        <span className="text-white font-medium">Proof Submission:</span> Returns delivery proof on-chain to unlock fees & TAO.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Footer Panel */}
-              <div className="border-t border-white/5 bg-transparent hover:bg-white/5 transition-colors px-10 py-5 flex items-center w-full">
-                <svg className="w-[16px] h-[16px] text-[#cccccc] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-                <span className="text-[#cccccc] type-label mt-[1px]">Verified Delivery: &lt; 10s Latency</span>
-              </div>
-            </div>
-
-          </div>
-        </section>
-        )}
-
-
-
-
-        {false && (
-        <section id="the-auction" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
-
-
-
-            <div className="flex flex-col items-center text-center w-full relative z-10 mb-20 pt-10">
-              <div className="type-label text-[#cccccc] mb-5">The Auction</div>
-              <h2 className="type-title mb-5 text-metallic-premium drop-shadow-2xl">
-                Sealed-Bid Velocity
-              </h2>
-              <p className="type-body text-[#888]">
-                Fastest & cheapest miner wins execution rights.
-              </p>
-            </div>
-
-            {/* Diagram container */}
-            <div className="relative flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-[60px] xl:gap-[80px] w-full mt-16 max-w-[900px] mx-auto">
-
-              {/* 1. RELAY MINERS column */}
-              <div className="flex flex-col relative w-full sm:w-[240px] xl:w-[200px] shrink-0 xl:justify-center">
-                <div className="text-[#7a7a7a] text-[12px] text-center xl:text-left mb-3">Relay Miners</div>
-
-                <div className="relative w-full flex flex-col gap-4">
-                  {/* Desktop connection lines drawn behind the items */}
-                  <div className="hidden xl:block absolute left-[100%] top-[30px] w-[30px] bottom-[30px] border-t-[1.5px] border-b-[1.5px] border-l-0 border-r-[1.5px] border-[#777777] rounded-r-[6px] z-0"></div>
-                  <div className="hidden xl:block absolute left-[100%] ml-[30px] top-1/2 -translate-y-1/2 w-[50px] h-[1.5px] bg-[#777777] z-0"></div>
-                  {/* Arrow head */}
-                  <div className="hidden xl:block absolute left-[100%] ml-[74px] top-1/2 -translate-y-1/2 w-[0] h-[0] border-t-[5px] border-b-[5px] border-l-[6px] border-transparent border-l-[#777777] z-10"></div>
-
-                  {[
-                    { id: 'A' },
-                    { id: 'B' },
-                    { id: 'C' }
-                  ].map((miner) => (
-                    <div key={miner.id} className="w-full bg-black/20 backdrop-blur-md border border-[#444444] rounded-[8px] p-4 py-4 flex items-center gap-4 relative z-10 shadow-inner hover:bg-white/5 transition-colors">
-                      <svg className="w-[18px] h-[18px] text-[#666] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4 6h16v4H4zm2 1h2v2H6z" />
-                        <path d="M4 14h16v4H4zm2 1h2v2H6z" />
-                      </svg>
-                      <div>
-                        <div className="text-white text-[18px] font-bold leading-tight">Miner {miner.id}</div>
-                        <div className="text-[#8a8a8a] text-[14px] mt-2 whitespace-nowrap flex items-center">
-                          Sealed Bid
-                          <svg className="w-[12px] h-[12px] ml-1.5 text-[#666] shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
-                          </svg>
+                      <div className="flex items-start gap-4">
+                        <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <circle cx="18" cy="5" r="3" />
+                          <circle cx="6" cy="12" r="3" />
+                          <circle cx="18" cy="19" r="3" />
+                          <path d="M8.59 13.51l6.83 3.98m-.01-10.98l-6.82 3.98" stroke="currentColor" strokeWidth="2" />
+                        </svg>
+                        <div className="text-[#a1a1a1] type-body">
+                          <span className="text-white font-medium">Validator Feed:</span> Propagates verified events to the Validator set for consensus.
                         </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* 2. SCORING FORMULA container */}
-              <div className="relative bg-black/20 backdrop-blur-md border border-[#444444] rounded-[12px] py-[50px] px-8 md:py-[60px] md:px-10 w-full max-w-[440px] xl:w-[440px] shadow-[0_20px_60px_rgba(0,0,0,0.8)] shadow-inner z-10 shrink-0">
-
-                {/* Top Floating Badge */}
-                <div className="absolute -top-[16px] left-1/2 -translate-x-1/2 bg-[#050505] border-[1.5px] border-[#777777] rounded-[30px] px-5 py-1.5 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(204,204,204,0.15)] shadow-inner whitespace-nowrap z-20">
-                  <svg className="w-3.5 h-3.5 text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
+                {/* Footer Panel */}
+                <div className="border-t border-white/5 bg-transparent hover:bg-white/5 transition-colors px-10 py-5 flex items-center w-full">
+                  <svg className="w-[16px] h-[16px] text-[#cccccc] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
                   </svg>
-                  <span className="text-[#cccccc] font-bold text-[11px] mt-[1px]">2s Window</span>
-                </div>
-
-                <div className="absolute top-[26px] left-1/2 -translate-x-1/2 text-center text-[#444] type-label tracking-[0.1em] whitespace-nowrap">Scoring Formula</div>
-
-                <div className="flex justify-between items-center gap-4 w-full">
-                  <div className="text-[20px] font-bold leading-[2.2]">
-                    <div className="text-[#888] mb-1 text-[22px] font-semibold">Score = </div>
-                    <div className="flex items-center">
-                      <span className="inline-block w-[16px] shrink-0 mr-[4px]"></span>
-                      <span className="text-[#cccccc]">0.40</span> <span className="text-[#444] mx-[3px] text-[14px]">×</span> <span className="text-white">Latency</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-[#555] inline-block w-[16px] shrink-0 mr-[4px]">+</span>
-                      <span className="text-[#cccccc]">0.40</span> <span className="text-[#444] mx-[3px] text-[14px]">×</span> <span className="text-white">Gas Cost</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-[#555] inline-block w-[16px] shrink-0 mr-[4px]">+</span>
-                      <span className="text-white">0.20</span> <span className="text-[#444] mx-[3px] text-[14px]">×</span> <span className="text-white">Accuracy</span>
-                    </div>
-                  </div>
-
-                  <div className="w-[70px] h-[70px] shrink-0 relative">
-                    <svg className="w-[70px] h-[70px] transform -rotate-90" viewBox="0 0 36 36">
-                      {/* Background Accuracy 20% (gray ring part) */}
-                      <path
-                        className="text-[#2a2a2a]"
-                        strokeWidth="3.5"
-                        stroke="currentColor"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                      {/* Neutral 40% (bottom part) */}
-                      <path
-                        className="text-[#cccccc]"
-                        strokeWidth="3.5"
-                        strokeDasharray="40 100"
-                        strokeDashoffset="-40"
-                        strokeLinecap="round"
-                        stroke="currentColor"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                      {/* Cyan 40% (top right part) */}
-                      <path
-                        className="text-[#cccccc]"
-                        strokeWidth="3.5"
-                        strokeDasharray="40 100"
-                        strokeLinecap="round"
-                        stroke="currentColor"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Arrow pointing to Winner Executes */}
-                <div className="hidden xl:block absolute left-[100%] top-1/2 -translate-y-1/2 w-[80px] h-[1.5px] bg-[#777777] z-0"></div>
-                <div className="hidden xl:block absolute left-[100%] ml-[74px] top-1/2 -translate-y-1/2 w-[0] h-[0] border-t-[5px] border-b-[5px] border-l-[6px] border-transparent border-l-[#777777]"></div>
-              </div>
-
-              {/* 3. WINNER EXECUTES */}
-              <div className="w-full sm:w-[240px] xl:w-[150px] bg-black/20 backdrop-blur-md border-[1.5px] border-[#444444] rounded-[8px] p-6 lg:p-7 flex flex-col items-center justify-center gap-4 relative z-10 shadow-[0_0_25px_rgba(204,204,204,0.15)] shadow-inner shrink-0 xl:self-center">
-                <svg className="w-[30px] h-[30px] text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 5h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v2H5a1 1 0 0 0-1 1v2.22A4.78 4.78 0 0 0 8.78 13h.14a4.98 4.98 0 0 0 2.08 3h-2a1 1 0 0 0-1 1v2h-2v2h12v-2h-2v-2a1 1 0 0 0-1-1h-2a4.98 4.98 0 0 0 2.08-3h.14A4.78 4.78 0 0 0 19 8.22V6a1 1 0 0 0-1-1zM6 8.22V7h1v4.61A2.78 2.78 0 0 1 6 8.22zM17 7v1.22A2.78 2.78 0 0 1 14.39 12H18V7z" />
-                </svg>
-                <div className="text-white type-label text-center leading-tight">
-                  Winner<br />Executes
+                  <span className="text-[#cccccc] type-label mt-[1px]">Required Stake: 100 TAO to register UID</span>
                 </div>
               </div>
 
             </div>
-          </div>
-        </section>
+          </section>
         )}
 
         {false && (
-        <section id="scoring" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+          <section id="relay-miner" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden max-w-[1100px] mx-auto w-full">
 
 
 
-            <div className="relative z-10 mb-8 pt-5 flex flex-col items-center text-center w-full gap-4 pb-4">
-              <h2 className="type-title text-metallic-premium drop-shadow-2xl">
-                5-Dimension Scoring
-              </h2>
-              <p className="type-body text-[#888] max-w-[500px]">
-                Quality drives rewards. Miners are scored on every delivery.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 relative z-10 w-full max-w-[1020px] mx-auto">
-
-              {/* 1. Latency (25%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
-                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D1</div>
-                <div className="text-white type-subtitle mb-1 drop-shadow-md">Latency</div>
-                <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">25%</div>
-                <div className="type-body text-gray-300 drop-shadow-md">
-                  Time from source dispatch to destination delivery measured in ms.
-                </div>
+              <div className="flex flex-col items-center text-center w-full relative z-10 mb-8">
+                <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+                  Relay Miner
+                </h2>
               </div>
 
-              {/* 2. Confirmation (25%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
-                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D2</div>
-                <div className="text-white type-subtitle mb-1 drop-shadow-md">Confirmation</div>
-                <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">25%</div>
-                <div className="type-body text-gray-300 drop-shadow-md">
-                  Delivery within promised deadline.<br />Missed deadlines = zero score.
-                </div>
-              </div>
+              <div className="rounded-[1.5rem] bg-black/20 backdrop-blur-md shadow-inner border border-white/10 relative mx-auto w-full max-w-[900px] overflow-hidden mt-8 md:mt-10 hover:bg-black/30 transition-colors">
+                {/* Neutral top bar */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#cccccc] shadow-[0_0_20px_rgba(204,204,204,0.4)]"></div>
 
-              {/* 3. Gas Efficiency (20%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
-                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D3</div>
-                <div className="text-white type-subtitle mb-1 drop-shadow-md">Gas Efficiency</div>
-                <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">20%</div>
-                <div className="type-body text-gray-300 relative z-10 drop-shadow-md">
-                  Optimizing on-chain costs vs. oracle estimates.
-                </div>
-              </div>
+                <div className="flex flex-col md:flex-row relative">
+                  {/* Faint internal vertical divider for desktop */}
+                  <div className="hidden md:block absolute left-[38%] top-[10%] bottom-[10%] w-[1px] bg-white/20"></div>
 
-              {/* 4. Integrity (15%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
-                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D4</div>
-                <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-1 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">15%</div>
-                <div className="text-white type-subtitle mb-3 drop-shadow-md">Integrity</div>
-                <div className="type-body text-gray-300 relative z-10 drop-shadow-md">
-                  Payload hash matching source event exactly.
-                </div>
-              </div>
+                  {/* Left Column Component */}
+                  <div className="w-full md:w-[38%] pt-16 pb-14 px-8 flex flex-col items-center text-center">
+                    <div className="w-[96px] h-[96px] rounded-full border-[1.5px] border-[#cccccc] bg-[#cccccc]/[0.05] flex items-center justify-center shadow-[0_0_30px_rgba(204,204,204,0.2)] mb-8">
+                      <svg className="w-[38px] h-[38px] text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                      </svg>
+                    </div>
 
-              {/* 5. Reliability (15%) */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
-                <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D5</div>
-                <div className="text-white type-subtitle mb-1 drop-shadow-md">Reliability</div>
-                <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">15%</div>
-                <div className="type-body text-gray-300 drop-shadow-md">
-                  Historical uptime and successful delivery rate.
-                </div>
-              </div>
+                    <div className="text-[72px] font-bold text-[#cccccc] leading-none mb-4">~70%</div>
+                    <div className="type-label text-[#cccccc] mb-4">Subnet TAO Emissions</div>
 
-              {/* 6. Blended Score Box */}
-              <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
-                <div className="text-white type-subtitle mb-1 drop-shadow-md">Blended Score</div>
-                <div className="type-label text-gray-400 mb-3">Final Formula</div>
-                <div className="text-[16px] leading-[1.6] font-mono whitespace-nowrap drop-shadow-md">
-                  <div className="text-white mb-1">Score =</div>
-                  <div>
-                    <span className="text-[#cccccc]">0.70</span> <span className="text-[#666]">×</span> <span className="text-white">Exec</span> <span className="text-[#666]"> +</span>
+                    <p className="text-[#666] type-body max-w-[200px]">
+                      Rewards earned by winning auctions and successfully executing deliveries.
+                    </p>
                   </div>
-                  <div>
-                    <span className="text-[#cccccc]">0.30</span> <span className="text-[#666]">×</span> <span className="text-white">Bid</span>
+
+                  {/* Right Column Component */}
+                  <div className="w-full md:w-[62%] pt-16 pb-14 px-10 md:pr-14 md:pl-12">
+                    <h3 className="type-subtitle text-white mb-3">Execution Mechanism</h3>
+                    <p className="text-[#a1a1a1] type-body mb-10 w-[95%]">
+                      Relay Miners actively compete to physically deliver messages across chains with speed and security.
+                    </p>
+
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-4">
+                        <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M14 6l4 4L7 21l-4-4L14 6z" />
+                          <path d="M18 2l4 4-3 3-4-4 3-3z" />
+                        </svg>
+                        <div className="text-[#a1a1a1] type-body">
+                          <span className="text-white font-medium">Sealed Auctions:</span> Bids latency & gas in 2s windows. Fastest + cheapest wins.
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <svg className="w-[16px] h-[16px] text-[#cccccc] mt-0.5 shrink-0 -ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20 8h-3V4H3v13h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM8 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM17.5 9.5l1.96 2.5H17.5v-2.5z" />
+                        </svg>
+                        <div className="text-[#a1a1a1] type-body">
+                          <span className="text-white font-medium">Cross-Chain Delivery:</span> Executes transaction on destination contract immediately.
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <svg className="w-[14px] h-[14px] text-[#cccccc] mt-1 shrink-0 px-[1px]" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M3 2v20l3-3 3 3 3-3 3 3 3-3 3 3V2H3zm14 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z" />
+                        </svg>
+                        <div className="text-[#a1a1a1] type-body">
+                          <span className="text-white font-medium">Proof Submission:</span> Returns delivery proof on-chain to unlock fees & TAO.
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {/* Footer Panel */}
+                <div className="border-t border-white/5 bg-transparent hover:bg-white/5 transition-colors px-10 py-5 flex items-center w-full">
+                  <svg className="w-[16px] h-[16px] text-[#cccccc] mr-3" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  <span className="text-[#cccccc] type-label mt-[1px]">Verified Delivery: &lt; 10s Latency</span>
+                </div>
               </div>
 
             </div>
+          </section>
+        )}
 
 
 
-          </div>
-        </section>
+
+        {false && (
+          <section id="the-auction" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+
+
+              <div className="flex flex-col items-center text-center w-full relative z-10 mb-20 pt-10">
+                <div className="type-label text-[#cccccc] mb-5">The Auction</div>
+                <h2 className="type-title mb-5 text-metallic-premium drop-shadow-2xl">
+                  Sealed-Bid Velocity
+                </h2>
+                <p className="type-body text-[#888]">
+                  Fastest & cheapest miner wins execution rights.
+                </p>
+              </div>
+
+              {/* Diagram container */}
+              <div className="relative flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-[60px] xl:gap-[80px] w-full mt-16 max-w-[900px] mx-auto">
+
+                {/* 1. RELAY MINERS column */}
+                <div className="flex flex-col relative w-full sm:w-[240px] xl:w-[200px] shrink-0 xl:justify-center">
+                  <div className="text-[#7a7a7a] text-[12px] text-center xl:text-left mb-3">Relay Miners</div>
+
+                  <div className="relative w-full flex flex-col gap-4">
+                    {/* Desktop connection lines drawn behind the items */}
+                    <div className="hidden xl:block absolute left-[100%] top-[30px] w-[30px] bottom-[30px] border-t-[1.5px] border-b-[1.5px] border-l-0 border-r-[1.5px] border-[#777777] rounded-r-[6px] z-0"></div>
+                    <div className="hidden xl:block absolute left-[100%] ml-[30px] top-1/2 -translate-y-1/2 w-[50px] h-[1.5px] bg-[#777777] z-0"></div>
+                    {/* Arrow head */}
+                    <div className="hidden xl:block absolute left-[100%] ml-[74px] top-1/2 -translate-y-1/2 w-[0] h-[0] border-t-[5px] border-b-[5px] border-l-[6px] border-transparent border-l-[#777777] z-10"></div>
+
+                    {[
+                      { id: 'A' },
+                      { id: 'B' },
+                      { id: 'C' }
+                    ].map((miner) => (
+                      <div key={miner.id} className="w-full bg-black/20 backdrop-blur-md border border-[#444444] rounded-[8px] p-4 py-4 flex items-center gap-4 relative z-10 shadow-inner hover:bg-white/5 transition-colors">
+                        <svg className="w-[18px] h-[18px] text-[#666] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M4 6h16v4H4zm2 1h2v2H6z" />
+                          <path d="M4 14h16v4H4zm2 1h2v2H6z" />
+                        </svg>
+                        <div>
+                          <div className="text-white text-[18px] font-bold leading-tight">Miner {miner.id}</div>
+                          <div className="text-[#8a8a8a] text-[14px] mt-2 whitespace-nowrap flex items-center">
+                            Sealed Bid
+                            <svg className="w-[12px] h-[12px] ml-1.5 text-[#666] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 2. SCORING FORMULA container */}
+                <div className="relative bg-black/20 backdrop-blur-md border border-[#444444] rounded-[12px] py-[50px] px-8 md:py-[60px] md:px-10 w-full max-w-[440px] xl:w-[440px] shadow-[0_20px_60px_rgba(0,0,0,0.8)] shadow-inner z-10 shrink-0">
+
+                  {/* Top Floating Badge */}
+                  <div className="absolute -top-[16px] left-1/2 -translate-x-1/2 bg-[#050505] border-[1.5px] border-[#777777] rounded-[30px] px-5 py-1.5 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(204,204,204,0.15)] shadow-inner whitespace-nowrap z-20">
+                    <svg className="w-3.5 h-3.5 text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
+                    </svg>
+                    <span className="text-[#cccccc] font-bold text-[11px] mt-[1px]">2s Window</span>
+                  </div>
+
+                  <div className="absolute top-[26px] left-1/2 -translate-x-1/2 text-center text-[#444] type-label tracking-[0.1em] whitespace-nowrap">Scoring Formula</div>
+
+                  <div className="flex justify-between items-center gap-4 w-full">
+                    <div className="text-[20px] font-bold leading-[2.2]">
+                      <div className="text-[#888] mb-1 text-[22px] font-semibold">Score = </div>
+                      <div className="flex items-center">
+                        <span className="inline-block w-[16px] shrink-0 mr-[4px]"></span>
+                        <span className="text-[#cccccc]">0.40</span> <span className="text-[#444] mx-[3px] text-[14px]">×</span> <span className="text-white">Latency</span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#555] inline-block w-[16px] shrink-0 mr-[4px]">+</span>
+                        <span className="text-[#cccccc]">0.40</span> <span className="text-[#444] mx-[3px] text-[14px]">×</span> <span className="text-white">Gas Cost</span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="text-[#555] inline-block w-[16px] shrink-0 mr-[4px]">+</span>
+                        <span className="text-white">0.20</span> <span className="text-[#444] mx-[3px] text-[14px]">×</span> <span className="text-white">Accuracy</span>
+                      </div>
+                    </div>
+
+                    <div className="w-[70px] h-[70px] shrink-0 relative">
+                      <svg className="w-[70px] h-[70px] transform -rotate-90" viewBox="0 0 36 36">
+                        {/* Background Accuracy 20% (gray ring part) */}
+                        <path
+                          className="text-[#2a2a2a]"
+                          strokeWidth="3.5"
+                          stroke="currentColor"
+                          fill="none"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        {/* Neutral 40% (bottom part) */}
+                        <path
+                          className="text-[#cccccc]"
+                          strokeWidth="3.5"
+                          strokeDasharray="40 100"
+                          strokeDashoffset="-40"
+                          strokeLinecap="round"
+                          stroke="currentColor"
+                          fill="none"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        {/* Cyan 40% (top right part) */}
+                        <path
+                          className="text-[#cccccc]"
+                          strokeWidth="3.5"
+                          strokeDasharray="40 100"
+                          strokeLinecap="round"
+                          stroke="currentColor"
+                          fill="none"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Arrow pointing to Winner Executes */}
+                  <div className="hidden xl:block absolute left-[100%] top-1/2 -translate-y-1/2 w-[80px] h-[1.5px] bg-[#777777] z-0"></div>
+                  <div className="hidden xl:block absolute left-[100%] ml-[74px] top-1/2 -translate-y-1/2 w-[0] h-[0] border-t-[5px] border-b-[5px] border-l-[6px] border-transparent border-l-[#777777]"></div>
+                </div>
+
+                {/* 3. WINNER EXECUTES */}
+                <div className="w-full sm:w-[240px] xl:w-[150px] bg-black/20 backdrop-blur-md border-[1.5px] border-[#444444] rounded-[8px] p-6 lg:p-7 flex flex-col items-center justify-center gap-4 relative z-10 shadow-[0_0_25px_rgba(204,204,204,0.15)] shadow-inner shrink-0 xl:self-center">
+                  <svg className="w-[30px] h-[30px] text-[#cccccc]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 5h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v2H5a1 1 0 0 0-1 1v2.22A4.78 4.78 0 0 0 8.78 13h.14a4.98 4.98 0 0 0 2.08 3h-2a1 1 0 0 0-1 1v2h-2v2h12v-2h-2v-2a1 1 0 0 0-1-1h-2a4.98 4.98 0 0 0 2.08-3h.14A4.78 4.78 0 0 0 19 8.22V6a1 1 0 0 0-1-1zM6 8.22V7h1v4.61A2.78 2.78 0 0 1 6 8.22zM17 7v1.22A2.78 2.78 0 0 1 14.39 12H18V7z" />
+                  </svg>
+                  <div className="text-white type-label text-center leading-tight">
+                    Winner<br />Executes
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        )}
+
+        {false && (
+          <section id="scoring" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+
+
+
+              <div className="relative z-10 mb-8 pt-5 flex flex-col items-center text-center w-full gap-4 pb-4">
+                <h2 className="type-title text-metallic-premium drop-shadow-2xl">
+                  5-Dimension Scoring
+                </h2>
+                <p className="type-body text-[#888] max-w-[500px]">
+                  Quality drives rewards. Miners are scored on every delivery.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 relative z-10 w-full max-w-[1020px] mx-auto">
+
+                {/* 1. Latency (25%) */}
+                <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                  <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D1</div>
+                  <div className="text-white type-subtitle mb-1 drop-shadow-md">Latency</div>
+                  <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">25%</div>
+                  <div className="type-body text-gray-300 drop-shadow-md">
+                    Time from source dispatch to destination delivery measured in ms.
+                  </div>
+                </div>
+
+                {/* 2. Confirmation (25%) */}
+                <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                  <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D2</div>
+                  <div className="text-white type-subtitle mb-1 drop-shadow-md">Confirmation</div>
+                  <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">25%</div>
+                  <div className="type-body text-gray-300 drop-shadow-md">
+                    Delivery within promised deadline.<br />Missed deadlines = zero score.
+                  </div>
+                </div>
+
+                {/* 3. Gas Efficiency (20%) */}
+                <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+                  <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D3</div>
+                  <div className="text-white type-subtitle mb-1 drop-shadow-md">Gas Efficiency</div>
+                  <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">20%</div>
+                  <div className="type-body text-gray-300 relative z-10 drop-shadow-md">
+                    Optimizing on-chain costs vs. oracle estimates.
+                  </div>
+                </div>
+
+                {/* 4. Integrity (15%) */}
+                <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_40px_rgba(0,0,0,0.7)]">
+                  <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D4</div>
+                  <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-1 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">15%</div>
+                  <div className="text-white type-subtitle mb-3 drop-shadow-md">Integrity</div>
+                  <div className="type-body text-gray-300 relative z-10 drop-shadow-md">
+                    Payload hash matching source event exactly.
+                  </div>
+                </div>
+
+                {/* 5. Reliability (15%) */}
+                <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                  <div className="absolute top-4 right-4 bg-white/10 text-[#bbb] text-[10px] px-1.5 py-0.5 rounded leading-none backdrop-blur-sm">D5</div>
+                  <div className="text-white type-subtitle mb-1 drop-shadow-md">Reliability</div>
+                  <div className="text-[44px] font-bold text-[#cccccc] leading-none mb-4 drop-shadow-[0_0_15px_rgba(204,204,204,0.4)]">15%</div>
+                  <div className="type-body text-gray-300 drop-shadow-md">
+                    Historical uptime and successful delivery rate.
+                  </div>
+                </div>
+
+                {/* 6. Blended Score Box */}
+                <div className="relative border border-white/10 border-l-[3px] border-l-[#cccccc] bg-black/20 backdrop-blur-md shadow-inner hover:bg-white/5 transition-colors rounded-r-xl py-5 pl-6 pr-5 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                  <div className="text-white type-subtitle mb-1 drop-shadow-md">Blended Score</div>
+                  <div className="type-label text-gray-400 mb-3">Final Formula</div>
+                  <div className="text-[16px] leading-[1.6] font-mono whitespace-nowrap drop-shadow-md">
+                    <div className="text-white mb-1">Score =</div>
+                    <div>
+                      <span className="text-[#cccccc]">0.70</span> <span className="text-[#666]">×</span> <span className="text-white">Exec</span> <span className="text-[#666]"> +</span>
+                    </div>
+                    <div>
+                      <span className="text-[#cccccc]">0.30</span> <span className="text-[#666]">×</span> <span className="text-white">Bid</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+            </div>
+          </section>
         )}
 
 
@@ -1470,7 +1465,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center justify-center text-center w-full relative z-10 mb-12 pt-6">
               <h2 className="type-title text-metallic-premium drop-shadow-2xl text-center w-full">
-                Real-Time Fees Real-Time Rewards
+                Incentives Aligned by Design
               </h2>
             </div>
 
@@ -1584,140 +1579,140 @@ export default function Home() {
         </section>
 
         {false && (
-        <section id="roadmap" className="w-full relative z-10 my-24 md:my-32 px-6">
-          <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
+          <section id="roadmap" className="w-full relative z-10 my-24 md:my-32 px-6">
+            <div className="surface-glass-strong p-6 md:p-8 lg:p-10 rounded-[2rem] shadow-2xl relative max-w-[1100px] mx-auto w-full overflow-hidden">
 
-            <div className="flex flex-col items-center text-center w-full max-w-[1020px] mx-auto mb-4 relative z-10">
-              <h2 className="type-title mb-8 text-metallic-premium drop-shadow-2xl">
-                Roadmap To Scale
-              </h2>
+              <div className="flex flex-col items-center text-center w-full max-w-[1020px] mx-auto mb-4 relative z-10">
+                <h2 className="type-title mb-8 text-metallic-premium drop-shadow-2xl">
+                  Roadmap To Scale
+                </h2>
 
-              {/* Timeline Header Area */}
-              <div className="hidden lg:grid grid-cols-3 gap-8 w-full mb-[0px] h-[45px] relative">
-                {/* Full-width horizontal line */}
-                <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-[#cccccc] opacity-70 z-0"></div>
+                {/* Timeline Header Area */}
+                <div className="hidden lg:grid grid-cols-3 gap-8 w-full mb-[0px] h-[45px] relative">
+                  {/* Full-width horizontal line */}
+                  <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-[#cccccc] opacity-70 z-0"></div>
 
-                {/* Node 1 */}
-                <div className="relative h-full">
-                  {/* Vertical line centered */}
-                  <div className="absolute top-0 left-1/2 -translate-x-[0.75px] w-[1.5px] h-full bg-[#cccccc] opacity-70"></div>
-                  {/* Circle centered */}
-                  <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-[16px] h-[16px] rounded-full border-[3px] border-[#cccccc] bg-black/80 backdrop-blur-md z-10 transition-transform hover:scale-110"></div>
-                </div>
-
-                {/* Node 2 */}
-                <div className="relative h-full">
-                  {/* Vertical line centered */}
-                  <div className="absolute top-0 left-1/2 -translate-x-[0.75px] w-[1.5px] h-full bg-[#cccccc] opacity-70"></div>
-                  {/* Circle centered */}
-                  <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-[16px] h-[16px] rounded-full border-[3px] border-[#cccccc] bg-black/80 backdrop-blur-md z-10 transition-transform hover:scale-110"></div>
-                </div>
-
-                {/* Node 3 */}
-                <div className="relative h-full">
-                  {/* Vertical line centered */}
-                  <div className="absolute top-0 left-1/2 -translate-x-[0.75px] w-[1.5px] h-full bg-[#ffffff] opacity-70"></div>
-                  {/* Circle centered */}
-                  <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-[16px] h-[16px] rounded-full border-[3px] border-[#ffffff] bg-black/80 backdrop-blur-md z-10 transition-transform hover:scale-110"></div>
-                </div>
-
-              </div>
-
-              {/* Grid Content Area for Phases */}
-              <div className="grid lg:grid-cols-3 gap-8">
-                {/* Phase 1 */}
-                <div className="relative border-t-[1.5px] border-[#cccccc] bg-gradient-to-br from-[#cccccc]/[0.05] to-transparent bg-black/20 backdrop-blur-md shadow-inner border-x border-b border-x-white/5 border-b-white/5 hover:bg-white/[0.02] transition-colors p-6 md:p-8 rounded-b-[8px]">
-                  <div className="text-white type-subtitle mb-6">{roadmap[0].phase}</div>
-
-                  <div className="inline-flex items-center gap-2 border border-[#cccccc]/30 bg-[#cccccc]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#cccccc] type-label">
-                    <div className="w-2 h-2 rounded-full bg-[#cccccc]"></div>
-                    {roadmap[0].status}
+                  {/* Node 1 */}
+                  <div className="relative h-full">
+                    {/* Vertical line centered */}
+                    <div className="absolute top-0 left-1/2 -translate-x-[0.75px] w-[1.5px] h-full bg-[#cccccc] opacity-70"></div>
+                    {/* Circle centered */}
+                    <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-[16px] h-[16px] rounded-full border-[3px] border-[#cccccc] bg-black/80 backdrop-blur-md z-10 transition-transform hover:scale-110"></div>
                   </div>
 
-                  <div className="space-y-6">
-                    {roadmap[0].items.map((item, i) => {
-                      const [title, desc] = item.split(' - ');
-                      return (
-                        <div key={i} className="flex gap-4 items-start">
-                          <svg className="w-[16px] h-[16px] text-[#cccccc] shrink-0 mt-[2px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                          <div>
-                            <div className="text-[#dedede] type-body font-semibold mb-1">{title}</div>
-                            <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                  {/* Node 2 */}
+                  <div className="relative h-full">
+                    {/* Vertical line centered */}
+                    <div className="absolute top-0 left-1/2 -translate-x-[0.75px] w-[1.5px] h-full bg-[#cccccc] opacity-70"></div>
+                    {/* Circle centered */}
+                    <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-[16px] h-[16px] rounded-full border-[3px] border-[#cccccc] bg-black/80 backdrop-blur-md z-10 transition-transform hover:scale-110"></div>
+                  </div>
+
+                  {/* Node 3 */}
+                  <div className="relative h-full">
+                    {/* Vertical line centered */}
+                    <div className="absolute top-0 left-1/2 -translate-x-[0.75px] w-[1.5px] h-full bg-[#ffffff] opacity-70"></div>
+                    {/* Circle centered */}
+                    <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-[16px] h-[16px] rounded-full border-[3px] border-[#ffffff] bg-black/80 backdrop-blur-md z-10 transition-transform hover:scale-110"></div>
+                  </div>
+
+                </div>
+
+                {/* Grid Content Area for Phases */}
+                <div className="grid lg:grid-cols-3 gap-8">
+                  {/* Phase 1 */}
+                  <div className="relative border-t-[1.5px] border-[#cccccc] bg-gradient-to-br from-[#cccccc]/[0.05] to-transparent bg-black/20 backdrop-blur-md shadow-inner border-x border-b border-x-white/5 border-b-white/5 hover:bg-white/[0.02] transition-colors p-6 md:p-8 rounded-b-[8px]">
+                    <div className="text-white type-subtitle mb-6">{roadmap[0].phase}</div>
+
+                    <div className="inline-flex items-center gap-2 border border-[#cccccc]/30 bg-[#cccccc]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#cccccc] type-label">
+                      <div className="w-2 h-2 rounded-full bg-[#cccccc]"></div>
+                      {roadmap[0].status}
+                    </div>
+
+                    <div className="space-y-6">
+                      {roadmap[0].items.map((item, i) => {
+                        const [title, desc] = item.split(' - ');
+                        return (
+                          <div key={i} className="flex gap-4 items-start">
+                            <svg className="w-[16px] h-[16px] text-[#cccccc] shrink-0 mt-[2px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <div>
+                              <div className="text-[#dedede] type-body font-semibold mb-1">{title}</div>
+                              <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
+
+                  {/* Phase 2 */}
+                  <div className="relative border-t-[1.5px] border-[#cccccc] bg-gradient-to-br from-[#cccccc]/[0.05] to-transparent bg-black/20 backdrop-blur-md shadow-inner border-x border-b border-x-white/5 border-b-white/5 hover:bg-white/[0.02] transition-colors p-6 md:p-8 rounded-b-[8px]">
+                    <div className="text-white type-subtitle mb-6">{roadmap[1].phase}</div>
+
+                    <div className="inline-flex items-center gap-2 border border-[#cccccc]/30 bg-[#cccccc]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#cccccc] type-label">
+                      <svg className="w-3 h-3 text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /></svg>
+                      {roadmap[1].status}
+                    </div>
+
+                    <div className="space-y-6">
+                      {roadmap[1].items.map((item, i) => {
+                        const [title, desc] = item.split(' - ');
+                        return (
+                          <div key={i} className="flex gap-4 items-start">
+                            <div className="w-[16px] h-[16px] rounded-full bg-[#cccccc] flex items-center justify-center shrink-0 mt-[2px]">
+                              <svg className="w-[10px] h-[10px] text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                            </div>
+                            <div>
+                              <div className="text-[#dedede] type-body font-semibold mb-1">{title}</div>
+                              <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Phase 3+ */}
+                  <div className="relative border-t-[1.5px] border-[#ffffff] bg-gradient-to-br from-[#ffffff]/[0.05] to-transparent bg-black/20 backdrop-blur-md shadow-inner border-x border-b border-x-white/5 border-b-white/5 hover:bg-white/[0.02] transition-colors p-6 md:p-8 rounded-b-[8px]">
+                    <div className="text-white type-subtitle mb-6">{roadmap[2].phase}</div>
+
+                    <div className="inline-flex items-center gap-2 border border-[#ffffff]/30 bg-[#ffffff]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#ffffff] type-label">
+                      <div className="w-2 h-2 rounded-full border-2 border-white bg-transparent"></div>
+                      {roadmap[2].status}
+                    </div>
+
+                    <div className="space-y-6">
+                      {roadmap[2].items.map((item, i) => {
+                        const [title, desc] = item.split(' - ');
+                        return (
+                          <div key={i} className="flex gap-4 items-start">
+                            <div className="w-[14px] h-[14px] rounded-full border-[2px] border-white bg-transparent shrink-0 mt-[3px]"></div>
+                            <div>
+                              <div className="text-[#dedede] type-body font-semibold mb-1">{title}</div>
+                              <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
                 </div>
 
-                {/* Phase 2 */}
-                <div className="relative border-t-[1.5px] border-[#cccccc] bg-gradient-to-br from-[#cccccc]/[0.05] to-transparent bg-black/20 backdrop-blur-md shadow-inner border-x border-b border-x-white/5 border-b-white/5 hover:bg-white/[0.02] transition-colors p-6 md:p-8 rounded-b-[8px]">
-                  <div className="text-white type-subtitle mb-6">{roadmap[1].phase}</div>
-
-                  <div className="inline-flex items-center gap-2 border border-[#cccccc]/30 bg-[#cccccc]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#cccccc] type-label">
-                    <svg className="w-3 h-3 text-[#cccccc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /></svg>
-                    {roadmap[1].status}
-                  </div>
-
-                  <div className="space-y-6">
-                    {roadmap[1].items.map((item, i) => {
-                      const [title, desc] = item.split(' - ');
-                      return (
-                        <div key={i} className="flex gap-4 items-start">
-                          <div className="w-[16px] h-[16px] rounded-full bg-[#cccccc] flex items-center justify-center shrink-0 mt-[2px]">
-                            <svg className="w-[10px] h-[10px] text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                          </div>
-                          <div>
-                            <div className="text-[#dedede] type-body font-semibold mb-1">{title}</div>
-                            <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                <div className="border-t border-[#1a1a1a] mt-6 pt-4 flex justify-end gap-5 text-white">
+                  <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /></svg>
+                  <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" /></svg>
+                  <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.946 2.4189-2.1568 2.4189z" /></svg>
                 </div>
-
-                {/* Phase 3+ */}
-                <div className="relative border-t-[1.5px] border-[#ffffff] bg-gradient-to-br from-[#ffffff]/[0.05] to-transparent bg-black/20 backdrop-blur-md shadow-inner border-x border-b border-x-white/5 border-b-white/5 hover:bg-white/[0.02] transition-colors p-6 md:p-8 rounded-b-[8px]">
-                  <div className="text-white type-subtitle mb-6">{roadmap[2].phase}</div>
-
-                  <div className="inline-flex items-center gap-2 border border-[#ffffff]/30 bg-[#ffffff]/10 rounded-[4px] px-3 py-1.5 mb-8 text-[#ffffff] type-label">
-                    <div className="w-2 h-2 rounded-full border-2 border-white bg-transparent"></div>
-                    {roadmap[2].status}
-                  </div>
-
-                  <div className="space-y-6">
-                    {roadmap[2].items.map((item, i) => {
-                      const [title, desc] = item.split(' - ');
-                      return (
-                        <div key={i} className="flex gap-4 items-start">
-                          <div className="w-[14px] h-[14px] rounded-full border-[2px] border-white bg-transparent shrink-0 mt-[3px]"></div>
-                          <div>
-                            <div className="text-[#dedede] type-body font-semibold mb-1">{title}</div>
-                            <div className="text-[#666] text-[12px] leading-relaxed">{desc}</div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-              </div>
-
-              <div className="border-t border-[#1a1a1a] mt-6 pt-4 flex justify-end gap-5 text-white">
-                <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /></svg>
-                <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" /></svg>
-                <svg className="w-5 h-5 hover:text-gray-400 cursor-pointer" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3333-.946 2.4189-2.1568 2.4189z" /></svg>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         )}
 
         {/* FOOTER CTA */}
         <section className="pt-24 pb-16 flex flex-col items-center text-center px-4 bg-gradient-to-t from-[#020205] via-[#020205]/40 to-transparent">
           <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-10 bg-black/60 backdrop-blur-md shadow-2xl">
-            <div className="w-6 h-6 rounded-full bg-white animate-spin shadow-[0_0_15px_rgba(255,255,255,0.8)]" style={{ animationDuration: '4s' }} />
+            <Image src={logoImg} alt="Entangle Protocol" width={40} height={40} className="object-contain brightness-150 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]" />
           </div>
           <h2 className="type-title mb-8 text-metallic-premium drop-shadow-2xl">Join The Network</h2>
 
